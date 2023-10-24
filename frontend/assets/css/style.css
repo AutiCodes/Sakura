@@ -60,8 +60,7 @@
 /* Dropdown */
 .dropdown-menu {
     background-color: #1f2024;
-    padding-left: 0px;
-    padding-right: 0px;
+    border-radius: 12px;
 }
 
 .dropdown-item {
