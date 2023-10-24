@@ -38,19 +38,19 @@
     <!-- End site banner -->
 
     <!-- Nav bar-->
-    <div class="container-fluid" id="menu_bar">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="d-flex w-100 justify-content-around">
+    <div class="" id="menu_bar">
+      <nav class="navbar navbar-expand-lg navbar-dark w-100 container-fluid d-block d-lg-flex justify-content-around">
+        <div class="d-flex d-md-flex d-lg-block  justify-content-around">
           <a href="#" class="navbar-brand fa fa-home" id="menu_bar_home_icon" style="font-size: 30px;"></a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+            <a href="#" class="d-sm-block d-lg-none navbar-brand fa fa-search mx-3" id="menu_bar_home_icon" style="font-size: 30px;"></a>
 
-          <a href="#" class="navbar-brand fa fa-search" id="menu_bar_home_icon" style="font-size: 30px;"></a>
         </div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse  flex-grow-0" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -67,7 +67,11 @@
               </div>
             </li>
           </ul>
+
+
         </div>
+
+          <a href="#" class="d-none d-lg-block navbar-brand fa fa-search" id="menu_bar_home_icon" style="font-size: 30px;"></a>
       </nav>
     </div>
     <!-- End nav bar -->
