@@ -1,7 +1,14 @@
+/*
+* Custom made for the All Day Tech & Gaming community.
+* By KelvinCodes, 2023.
+* For source code or contribution see our Github repo <url comes here>
+*/
+
 /* 
 * Homepage
 */
-/* Homepage banner image*/
+
+/* Banner */
 #main_site_banner {
     max-width: fit-content;
     z-index: -1;
@@ -10,7 +17,7 @@
     object-fit: fill;
 }
 
-/* Homepage banner social icons */
+/* social icons */
 #social_icons_banner_fb {
     position: absolute;
     right: 9%;
@@ -30,4 +37,50 @@
     padding-left: 0px;
     padding-right: 0px;
     background-color: #8224e3; /*rgb(98, 23, 177)*/
+}
+
+#menu_bar_home_icon:hover {
+    color: black;
+}
+
+/* dropdown icon */
+.navbar-toggler:hover {
+    color: black;
+}
+
+/* text */
+.nav-link {
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background-color: #1f2024;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.dropdown-item {
+    background-color: #1f2024;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgb(204, 179, 179);
+}
+
+/* Open dropdown on hover desktop only*/
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
 }
