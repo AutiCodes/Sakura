@@ -1,0 +1,33 @@
+/* 
+* Homepage
+*/
+/* Homepage banner image*/
+#main_site_banner {
+    max-width: fit-content;
+    z-index: -1;
+    padding-left: 0px;
+    padding-right: 0px;
+    object-fit: fill;
+}
+
+/* Homepage banner social icons */
+#social_icons_banner_fb {
+    position: absolute;
+    right: 9%;
+    padding: 20px;
+    font-size: 40px;
+}
+
+#social_icons_banner_insta{
+    position: absolute;
+    right: 13%;
+    padding: 20px;
+    font-size: 40px;
+}
+
+/* Menu bar */
+#menu_bar {
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #8224e3; /*rgb(98, 23, 177)*/
+}
