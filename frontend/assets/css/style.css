@@ -83,3 +83,8 @@
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
 }
+
+/* Animations */
+#navbarSupportedContent {
+    transition: height 0.3s ease;
+}
