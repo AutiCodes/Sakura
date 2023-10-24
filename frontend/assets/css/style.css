@@ -4,10 +4,22 @@
 * For source code or contribution see our Github repo <url comes here>
 */
 
+@keyframes fade {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(5px);
+    }
+}
+
 /* 
 * Homepage
 */
-
 /* Banner */
 #main_site_banner {
     max-width: fit-content;
@@ -32,6 +44,14 @@
     font-size: 40px;
 }
 
+#social_icons_banner_fb:hover {
+    color: rgb(39, 33, 33);
+}
+
+#social_icons_banner_insta:hover {
+    color: rgb(39, 33, 33);
+}
+
 /* Menu bar */
 #menu_bar {
     padding-left: 0px;
@@ -40,12 +60,12 @@
 }
 
 #menu_bar_home_icon:hover {
-    color: black;
+    color: rgb(39, 33, 33);
 }
 
 /* dropdown icon */
 .navbar-toggler:hover {
-    color: black;
+    background-color: rgb(39, 33, 33);
 }
 
 /* text */
@@ -55,12 +75,16 @@
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-}
+}  
 
 /* Dropdown */
 .dropdown-menu {
     background-color: #1f2024;
     border-radius: 12px;
+    margin-top: -5px;
+    padding: 0px;
+    animation: fade 0.5s ease forwards;
+    transition-delay:0.5s;
 }
 
 .dropdown-item {
@@ -69,6 +93,14 @@
     font-family: sans-serif;
     color: white;
     text-transform: uppercase;
+    border-radius: 12px;
+}
+
+.dropdown-item:hover {
+    transition: background-color 0.5s;
+    background-color: #9a4aed;
+    color: white;
+    margin-top: 0;
 }
 
 .dropdown-divider {
@@ -86,5 +118,5 @@
 
 /* Animations */
 #navbarSupportedContent {
-    transition: height 0.3s ease;
+    transition: height 0.5s ease;
 }
