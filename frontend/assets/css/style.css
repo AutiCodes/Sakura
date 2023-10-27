@@ -123,6 +123,8 @@
 * End own reusable classes
 */
 
+
+
 /* 
 * Homepage
 */
@@ -173,4 +175,33 @@
     border-radius: 5px;
     margin-right: px;
     box-sizing: border-box;
+}
+
+
+
+/*
+* Scrollbarr
+*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #8224e3;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8224e3;
+    border-radius: 10px;
 }
