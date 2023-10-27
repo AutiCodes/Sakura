@@ -19,7 +19,6 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
     <!-- Stylesheets external -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- Stylesheets custom -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -37,8 +36,8 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       <img src="./assets/img/banner_adtg_1920_380.png" style="width: 2500px;" class="img-fluid" alt="Banner">
 
       <!-- Social icons banner -->
-      <a href="#" class="fa fa-facebook social_icons_banner_fb"></a> <!-- Fix bootstrap! -->
-      <a href="#" class="fa fa-instagram social_icons_banner_insta"></a> <!-- Fix bootstrap! -->
+      <a href="#" class="fa fa-facebook social_icons_banner_fb"></a> <!-- Fix Bootstrap! -->
+      <a href="#" class="fa fa-instagram social_icons_banner_insta"></a> <!-- Fix Bootstrap! -->
     </div>
     <!-- End site banner -->
 
@@ -58,7 +57,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
         </div>
 
-        <div class="collapse navbar-collapse flex-grow-0 ani-05s">
+        <div class="collapse navbar-collapse flex-grow-0 ani-05s" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <!-- Facebook groups-->
             <li class="nav-item dropdown">
@@ -123,13 +122,12 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
     <!-- End nav bar -->
 
     
-    <!-- slideshow/article-tabs -->
+    <!-- Main content -->
     <div class="container-fluid">
       <div class="row justify-content-center mt-4">
-        <!-- Slideshow -->
-        <div class="col-lg-6 text-center mb-4 mb-md-0" id="col-slideshow">
 
-          <!-- Slideshow -->
+        <!-- Slideshow -->
+        <div class="col-lg-6 text-center mb-4 mb-md-4" id="col-slideshow">
           <div id="carousel-slide" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <!-- Item 1 -->
@@ -164,7 +162,6 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
                   </div>
                 </div>
               </div>
-              
             </div>
 
             <!-- Back button-->
@@ -256,19 +253,13 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
                   <h1>Software</h1>
               </div>
           </div>
-          <!-- End article-tabs -->
-
         </div>
-      </div>
-    </div>
-    <!-- End slideshow/article-tabs -->
+        <!-- End article-tabs -->
 
 
-    <!-- End page text/discord Iframe -->
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 mb-4 p-1 text-center bg-white rounded-lg">
-          <div class="container p-4">
+        <!-- Page intro text -->
+        <div class="col-lg-6">
+          <div class="container-fluid bg-white mb-4 rounded-lg mb-4 mb-md-4">
               <!-- Temporary text -->
               Welkom bij All Day Tech & Gaming! Tech & Gaming for everyone!
               All Day Tech & Gaming is de community voor en door Pc-gebruikers, enthousiaste techfreaks, gamers en noem het maar op. Opgericht door Sander den Breejen.
@@ -295,44 +286,48 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
               <!-- End temporary text-->
           </div>
         </div>
+        <!-- End page intro text -->
 
 
-        <!-- Discord embed-->
-        <div class="col-lg-auto mb-4 text-center ml-4 mr-4 bg-white rounded-lg" style="min-width: 470px; max-height: 550px;">
+        <!-- Discord embed -->
+        <div class="col-lg-auto mb-4 text-center ml-3 mr-3 bg-white rounded-lg" style="min-width: 470px; max-height: 550px;">
           <iframe src="https://discord.com/widget?id=716388937450389514&amp;theme=dark"
-          class="pt-3 pb-1" width="400" height="540" allowtransparency="true" frameborder="0" 
-          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+            class="pt-3 pb-1" width="400" height="540" allowtransparency="true" frameborder="0" 
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
           </iframe>
         </div>
-      </div>
-    </div>
-    <!-- End page text/discord Iframe -->
+        <!-- End Discord embed -->
 
 
-    
-    <!-- Articles missed -->
-    <div class="container">
-      <div class="row">
-        <div class="container bg-white">
-          <div class="row justify-content-center">
+        <!-- Articles missed -->
+        <div class="container bg-white rounded-lg mb-4">
+          <h3 class="lp-b text-white pt-2 pl-2 pb-3 rounded-lg" style="width: 40%; clip-path: polygon(0% 12.5%, 85% 12.5%, 90% 89%, 0% 88.75%);">Artikelen die je gemist hebt</h3>
+          <div class="row justify-content-center bg-white mb-2">
+            
             <div class="col-sm text-center">
-              One of three columns
+              <img src="//placehold.it/250" class="img-fluid rounded">
             </div>
+
             <div class="col-sm text-center">
-              One of three columns
+              <img src="//placehold.it/250" class="img-fluid rounded">
             </div>
+
             <div class="col-sm text-center">
-              One of three columns
+              <img src="//placehold.it/250" class="img-fluid rounded">
             </div>
+
             <div class="col-sm text-center">
-              One of three columns
+              <img src="//placehold.it/250" class="img-fluid rounded">
             </div>            
+
           </div>
         </div>
+        <!-- End articles missed -->
       </div>
-    </div>    
-    <!-- End articles missed -->
+    </div>
+    <!-- End main content -->
 
+  
 
 </main>
 <!-- End main body -->
