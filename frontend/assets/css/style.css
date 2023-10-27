@@ -2,7 +2,7 @@
 * Project Sakura
 * Custom made for the All Day Tech & Gaming community.
 * By KelvinCodes, 2023.
-* For source code or contribution see our Github repo <url comes here>
+* For source code or contribution see our Github repo: https://github.com/kelvin-codes-stuff/AllDayTechAndGaming-community-site
 */
 
 @keyframes fade {
@@ -112,6 +112,7 @@
 }
 
 
+
 /* 
 *Fonts 
 */
@@ -125,33 +126,28 @@
 /* 
 * Homepage
 */
-/* social icons */
-#social_icons_banner_fb {
+/* social icons (Css gonna be removed)*/
+.social_icons_banner_fb {
     position: absolute;
     right: 9%;
     padding: 20px;
     font-size: 40px;
 }
 
-#social_icons_banner_insta{
+.social_icons_banner_insta{
     position: absolute;
     right: 13%;
     padding: 20px;
     font-size: 40px;
 }
 
-#social_icons_banner_fb:hover {
+.social_icons_banner_fb:hover {
     color: rgb(39, 33, 33);
 }
 
-#social_icons_banner_insta:hover {
+.social_icons_banner_insta:hover {
     color: rgb(39, 33, 33);
 }
-
-
-
-/* Slideshow-posts-sidebar container */
-
 
 /* Slideshow */
 .carousel > .carousel-inner > .carousel-item > img{
@@ -165,11 +161,8 @@
     transform: translateY(-1.2)
 } 
 
-
-
-/* posts-sidebar embed */
 /* Category styling */
-#home-category-styling {
+.home-category-styling {
     color: white;
     background-color: #8224e3;
     font-size: 12px;
