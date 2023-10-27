@@ -1,7 +1,8 @@
 /*
+* Project Sakura
 * Custom made for the All Day Tech & Gaming community.
 * By KelvinCodes, 2023.
-* For source code or contribution see our Github repo <url comes here>
+* For source code or contribution see our Github repo: https://github.com/kelvin-codes-stuff/AllDayTechAndGaming-community-site
 */
 
 @keyframes fade {
@@ -17,106 +18,159 @@
     }
 }
 
+/*
+* My own reusable classes
+*/
+/*
+* Colors
+*/
+/* Light purple */
+.lp-c {
+    color: #8224e3;
+}
+/* Light purple */
+.lp-b {
+    background-color: #8224e3;
+}
+/* Ultra light purple */
+.ulp-c {
+    color: #9a4aed;
+}
+/* Ultra light purple */
+.ulp-b {
+    background-color: #9a4aed;
+}
+
+/* Darker white */
+.dw-b {
+    background-color: rgb(243, 240, 240);
+}
+
+/* Light dark */
+.ld-c {
+    color: rgb(39, 33, 33);
+}
+.ld-b {
+    background-color: rgb(39, 33, 33);
+}
+
+/* Other dark */
+.ld2-c {
+    color: #1f2024;
+}
+.ld2-b {
+    background-color: #1f2024;
+}
+
+/* Navbar dropdown devider */
+.lwp-c {
+    border-top: 1px solid rgb(204, 179, 179);
+}
+
+
+
+/*
+* Animations
+*/
+/* 0.5s ease out */
+.ani-05s {
+    transition: height 0.5s ease;
+}
+
+/* 0.5s ease out forward */
+.ani-05s-o {
+    animation: fade 0.5s ease forwards;
+    transition-delay:0.5s;
+}
+
+
+
+/* 
+* Hover
+*/
+.icon-h-ld-b:hover {
+    background-color: rgb(39, 33, 33);
+}
+
+.icon-h-ld-c:hover {
+    color: rgb(39, 33, 33);
+}
+.dropdown-item:hover {
+    transition: background-color 0.5s;
+    animation-duration: 1000ms;
+
+    background-color: #9a4aed;
+    color: white;
+    margin-top: 0;
+}
+/* Open dropdown on hover desktop only*/
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+
+
+/* 
+*Fonts 
+*/
+.fnt-ss {
+    font-family: sans-serif;
+}
+/*
+* End own reusable classes
+*/
+
 /* 
 * Homepage
 */
-/* Banner */
-#main_site_banner {
-    max-width: fit-content;
-    z-index: -1;
-    padding-left: 0px;
-    padding-right: 0px;
-    object-fit: fill;
-}
-
-/* social icons */
-#social_icons_banner_fb {
+/* social icons (Css gonna be removed)*/
+.social_icons_banner_fb {
     position: absolute;
     right: 9%;
     padding: 20px;
     font-size: 40px;
 }
 
-#social_icons_banner_insta{
+.social_icons_banner_insta{
     position: absolute;
     right: 13%;
     padding: 20px;
     font-size: 40px;
 }
 
-#social_icons_banner_fb:hover {
+.social_icons_banner_fb:hover {
     color: rgb(39, 33, 33);
 }
 
-#social_icons_banner_insta:hover {
+.social_icons_banner_insta:hover {
     color: rgb(39, 33, 33);
 }
 
-/* Menu bar */
-#menu_bar {
-    padding-left: 0px;
-    padding-right: 0px;
-    background-color: #8224e3; /*rgb(98, 23, 177)*/
+/* Slideshow */
+.carousel > .carousel-inner > .carousel-item > img{
+    width:100%; 
+    height:450px;
 }
 
-#menu_bar_home_icon:hover {
-    color: rgb(39, 33, 33);
-}
+/* Slideshow animations */
+.carousel-slide-left{
+    transition: all 700ms ease-in-out;
+    transform: translateY(-1.2)
+} 
 
-/* dropdown icon */
-.navbar-toggler:hover {
-    background-color: rgb(39, 33, 33);
-}
-
-/* text */
-.nav-link {
-    font-size: 16px;
-    font-family: sans-serif;
+/* Category styling */
+.home-category-styling {
     color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-}  
-
-/* Dropdown */
-.dropdown-menu {
-    background-color: #1f2024;
-    border-radius: 12px;
-    margin-top: -5px;
-    padding: 0px;
-    animation: fade 0.5s ease forwards;
-    transition-delay:0.5s;
-}
-
-.dropdown-item {
-    background-color: #1f2024;
+    background-color: #8224e3;
     font-size: 12px;
-    font-family: sans-serif;
-    color: white;
-    text-transform: uppercase;
-    border-radius: 12px;
-}
-
-.dropdown-item:hover {
-    transition: background-color 0.5s;
-    background-color: #9a4aed;
-    color: white;
-    margin-top: 0;
-}
-
-.dropdown-divider {
-    border-top: 1px solid rgb(204, 179, 179);
-}
-
-/* Open dropdown on hover desktop only*/
-.dropdown:hover>.dropdown-menu {
-    display: block;
-}
-
-.dropdown>.dropdown-toggle:active {
-    pointer-events: none;
-}
-
-/* Animations */
-#navbarSupportedContent {
-    transition: height 0.5s ease;
+    padding: 4px;
+    line-height: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: px;
+    box-sizing: border-box;
 }

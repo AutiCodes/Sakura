@@ -1,5 +1,5 @@
-# AllDayTechAndGaming custom community site
-In October 2023 i decided to step away from Wordpress to a custom solution. Some of the reasons are:
+# AllDayTechAndGaming community site (project Sakura)
+In October 2023 i decided to step away from Wordpress and make a custom solution. Some of the reasons are:
 - Plugin eco system.
 - No MVC concept.
 - Performance.
@@ -47,3 +47,6 @@ In October 2023 i decided to step away from Wordpress to a custom solution. Some
 - Total time: 150hr.
 - Beta release for community testers: 1 december 2023.
 - Final release: 1 januari 2024.
+
+### Contributors
+- KelvinCodes
