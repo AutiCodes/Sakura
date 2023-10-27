@@ -50,3 +50,5 @@ In October 2023 i decided to step away from Wordpress and make a custom solution
 
 ### Contributors
 - KelvinCodes
+- FinlayDaG33k
+- icodesdeveloper
