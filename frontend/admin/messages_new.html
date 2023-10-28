@@ -28,6 +28,8 @@ Admin page theme: SB Admin 2
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="assets/css/messages_new.css" rel="stylesheet">
 
+    <!-- Extermal CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -428,19 +430,61 @@ Admin page theme: SB Admin 2
                                   <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab">Auteur</a></li>
                                 </ul>
                                 
-                                <div class="tab-content tab-articles bg-white">
+                                <div class="tab-content tab-articles bg-white rounded">
                                     <!-- Tab content 1 -->
-                                    <div class="tab-pane active" id="tab-1">
+                                    <div class="tab-pane active ml-5 mr-5" id="tab-1">
                                         <h1>Categorieën</h1>
-                                        <hr>
+                                        <hr class="pt-0">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" style="transform: scale(1.5);" checked>
+                                            <label class="form-check-label ml-4" for="flexCheckDefault">
+                                              Algemeen
+                                            </label>
+                                        </div>
+                                        <div class="form-check pt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
+                                            <label class="form-check-label ml-4" for="flexCheckChecked">
+                                            Hardware
+                                            </label>
+                                        </div>
+                                        <div class="form-check pt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
+                                            <label class="form-check-label ml-4" for="flexCheckChecked">
+                                            Software
+                                            </label>
+                                        </div>
+                                        <div class="form-check pt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
+                                            <label class="form-check-label ml-4" for="flexCheckChecked">
+                                            Windows
+                                            </label>
+                                        </div>                    
+                                        <hr>         
+                                        <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
                                     </div>
                                     <!-- Tab content 2 -->
-                                    <div class="tab-pane" id="tab-2">
+                                    <div class="tab-pane ml-5 mr-5" id="tab-2">
                                         <h1>Publiceer tijd</h1>
+                                        <hr>
+                                        <p>T.b.c</p>
                                     </div>
                                     <!-- Tab content 3 -->
-                                    <div class="tab-pane" id="tab-3">
+                                    <div class="tab-pane ml-5 mr-5" id="tab-3">
                                         <h1>Auteur</h1>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
+                                            <label class="form-check-label ml-4" for="flexCheckChecked">
+                                            Sander den breejen
+                                            </label>
+                                        </div>    
+                                        <div class="form-check pt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
+                                            <label class="form-check-label ml-4" for="flexCheckChecked">
+                                            KelvinCodes
+                                            </label>
+                                        </div>    
+                                        <br>
                                     </div>                                    
                                 </div>
                             </div>
@@ -515,6 +559,7 @@ Admin page theme: SB Admin 2
     <!-- CKeditor -->
     <script src="assets/ckeditor5-40.0.0/build/ckeditor.js"></script>
 	<script src="assets/ckeditor5-40.0.0/sample/script.js"></script>
+
 </body>
 
 </html>
