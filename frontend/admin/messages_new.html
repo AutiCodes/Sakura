@@ -9,17 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard</title>
+    <title>Nieuw artikel</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="css/messages_new.css" rel="stylesheet">
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="assets/css/messages_new.css" rel="stylesheet">
 
 </head>
 
@@ -378,7 +379,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welkom KelvinCodes</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -399,25 +400,56 @@
                 </nav>
                 <!-- End of Topbar -->
 
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">            
                       <!-- Page header -->
-                      <h1 class="h3 mb-0 text-gray-800 ml-2">Nieuw artikel</h1>
+                      <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuw artikel</h1>
 
                       <div class="row">
                         <!-- Text editor -->
-                        <div class="col-10">
-                          <div class="editor-container">
+                        <div class="col-8 rounded">
                             <div class="editor">
                             </div>
-                          </div>
+                        </div>
+                        <!-- Article settings -->
+                        <div class="col-lg-auto">
+                            <!-- Article-tabs -->
+                            <div class="col-lg-auto text-center">
+                                <ul class="nav nav-tabs rounded-top" role="tablist">
+                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab">Categorieën</a></li>
+                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab">Publiceer tijd</a></li>
+                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab">Auteur</a></li>
+                                </ul>
+                                
+                                <div class="tab-content tab-articles bg-white">
+                                    <!-- Tab content 1 -->
+                                    <div class="tab-pane active" id="tab-1">
+                                        <h1>Categorieën</h1>
+                                        <hr>
+                                    </div>
+                                    <!-- Tab content 2 -->
+                                    <div class="tab-pane" id="tab-2">
+                                        <h1>Publiceer tijd</h1>
+                                    </div>
+                                    <!-- Tab content 3 -->
+                                    <div class="tab-pane" id="tab-3">
+                                        <h1>Auteur</h1>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <!-- End article-tabs -->
                         </div>
                       </div>
+
+                      <button type="button" class="btn btn-primary btn-lg mb-4">Publiceer</button>
+
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
+
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -428,6 +460,7 @@
                 </div>
             </footer>
             <!-- End of Footer -->
+
 
         </div>
         <!-- End of Content Wrapper -->
@@ -461,21 +494,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="./js/sb-admin-2.min.js"></script>
+    <script src="assets/js/sb-admin-2.min.js"></script>
 
     <!-- Font awesome new -->
     <script src="https://kit.fontawesome.com/10be35fba2.js" crossorigin="anonymous"></script>
 
     <!-- CKeditor -->
-    <script src="./assets/ckeditor5-40.0.0/build/ckeditor.js"></script>
-		<script src="./assets/ckeditor5-40.0.0/sample/script.js"></script>
+    <script src="assets/ckeditor5-40.0.0/build/ckeditor.js"></script>
+	<script src="assets/ckeditor5-40.0.0/sample/script.js"></script>
 </body>
 
 </html>
