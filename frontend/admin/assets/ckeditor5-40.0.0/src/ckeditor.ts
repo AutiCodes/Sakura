@@ -144,7 +144,7 @@ class Editor extends ClassicEditor {
 				'style',
 				'subscript',
 				'todoList'
-			]
+			],
 		},
 		language: 'en',
 		image: {
