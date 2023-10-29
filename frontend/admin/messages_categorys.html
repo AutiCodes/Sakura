@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Nieuw artikel</title>
+    <title>Categorieën</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,6 @@ Admin page theme: SB Admin 2
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-    <link href="assets/css/messages_new.css" rel="stylesheet">
 
     <!-- Extermal CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
@@ -412,87 +411,107 @@ Admin page theme: SB Admin 2
                 <!-- Begin Page Content -->
                 <div class="container-fluid">            
                       <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuw artikel</h1>
+                      <h1 class="h3 mb-2 text-gray-800 ml-0">Categorieën</h1>
 
                       <div class="row">
-                        <!-- Text editor -->
-                        <div class="col-8 rounded">
-                            <div class="editor">
+                        <!-- New category -->
+                        <div class="col-4 rounded">
+                          <form>
+                            <p>Nieuwe Categorie toevoegen</p>
+                            <div class="form-group">
+                              <label for="CategoryFormName">Naam</label>
+                              <input type="text" class="form-control" id="CategoryFormName" placeholder="Hardware">
                             </div>
+                            <div class="form-group">
+                              <label for="CategoryFormSlug">Slug</label>
+                              <input type="text" class="form-control" id="CategoryFormSlug" placeholder="hardware-posts">
+                            </div>                            
+                            <div class="form-group">
+                              <label for="CategoryFormHeadCategory">Hoofdcategorie</label>
+                              <select class="form-control" id="CategoryFormHeadCategory">
+                                <option>Standaard</option>
+                                <option>Hardware</option>
+                                <option>Software</option>
+                                <option>Voedingen</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="CategoryFormDescription">Beschrijving</label>
+                              <textarea class="form-control" id="CategoryFormDescription" rows="3"></textarea>
+                            </div>
+                          </form>
                         </div>
-                        <!-- Article settings -->
-                        <div class="col-lg-auto">
-                            <!-- Article-tabs -->
-                            <div class="col-lg-auto text-center">
-                                <ul class="nav nav-tabs rounded-top" role="tablist">
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab">Categorieën</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab">Publiceer tijd</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab">Auteur</a></li>
-                                </ul>
-                                
-                                <div class="tab-content tab-articles bg-white rounded">
-                                    <!-- Tab content 1 -->
-                                    <div class="tab-pane active ml-5 mr-5" id="tab-1">
-                                        <h1>Categorieën</h1>
-                                        <hr class="pt-0">
-                                        <div class="form-check">
-                                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" style="transform: scale(1.5);" checked>
-                                            <label class="form-check-label ml-4" for="flexCheckDefault">
-                                              Algemeen
-                                            </label>
+                        
+                        <!-- Category table-->
+                        <div class="col-8 rounded mt-5">
+                          <!-- Table articles -->
+                          <table class="table mt-4">
+                            <thead class="thead">
+                              <tr>
+                                <th scope="col">
+                                  <!-- Table controls -->
+                                  <div class="row">
+                                    <div class="col-3">
+                                      <div class="dropdown show">
+                                        <a class="btn btn btn-sm dropdown-toggle border bg-primary text-white mb-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Bulk acties
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <a class="dropdown-item" href="#">Verwijderen</a>
                                         </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Hardware
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Software
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Windows
-                                            </label>
-                                        </div>                    
-                                        <hr>         
-                                        <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
+                                      </div>
                                     </div>
-                                    <!-- Tab content 2 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-2">
-                                        <h1>Publiceer tijd</h1>
-                                        <hr>
-                                        <p>T.b.c</p>
-                                    </div>
-                                    <!-- Tab content 3 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-3">
-                                        <h1>Auteur</h1>
-                                        <hr>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Sander den breejen
-                                            </label>
-                                        </div>    
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            KelvinCodes
-                                            </label>
-                                        </div>    
-                                        <br>
-                                    </div>                                    
-                                </div>
-                            </div>
-                            <!-- End article-tabs -->
+                                  </div>
+                                  
+                                  <!-- Top table -->
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Naam
+                                    </label>
+                                  </div>
+                                </th>
+                                <th scope="col">Beschrijving</th>
+                                <th scope="col">Slug</th>
+                                <th scope="col">Aantal artikelen</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Row 1 -->
+                              <tr>
+                                <th scope="row" class="w-25">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
+                                    </label>
+                                  </div>
+                                </th>
+                                <td><a href="#">Alle berichten over hardware</a></td>
+                                <td><a href="#">hardware</a></td>
+                                <td><a href="#">12</a></td>
+                              </tr>
+                              <!-- Row 2 -->
+                              <tr>
+                                <th scope="row" class="w-25">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
+                                    </label>
+                                  </div>
+                                </th>
+                                <td><a href="#">Alle berichten over hardware</a></td>
+                                <td><a href="#">hardware</a></td>
+                                <td><a href="#">12</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <!-- End table article -->
                         </div>
                       </div>
 
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Publiceer</button>
+                      <button type="button" class="btn btn-primary btn-lg mb-4">Nieuwe categorie toevoegen</button>
 
                 </div>
                 <!-- /.container-fluid -->

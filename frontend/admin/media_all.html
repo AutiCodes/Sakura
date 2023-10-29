@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Nieuw artikel</title>
+    <title>Media</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,6 @@ Admin page theme: SB Admin 2
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-    <link href="assets/css/messages_new.css" rel="stylesheet">
 
     <!-- Extermal CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
@@ -411,89 +410,119 @@ Admin page theme: SB Admin 2
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">            
-                      <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuw artikel</h1>
+                    <!-- Page header -->
+                    <h1 class="h3 mb-2 text-gray-800 ml-0">Media</h1>
 
-                      <div class="row">
-                        <!-- Text editor -->
-                        <div class="col-8 rounded">
-                            <div class="editor">
+                    <input class="form-control mt-0 mb-4" type="file" id="formFileMultiple" multiple style="max-width: 20%;">
+
+                      <!-- Media control -->
+                      <div class="row justify-content-start">
+                        <div class="col bg-white">
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary rounded" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media types</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Afbeeldingen</a>
+                              <a class="dropdown-item" href="#">Videos</a>
+                              <a class="dropdown-item" href="#">Audio</a>
+                              <a class="dropdown-item" href="#">Documenten</a>
                             </div>
+                            <button type="button" class="btn btn-secondary ml-2 rounded" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Datums</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Oktober 2023</a>
+                              <a class="dropdown-item" href="#">Mei 2023</a>
+                              <a class="dropdown-item" href="#">April 2023</a>
+                            </div>
+                          </div>
                         </div>
-                        <!-- Article settings -->
-                        <div class="col-lg-auto">
-                            <!-- Article-tabs -->
-                            <div class="col-lg-auto text-center">
-                                <ul class="nav nav-tabs rounded-top" role="tablist">
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab">Categorieën</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab">Publiceer tijd</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab">Auteur</a></li>
-                                </ul>
-                                
-                                <div class="tab-content tab-articles bg-white rounded">
-                                    <!-- Tab content 1 -->
-                                    <div class="tab-pane active ml-5 mr-5" id="tab-1">
-                                        <h1>Categorieën</h1>
-                                        <hr class="pt-0">
-                                        <div class="form-check">
-                                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" style="transform: scale(1.5);" checked>
-                                            <label class="form-check-label ml-4" for="flexCheckDefault">
-                                              Algemeen
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Hardware
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Software
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Windows
-                                            </label>
-                                        </div>                    
-                                        <hr>         
-                                        <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
-                                    </div>
-                                    <!-- Tab content 2 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-2">
-                                        <h1>Publiceer tijd</h1>
-                                        <hr>
-                                        <p>T.b.c</p>
-                                    </div>
-                                    <!-- Tab content 3 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-3">
-                                        <h1>Auteur</h1>
-                                        <hr>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Sander den breejen
-                                            </label>
-                                        </div>    
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            KelvinCodes
-                                            </label>
-                                        </div>    
-                                        <br>
-                                    </div>                                    
-                                </div>
+                        
+                        <div class="col bg-white">
+                          <div class="input-group float-right">
+                            <div class="form-outline w-25 bg-dark rounded">
+                              <input type="search" id="form1" class="form-control" />
+                              <label class="form-label text-white" for="form1">Zoeken</label>
                             </div>
-                            <!-- End article-tabs -->
+                            <button type="button" class="btn btn-primary">
+                              <i class="fas fa-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                      
+                    </div>
+
+                    <div class="row mt-2 bg-white jus">
+
+                      <div class="container">
+                        <div class="row mb-2 mt-2">
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120" data-toggle="modal" data-target=".bd-example-modal-lg">
+                          </div>
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120">
+                          </div>
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120">
+                          </div>
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120">
+                          </div>
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120">
+                          </div>            
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120">
+                          </div>                                                                   
+                          <div class="col-sm mb-2 text-center">
+                            <img src="//placehold.it/120">
+                          </div>                                                      
                         </div>
                       </div>
+                    </div>
 
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Publiceer</button>
 
+                    <!-- Modal media information -->
+                    <div class="modal fade bd-example-modal-lg w-200" tabindex="-1" role="dialog" aria-labelledby="mediaModal" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <h1 class="border-bottom ml-4">Media details</h1>
+
+                          <div class="row">
+                            <!-- Image preview -->
+                            <div class="col mb-4 mt-4 ml-4">
+                              <img src="//placehold.it/600">
+                            </div>
+
+                           <!-- Details-->
+                           <div class="col mt-4 mr-2">
+                            <p class="font-weight-bold">Geüpload op:</p> <p>31 mei 2023</p>
+                            <p class="font-weight-bold">Geüpload door:</p> <p><a href="#">KelvinCodes</a></p>
+                            <p class="font-weight-bold">Geüpload voor:</p> <p><a href="#">Windows opnieuw installeren op je PC</a></p>
+                            <p class="font-weight-bold">Bestandsnaam:</p> <p>foto_mooi.png</p>
+                            <p class="font-weight-bold">Bestandsgrootte:</p> <p>1.3MB</p>
+                            <p class="font-weight-bold">Afmetingen:</p> <p>1920 x 1080 pixels</p>
+                            
+                            <hr>
+                          </div>
+
+                          <div class="row justify-content-center ml-2 mr-2">
+                            <form class="">
+                              <div class="form-group">
+                                <label for="exampleFormControlInput1">Naam</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" value="foto_mooi.png">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Bestand url</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" disabled>https://url.nl/img/foto_mooi.png</textarea>
+                              </div>
+
+                              <button type="submit" class="btn btn-primary mb-2">Toepassen</button>
+
+                            </form>
+                          </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 

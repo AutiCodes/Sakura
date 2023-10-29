@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Nieuw artikel</title>
+    <title>Media</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@ Admin page theme: SB Admin 2
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-    <link href="assets/css/messages_new.css" rel="stylesheet">
+    <link href="assets/css/media_add.css" rel="stylesheet">
 
     <!-- Extermal CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
@@ -410,89 +410,46 @@ Admin page theme: SB Admin 2
 
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">            
-                      <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuw artikel</h1>
+                <div class="container-fluid align-items-center">            
+                    <!-- Page header -->
+                    <h1 class="h3 mb-2 text-gray-800 ml-0">Media toevoegen</h1>
 
-                      <div class="row">
-                        <!-- Text editor -->
-                        <div class="col-8 rounded">
-                            <div class="editor">
-                            </div>
-                        </div>
-                        <!-- Article settings -->
-                        <div class="col-lg-auto">
-                            <!-- Article-tabs -->
-                            <div class="col-lg-auto text-center">
-                                <ul class="nav nav-tabs rounded-top" role="tablist">
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab">Categorieën</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab">Publiceer tijd</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab">Auteur</a></li>
-                                </ul>
-                                
-                                <div class="tab-content tab-articles bg-white rounded">
-                                    <!-- Tab content 1 -->
-                                    <div class="tab-pane active ml-5 mr-5" id="tab-1">
-                                        <h1>Categorieën</h1>
-                                        <hr class="pt-0">
-                                        <div class="form-check">
-                                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" style="transform: scale(1.5);" checked>
-                                            <label class="form-check-label ml-4" for="flexCheckDefault">
-                                              Algemeen
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Hardware
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Software
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Windows
-                                            </label>
-                                        </div>                    
-                                        <hr>         
-                                        <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
-                                    </div>
-                                    <!-- Tab content 2 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-2">
-                                        <h1>Publiceer tijd</h1>
-                                        <hr>
-                                        <p>T.b.c</p>
-                                    </div>
-                                    <!-- Tab content 3 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-3">
-                                        <h1>Auteur</h1>
-                                        <hr>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Sander den breejen
-                                            </label>
-                                        </div>    
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            KelvinCodes
-                                            </label>
-                                        </div>    
-                                        <br>
-                                    </div>                                    
-                                </div>
-                            </div>
-                            <!-- End article-tabs -->
-                        </div>
+                    <div class="drop-it-hot" id="drop-area">
+                      <div class="circle">
+                          <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0 0h24v24H0z" fill="none" />
+                              <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                          </svg>
                       </div>
-
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Publiceer</button>
+                      <form class="choose-files">
+                          <div class="button-wrapper">
+                              <label class="label" for="fileElem">Drag image here to upload or</label>
+                              <button type="button" class="btn">Choose image</button>
+                              <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                          </div>
+                      </form>
+                      <div id="gallery"></div>
+                  </div>
+                  
+                  <div class="editor-media">
+                      <div class="range-wrapper">
+                          <label for="contrast">Contrast</label>
+                          <input class="range" name="contrast" value="100" type="range" min="0" max="200" value="0" data-unit="%">
+                      </div>
+                      <div class="range-wrapper">
+                          <label for="brightness">Brightness</label>
+                          <input class="range" name="brightness" value="100" type="range" min="0" max="200" data-unit="%">
+                      </div>
+                      <div class="range-wrapper">
+                          <label for="blur">Hue</label>
+                          <input class="range" name="hue-rotate" value="0" type="range" min="0" max="200" data-unit="deg">
+                      </div>
+                      <div class="range-wrapper">
+                          <label for="sepia">Sepia</label>
+                          <input class="range" name="sepia" value="0" type="range" min="0" max="200" data-unit="%">
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-lg mt-2 mb-4">Uploaden</button>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -558,8 +515,13 @@ Admin page theme: SB Admin 2
 
     <!-- CKeditor -->
     <script src="assets/ckeditor5-40.0.0/build/ckeditor.js"></script>
-	<script src="assets/ckeditor5-40.0.0/sample/script.js"></script>
+  	<script src="assets/ckeditor5-40.0.0/sample/script.js"></script>
 
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Own JS -->
+    <script src="assets/js/media_add.js"></script>
 </body>
 
 </html>
