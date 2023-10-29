@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Nieuw artikel</title>
+    <title>Pagina's</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -24,11 +24,7 @@ Admin page theme: SB Admin 2
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-    <link href="assets/css/messages_new.css" rel="stylesheet">
 
-    <!-- Extermal CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -386,7 +382,7 @@ Admin page theme: SB Admin 2
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welkom KelvinCodes</span>
                                 <img class="img-profile rounded-circle"
-                                    src="assets/img/undraw_profile.svg">
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -407,98 +403,85 @@ Admin page theme: SB Admin 2
                 </nav>
                 <!-- End of Topbar -->
 
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">            
                       <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuw artikel</h1>
+                      <h1 class="h3 mb-0 text-gray-800 ml-2">Pagina's</h1>
+                      <button type="button" class="btn btn-primary btn-sm ml-2 mt-1">Nieuwe pagina</button>
 
-                      <div class="row">
-                        <!-- Text editor -->
-                        <div class="col-8 rounded">
-                            <div class="editor">
-                            </div>
-                        </div>
-                        <!-- Article settings -->
-                        <div class="col-lg-auto">
-                            <!-- Article-tabs -->
-                            <div class="col-lg-auto text-center">
-                                <ul class="nav nav-tabs rounded-top" role="tablist">
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab">Categorieën</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab">Publiceer tijd</a></li>
-                                  <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab">Auteur</a></li>
-                                </ul>
-                                
-                                <div class="tab-content tab-articles bg-white rounded">
-                                    <!-- Tab content 1 -->
-                                    <div class="tab-pane active ml-5 mr-5" id="tab-1">
-                                        <h1>Categorieën</h1>
-                                        <hr class="pt-0">
-                                        <div class="form-check">
-                                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" style="transform: scale(1.5);" checked>
-                                            <label class="form-check-label ml-4" for="flexCheckDefault">
-                                              Algemeen
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Hardware
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Software
-                                            </label>
-                                        </div>
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Windows
-                                            </label>
-                                        </div>                    
-                                        <hr>         
-                                        <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
+                      <!-- Table pages -->
+                      <table class="table mt-4">
+                        <thead class="thead">
+                          <tr>
+                            <th scope="col">
+                              <!-- Table controls -->
+                              <div class="row">
+                                <div class="col-3">
+                                  <div class="dropdown show">
+                                    <a class="btn btn btn-sm dropdown-toggle border bg-primary text-white mb-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Bulk acties
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                      <a class="dropdown-item" href="#">Bewerken</a>
+                                      <a class="dropdown-item" href="#">Prullenbak</a>
                                     </div>
-                                    <!-- Tab content 2 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-2">
-                                        <h1>Publiceer tijd</h1>
-                                        <hr>
-                                        <p>T.b.c</p>
-                                    </div>
-                                    <!-- Tab content 3 -->
-                                    <div class="tab-pane ml-5 mr-5" id="tab-3">
-                                        <h1>Auteur</h1>
-                                        <hr>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            Sander den breejen
-                                            </label>
-                                        </div>    
-                                        <div class="form-check pt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="transform: scale(1.5);">
-                                            <label class="form-check-label ml-4" for="flexCheckChecked">
-                                            KelvinCodes
-                                            </label>
-                                        </div>    
-                                        <br>
-                                    </div>                                    
+                                  </div>
                                 </div>
-                            </div>
-                            <!-- End article-tabs -->
-                        </div>
-                      </div>
-
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Publiceer</button>
-
+                              </div>
+                              
+                              <!-- Top table -->
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Titel
+                                </label>
+                              </div>
+                            </th>
+                            <th scope="col">Auteur</th>
+                            <th scope="col">Statistieken</th>
+                            <th scope="col"><i class="fa fa-comment"></i></th>
+                            <th scope="col">Datum</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Row 1 -->
+                          <tr>
+                            <th scope="row" class="w-25">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  <a href="#">All Day Bot</a> - concept <a href="#"><i class="fa fa-edit"></i></a>
+                                </label>
+                              </div>
+                            </th>
+                            <td><a href="#">KelvinCodes</a></td>
+                            <td><a href="#"><i class="fa fa-chart-column"></i></a></td>
+                            <td><a href="#"><i class="fa fa-comment"></i></a></td>
+                            <td class="w-25">Aangemaakt op: 4 Oktober 2023 om 16:21</td>
+                          </tr>
+                          <!-- Row 2 -->
+                          <tr>
+                            <th scope="row">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  <a href="#">Onze Facebook groepen</a>
+                                </label>
+                              </div>
+                            </th>
+                            <td><a href="#">KelvinCodes</a></td>
+                            <td><a href="#"><i class="fa fa-chart-column"></i></a></td>
+                            <td><a href="#"><i class="fa fa-comment"></i></a></td>
+                            <td class="w-25">Aangemaakt op: 4 Oktober 2023 om 16:21</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- End table article -->
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -509,7 +492,6 @@ Admin page theme: SB Admin 2
                 </div>
             </footer>
             <!-- End of Footer -->
-
 
         </div>
         <!-- End of Content Wrapper -->
@@ -555,9 +537,6 @@ Admin page theme: SB Admin 2
     <!-- Font awesome new -->
     <script src="https://kit.fontawesome.com/10be35fba2.js" crossorigin="anonymous"></script>
 
-    <!-- CKeditor -->
-    <script src="assets/ckeditor5-40.0.0/build/ckeditor.js"></script>
-	<script src="assets/ckeditor5-40.0.0/sample/script.js"></script>
 
 </body>
 
