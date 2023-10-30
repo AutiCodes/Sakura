@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Categorieën</title>
+    <title>Mail server instellingen</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -404,109 +404,51 @@ Admin page theme: SB Admin 2
 
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">            
-                      <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Categorieën</h1>
+                <div class="container">            
+                    <!-- Page header -->
+                    <h1 class="h3 mb-2 text-gray-800 ml-0">Mail server instellingen</h1>
 
-                      <div class="row">
-                        <!-- New category -->
-                        <div class="col-4 rounded">
-                          <form>
-                            <p>Nieuwe Categorie toevoegen</p>
-                            <div class="form-group">
-                              <label for="CategoryFormName">Naam</label>
-                              <input type="text" class="form-control" id="CategoryFormName" placeholder="Hardware">
-                            </div>
-                            <div class="form-group">
-                              <label for="CategoryFormSlug">Slug</label>
-                              <input type="text" class="form-control" id="CategoryFormSlug" placeholder="hardware-posts">
-                            </div>                            
-                            <div class="form-group">
-                              <label for="CategoryFormHeadCategory">Hoofdcategorie</label>
-                              <select class="form-control" id="CategoryFormHeadCategory">
-                                <option>Standaard</option>
-                                <option>Hardware</option>
-                                <option>Software</option>
-                                <option>Voedingen</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label for="CategoryFormDescription">Beschrijving</label>
-                              <textarea class="form-control" id="CategoryFormDescription" rows="3"></textarea>
-                            </div>
-                          </form>
-                        </div>
-                        
-                        <!-- Category table-->
-                        <div class="col-8 rounded mt-5">
-                          <!-- Table articles -->
-                          <table class="table mt-4">
-                            <thead class="thead">
-                              <tr>
-                                <th scope="col">
-                                  <!-- Table controls -->
-                                  <div class="row">
-                                    <div class="col-3">
-                                      <div class="dropdown show">
-                                        <a class="btn btn btn-sm dropdown-toggle border bg-primary text-white mb-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          Bulk acties
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                          <a class="dropdown-item" href="#">Verwijderen</a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
-                                  <!-- Top table -->
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      Naam
-                                    </label>
-                                  </div>
-                                </th>
-                                <th scope="col">Beschrijving</th>
-                                <th scope="col">Slug</th>
-                                <th scope="col">Aantal artikelen</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Row 1 -->
-                              <tr>
-                                <th scope="row" class="w-25">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
-                                    </label>
-                                  </div>
-                                </th>
-                                <td><a href="#">Alle berichten over hardware</a></td>
-                                <td><a href="#">hardware</a></td>
-                                <td><a href="#">12</a></td>
-                              </tr>
-                              <!-- Row 2 -->
-                              <tr>
-                                <th scope="row" class="w-25">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
-                                    </label>
-                                  </div>
-                                </th>
-                                <td><a href="#">Alle berichten over hardware</a></td>
-                                <td><a href="#">hardware</a></td>
-                                <td><a href="#">12</a></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <!-- End table article -->
-                        </div>
+                    <!-- Mail server row -->
+                    <div class="card shadow w-50">
+                      <div class="card-body">
+                        <h5 class="card-title">SMTP</h5>
+                        <form>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="mailserverSwitch">
+                            <label class="form-check-label" for="mailserverSwitch">Uit/aan</label>
+                          </div>
+                          <div class="form-group">
+                            <label for="hostSmtp">Host SMTP</label>
+                            <input type="text" class="form-control" id="hostSmtp" placeholder="smtp.domeinnaam.nl">
+                          </div>                    
+                          <div class="form-group">
+                            <label for="smtpPort">SMTP poort</label>
+                            <input type="text" class="form-control w-25" id="smtpPort" placeholder="587">
+                          </div>      
+                          <label for="mailEncryption">Encryptie</label>
+                          <select class="form-select w-25" id="mailEncryption" aria-label="Url formatting">
+                            <option selected>TLS</option>
+                            <option>SSL</option>
+                            <option>Geen (NIET AANBEVOLEN)</option>
+                          </select>     
+                          <br>
+                          <div class="form-group">
+                            <label for="formGroupExampleInput">Gebruikersnaam</label>
+                            <input type="text" class="form-control" id="MailUsername" placeholder="mail@domeinnaam.nl">
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupExampleInput">Wachtwoord</label>
+                            <input type="password" class="form-control" id="mailPassword" placeholder="mail@domeinnaam.nl">
+                            <i class="fa fa-eye mr-2" onclick="passswordShowHide()" ></i><p style="display: inline;">Wachtwoord tonen/verbergen</p>
+                          </div>
+                          <a href="#" class="btn btn-primary mt-3">Update</a>
+                        </form>
                       </div>
+                    </div>
 
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Nieuwe categorie toevoegen</button>
+
+                  </div>
+                  </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -557,9 +499,22 @@ Admin page theme: SB Admin 2
         </div>
     </div>
 
+    <script>
+      // Password show/hide 
+      function passswordShowHide() {
+        const passwordForm = document.getElementById('mailPassword');
+
+        if (passwordForm.type === 'password') {
+          passwordForm.type = 'text';
+        } else {
+          passwordForm.type = 'password';
+        }
+      }
+    </script>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>

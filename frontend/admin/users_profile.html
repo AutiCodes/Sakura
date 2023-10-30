@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Categorieën</title>
+    <title>Profiel - KelvinCodes</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -24,10 +24,7 @@ Admin page theme: SB Admin 2
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Extermal CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -381,7 +378,7 @@ Admin page theme: SB Admin 2
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welkom KelvinCodes</span>
                                 <img class="img-profile rounded-circle"
-                                    src="assets/img/undraw_profile.svg">
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -402,118 +399,74 @@ Admin page theme: SB Admin 2
                 </nav>
                 <!-- End of Topbar -->
 
-
                 <!-- Begin Page Content -->
-                <div class="container-fluid">            
+                <div class="container">            
                       <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Categorieën</h1>
+                      <h1 class="h3 mb-3 text-gray-800 ml-0">Profiel van KelvinCodes</h1>
 
-                      <div class="row">
-                        <!-- New category -->
-                        <div class="col-4 rounded">
-                          <form>
-                            <p>Nieuwe Categorie toevoegen</p>
-                            <div class="form-group">
-                              <label for="CategoryFormName">Naam</label>
-                              <input type="text" class="form-control" id="CategoryFormName" placeholder="Hardware">
-                            </div>
-                            <div class="form-group">
-                              <label for="CategoryFormSlug">Slug</label>
-                              <input type="text" class="form-control" id="CategoryFormSlug" placeholder="hardware-posts">
-                            </div>                            
-                            <div class="form-group">
-                              <label for="CategoryFormHeadCategory">Hoofdcategorie</label>
-                              <select class="form-control" id="CategoryFormHeadCategory">
-                                <option>Standaard</option>
-                                <option>Hardware</option>
-                                <option>Software</option>
-                                <option>Voedingen</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label for="CategoryFormDescription">Beschrijving</label>
-                              <textarea class="form-control" id="CategoryFormDescription" rows="3"></textarea>
-                            </div>
-                          </form>
+                      <form>
+                        <!-- Username -->
+                        <div class="form-group">
+                          <label for="username">Gebruikersnaam</label>
+                          <input type="text" class="form-control" id="username" placeholder="KelvinCodes" disabled>
+                        </div>
+
+                        <!-- First name -->
+                        <div class="form-group">
+                          <label for="firstname">Voornaam</label>
+                          <input type="text" class="form-control" id="firstname" placeholder="Kelvin">
                         </div>
                         
-                        <!-- Category table-->
-                        <div class="col-8 rounded mt-5">
-                          <!-- Table articles -->
-                          <table class="table mt-4">
-                            <thead class="thead">
-                              <tr>
-                                <th scope="col">
-                                  <!-- Table controls -->
-                                  <div class="row">
-                                    <div class="col-3">
-                                      <div class="dropdown show">
-                                        <a class="btn btn btn-sm dropdown-toggle border bg-primary text-white mb-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          Bulk acties
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                          <a class="dropdown-item" href="#">Verwijderen</a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
-                                  <!-- Top table -->
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      Naam
-                                    </label>
-                                  </div>
-                                </th>
-                                <th scope="col">Beschrijving</th>
-                                <th scope="col">Slug</th>
-                                <th scope="col">Aantal artikelen</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Row 1 -->
-                              <tr>
-                                <th scope="row" class="w-25">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
-                                    </label>
-                                  </div>
-                                </th>
-                                <td><a href="#">Alle berichten over hardware</a></td>
-                                <td><a href="#">hardware</a></td>
-                                <td><a href="#">12</a></td>
-                              </tr>
-                              <!-- Row 2 -->
-                              <tr>
-                                <th scope="row" class="w-25">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
-                                    </label>
-                                  </div>
-                                </th>
-                                <td><a href="#">Alle berichten over hardware</a></td>
-                                <td><a href="#">hardware</a></td>
-                                <td><a href="#">12</a></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <!-- End table article -->
+                        <!-- Last name -->
+                        <div class="form-group">
+                          <label for="lastname">Achternaam</label>
+                          <input type="text" class="form-control" id="lastname" placeholder="de Reus">
                         </div>
-                      </div>
 
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Nieuwe categorie toevoegen</button>
+                        <!-- Email -->
+                        <div class="form-group">
+                          <label for="email">Email adres</label>
+                          <input type="email" class="form-control" id="email" placeholder="prive@kelvincodes.nl">
+                        </div>
+                        
+                        <!-- Role -->
+                        <div class="form-group">
+                          <label for="role">Rol</label>
+                          <select class="form-control" id="role">
+                            <option selected>Super-admin</option>
+                            <option>Admin</option>
+                            <option>Redacteur</option>
+                          </select>
+                        </div>
 
+                        <!-- Profile picture -->
+                        <div class="form-group">
+                          <label for="profile-picture">Profiel foto</label>
+                            <div class="col w-25 ml-0 pl-0">
+                              <img src="//placehold.it/80" class="mb-3">
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                          <label for="password">Wachtwoord</label>
+                          <input type="password" class="form-control" id="password" placeholder="Wachtwoord">
+                          <i class="fa fa-eye" onclick="showHidePassword()"></i><span> Toon/verberg wachtwoord</span>
+                        </div>
+
+
+                        <button type="button" class="btn btn-primary btn-lg mb-4">Update</button>
+
+                      </form>
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -524,7 +477,6 @@ Admin page theme: SB Admin 2
                 </div>
             </footer>
             <!-- End of Footer -->
-
 
         </div>
         <!-- End of Content Wrapper -->
@@ -557,9 +509,20 @@ Admin page theme: SB Admin 2
         </div>
     </div>
 
+    <script>
+      function showHidePassword() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -569,6 +532,7 @@ Admin page theme: SB Admin 2
 
     <!-- Font awesome new -->
     <script src="https://kit.fontawesome.com/10be35fba2.js" crossorigin="anonymous"></script>
+
 
 </body>
 

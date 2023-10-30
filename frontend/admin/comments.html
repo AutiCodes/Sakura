@@ -15,7 +15,7 @@ Admin page theme: SB Admin 2
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Categorieën</title>
+    <title>Comments</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -24,10 +24,7 @@ Admin page theme: SB Admin 2
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Extermal CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -402,118 +399,105 @@ Admin page theme: SB Admin 2
                 </nav>
                 <!-- End of Topbar -->
 
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">            
                       <!-- Page header -->
-                      <h1 class="h3 mb-2 text-gray-800 ml-0">Categorieën</h1>
+                      <h1 class="h3 mb-0 text-gray-800 ml-2">Comments</h1>
 
-                      <div class="row">
-                        <!-- New category -->
-                        <div class="col-4 rounded">
-                          <form>
-                            <p>Nieuwe Categorie toevoegen</p>
-                            <div class="form-group">
-                              <label for="CategoryFormName">Naam</label>
-                              <input type="text" class="form-control" id="CategoryFormName" placeholder="Hardware">
-                            </div>
-                            <div class="form-group">
-                              <label for="CategoryFormSlug">Slug</label>
-                              <input type="text" class="form-control" id="CategoryFormSlug" placeholder="hardware-posts">
-                            </div>                            
-                            <div class="form-group">
-                              <label for="CategoryFormHeadCategory">Hoofdcategorie</label>
-                              <select class="form-control" id="CategoryFormHeadCategory">
-                                <option>Standaard</option>
-                                <option>Hardware</option>
-                                <option>Software</option>
-                                <option>Voedingen</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label for="CategoryFormDescription">Beschrijving</label>
-                              <textarea class="form-control" id="CategoryFormDescription" rows="3"></textarea>
-                            </div>
-                          </form>
-                        </div>
-                        
-                        <!-- Category table-->
-                        <div class="col-8 rounded mt-5">
-                          <!-- Table articles -->
-                          <table class="table mt-4">
-                            <thead class="thead">
-                              <tr>
-                                <th scope="col">
-                                  <!-- Table controls -->
-                                  <div class="row">
-                                    <div class="col-3">
-                                      <div class="dropdown show">
-                                        <a class="btn btn btn-sm dropdown-toggle border bg-primary text-white mb-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          Bulk acties
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                          <a class="dropdown-item" href="#">Verwijderen</a>
-                                        </div>
-                                      </div>
+                      <!-- Table articles -->
+                      <table class="table mt-4">
+                        <thead class="thead">
+                          <tr>
+                            <th scope="col">
+                              <!-- Table controls -->
+                              <div class="row">
+                                <div class="col-3">
+                                  <div class="dropdown show">
+                                    <a class="btn btn btn-sm dropdown-toggle border bg-primary text-white mb-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Acties
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                      <a class="dropdown-item" href="#">Bewerken</a>
+                                      <a class="dropdown-item" href="#">Prullenbak</a>
+                                      <a class="dropdown-item" href="#">Spam</a>
                                     </div>
                                   </div>
-                                  
-                                  <!-- Top table -->
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      Naam
-                                    </label>
-                                  </div>
-                                </th>
-                                <th scope="col">Beschrijving</th>
-                                <th scope="col">Slug</th>
-                                <th scope="col">Aantal artikelen</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Row 1 -->
-                              <tr>
-                                <th scope="row" class="w-25">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
-                                    </label>
-                                  </div>
-                                </th>
-                                <td><a href="#">Alle berichten over hardware</a></td>
-                                <td><a href="#">hardware</a></td>
-                                <td><a href="#">12</a></td>
-                              </tr>
-                              <!-- Row 2 -->
-                              <tr>
-                                <th scope="row" class="w-25">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      <a href="#">Hardware</a> - <a href="#"><i class="fa fa-edit"></i></a>
-                                    </label>
-                                  </div>
-                                </th>
-                                <td><a href="#">Alle berichten over hardware</a></td>
-                                <td><a href="#">hardware</a></td>
-                                <td><a href="#">12</a></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <!-- End table article -->
-                        </div>
-                      </div>
+                                </div>
+                              </div>
+                              
+                              <!-- Top table -->
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Auteur
+                                </label>
+                              </div>
+                            </th>
+                            <th scope="col">Reactie</th>
+                            <th scope="col">Op artikel</th>
+                            <th scope="col">Aangemaakt op</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Row 1 -->
+                          <tr>
+                            <th scope="row" class="w-25">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <div class="col-sm">
+                                      <p class="text-dark">Jan van de pette flat</p>
+                                    </div>
+                                    <div class="col-sm">
+                                      <p class="text-dark">IP: 291.283.12.123</p>
+                                    </div>
+                                </label>
+                              </div>
+                            </th>
+                            <td>Onze website is voornamelijk bedoeld voor het delen van het laatste tech-nieuws en tips & tricks dat voornamelijk gedeeld word door de oprichter. Alle tech-nieuws, tips & tricks en updates over onze community kan je ook vinden op onze Facebook Pagina! We hopen onze website & community steeds verder uit te breiden</td>
+                            <td><a href="#">Prijs AM4 processoren door het dak.</a></td>
+                            <td class="w-25">4 Oktober 2023 om 16:21</td>
+                          </tr>
+                          <!-- Row 2 -->
+                          <tr>
+                            <th scope="row" class="w-25">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <div class="col-sm">
+                                      <p class="text-dark">Jan van de pette flat</p>
+                                    </div>
+                                    <div class="col-sm">
+                                      <p class="text-dark">IP: 291.283.12.123</p>
+                                    </div>
+                                </label>
+                              </div>
+                            </th>
+                            <td>Onze website is voornamelijk bedoeld voor het delen van het laatste tech-nieuws en tips & tricks dat voornamelijk gedeeld word door de oprichter. Alle tech-nieuws, tips & tricks en updates over onze community kan je ook vinden op onze Facebook Pagina! We hopen onze website & community steeds verder uit te breiden</td>
+                            <td><a href="#">Prijs AM4 processoren door het dak.</a></td>
+                            <td class="w-25">4 Oktober 2023 om 16:21</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- End table article -->
 
-                      <button type="button" class="btn btn-primary btn-lg mb-4">Nieuwe categorie toevoegen</button>
+
+                      <!-- Pagination-->
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item"><a class="page-link" href="#">Vorige</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">Volgende</a></li>
+                        </ul>
+                      </nav>
 
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -524,7 +508,6 @@ Admin page theme: SB Admin 2
                 </div>
             </footer>
             <!-- End of Footer -->
-
 
         </div>
         <!-- End of Content Wrapper -->
@@ -558,8 +541,8 @@ Admin page theme: SB Admin 2
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -569,6 +552,7 @@ Admin page theme: SB Admin 2
 
     <!-- Font awesome new -->
     <script src="https://kit.fontawesome.com/10be35fba2.js" crossorigin="anonymous"></script>
+
 
 </body>
 

@@ -43,10 +43,11 @@ In October 2023 i decided to step away from Wordpress and make a custom solution
 - CSS
 - JS/TS
 
-### Development time targets
+### Development time
 - Total time: 150hr.
 - Beta release for community testers: 1 december 2023.
 - Final release: 1 januari 2024.
+- Development time so far: 18hr.
 
 ### Contributors
 - KelvinCodes
