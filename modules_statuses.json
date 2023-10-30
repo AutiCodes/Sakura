@@ -1,3 +1,5 @@
 {
-    "Testing": true
+    "Testing": true,
+    "News": true,
+    "AdminPanel": true
 }

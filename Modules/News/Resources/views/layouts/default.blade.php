@@ -7,7 +7,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 -->
 <html>
   <head>
-    @include('includes.head')
+    @include('news::includes.head')
     <title>Home</title>
   </head>
 
@@ -15,19 +15,19 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
     <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
 
       <header>
-        @include('includes.header')
+        @include('news::includes.header')
       </header>
 
       <!-- Main content -->
       @yield('content')
 
       <!-- Footer -->
-      @include('includes.footer')
+      @include('news::includes.footer')
 
     </div>
     
     <!-- JS -->
-    @include('includes.scripts')
+    @include('news::includes.scripts')
 
   </body>
 </html>
