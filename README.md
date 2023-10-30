@@ -6,11 +6,6 @@ In October 2023 i decided to step away from Wordpress and make a custom solution
 - Adding features more easily.
 - Better frontend development.
 
-# Planned features
-### End users
-- Replication with optimizations of the current home/article-list and article pages. [See current site here](https://alldaytechandgaming.nl)
-- Comment system.
-
 ### Admins, authors, guest and developers
 - Home dashboard with global information.
 - Adding, removing, editing posts.
@@ -42,6 +37,29 @@ In October 2023 i decided to step away from Wordpress and make a custom solution
 - HTML
 - CSS
 - JS/TS
+
+### Routes
+End users:
+- /
+- /artikelen/slug
+- /artikel/slug
+
+Admin panel:
+Dashboard:
+- /admin
+Messages:
+- /admin/berichten/allemaal
+- /admin/berichten/toevoegen
+- /admin/berichten/categorieen
+- /admin/berichten/tags
+Media:
+- /admin/media/allemaal
+- /admin/media/toevoegen
+Pages:
+- /admin/paginas/allemaal
+- /admin/paginas/nieuw
+Comments:
+- /admin/comments
 
 ### Development time
 - Total time: 150hr.

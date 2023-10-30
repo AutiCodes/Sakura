@@ -8,72 +8,66 @@ use Illuminate\Routing\Controller;
 
 class AdminPanelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
+    // Shows dashboard
     public function index()
     {
-        return view('adminpanel::index');
+        return view('adminpanel::pages.dashboard');
+    } 
+
+    /*
+    * Messages
+    */
+    public function messagesAll()
+    {
+      return view('adminpanel::pages.messages_all');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
+    public function messagesAdd()
     {
-        return view('adminpanel::create');
+      return view('adminpanel::pages.messages_new');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
+    public function messagesCategorys()
     {
-        //
+      return view('adminpanel::pages.messages_categorys');
     }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
+    public function messagesTags()
     {
-        return view('adminpanel::show');
+      return view('adminpanel::pages.messages_tags');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
+    /*
+    * Media
+    */
+    public function mediaAll()
     {
-        return view('adminpanel::edit');
+      return view('adminpanel::pages.media_all');
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
+    public function mediaAdd()
     {
-        //
+      return view('adminpanel::pages.media_add');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
+    /*
+    * Pages
+    */
+    public function pagesAll()
     {
-        //
+      return view('adminpanel::pages.pages_all');
+    }
+
+    public function pagesAdd()
+    {
+      return view('adminpanel::pages.pages_add');
+    }
+
+    /*
+    * Comments
+    */
+    public function comments()
+    {
+      return view('adminpanel::pages.comments');
     }
 }
