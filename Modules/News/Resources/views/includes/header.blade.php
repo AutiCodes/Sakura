@@ -62,11 +62,11 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         </li>
         <div class="dropdown-divider lwp-c"></div>
         <li class="nav-item">
-          <a class="nav-link font-weight-bold text-uppercase fnt-ss" href="#">Berichten over hardware</a>
+          <a class="nav-link font-weight-bold text-uppercase fnt-ss" href="/artikelen/hardware">Berichten over hardware</a>
         </li>
         <div class="dropdown-divider lwp-c"></div>
         <li class="nav-item">
-          <a class="nav-link font-weight-bold text-uppercase fnt-ss" href="#">Berichten over software</a>
+          <a class="nav-link font-weight-bold text-uppercase fnt-ss" href="/artikelen/software">Berichten over software</a>
         </li>
       </ul>
     </div>

@@ -11,131 +11,35 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 <div class="row justify-content-center  mt-4">
   <!-- Articles/embeds -->
     <div class="col-lg-5 mb-4 rounded-lg ml-2 mt-sm-4 mt-lg-1 pl-sm-2 pr-sm-2">
-      <!-- Article card -->
-      <div class="card flex-row mb-2">
-        <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
-        <div class="card-body p-2">
-          <!-- Categorys -->
-          <div class="d-flex justify-content-start p-2 d-block mt-3">                    
-            <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-            <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-          </div>
-          <!-- Title -->
-          <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-          <div class="d-flex justify-content-start mt-3 ml-2">
-            <!-- Poster info -->
-            <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href="#"> Okt 3, 2023</a></p> 
-            <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> Kelvin de Reus</a></p>
-          </div>
-          <!-- Card text -->
-          <p class="pl-2"> 
-            Deepfake is een probleem dat steeds groter word, dankzij deepfake video’s
-            weetje soms niet meer zeker of een video echt of nep is. Daar heeft Intel een software-oplossing voor bedacht
-            Fakecatcher is software dat werkt doormiddel van photoplethysmography en ook deep-learning algoritme’s dat nepvideo’s kan detecteren
-          </p>
-        </div>
-      </div>   
-      
-      <!-- Article card -->
-      <div class="card flex-row mb-2">
-        <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
-        <div class="card-body p-2">
-          <!-- Categorys -->
-          <div class="d-flex justify-content-start p-2 d-block mt-3">                    
-            <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-            <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-          </div>
-          <!-- Title -->
-          <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-          <div class="d-flex justify-content-start mt-3 ml-2">
-            <!-- Poster info -->
-            <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href="#"> Okt 3, 2023</a></p> 
-            <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> Kelvin de Reus</a></p>
-          </div>
-          <!-- Card text -->
-          <p class="pl-2">
-            Deepfake is een probleem dat steeds groter word, dankzij deepfake video’s
-            weetje soms niet meer zeker of een video echt of nep is. Daar heeft Intel een software-oplossing voor bedacht
-            Fakecatcher is software dat werkt doormiddel van photoplethysmography en ook deep-learning algoritme’s dat nepvideo’s kan detecteren
-          </p>
-        </div>
-      </div>   
 
-      <!-- Article card -->
-      <div class="card flex-row mb-2">
-        <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
-        <div class="card-body p-2">
-          <!-- Categorys -->
-          <div class="d-flex justify-content-start p-2 d-block mt-3">                    
-            <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-            <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
+      @foreach($articles as $article)
+        <!-- Article card -->
+        <div class="card flex-row mb-2">
+          <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
+          <div class="card-body p-2">
+            <!-- Categorys -->
+            <div class="d-flex justify-content-start p-2 d-block mt-3">                    
+              <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling">{{ $article->category->name }}</a></p>
+              @if ($article->secondCategory != '')
+                <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="ml-2 home-category-styling">{{ $article->secondCategory->name }}</a></p>
+              @endif
+            </div>
+            <!-- Title -->
+            <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+            <div class="d-flex justify-content-start mt-3 ml-2">
+              <!-- Poster info -->
+              <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href=""> {{ $article->publish_date }}</a></p> 
+              <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> {{ $article->author_id }}</a></p>
+            </div>
+            <!-- Card text -->
+            <p class="pl-2"> 
+              {{ \Illuminate\Support\Str::limit($article->content, 300, $end='...') }}
+            </p>
           </div>
-          <!-- Title -->
-          <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-          <div class="d-flex justify-content-start mt-3 ml-2">
-            <!-- Poster info -->
-            <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href="#"> Okt 3, 2023</a></p> 
-            <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> Kelvin de Reus</a></p>
-          </div>
-          <!-- Card text -->
-          <p class="pl-2">
-            Deepfake is een probleem dat steeds groter word, dankzij deepfake video’s
-            weetje soms niet meer zeker of een video echt of nep is. Daar heeft Intel een software-oplossing voor bedacht
-            Fakecatcher is software dat werkt doormiddel van photoplethysmography en ook deep-learning algoritme’s dat nepvideo’s kan detecteren
-          </p>
-        </div>
-      </div>   
-      
-      <!-- Article card -->
-      <div class="card flex-row mb-2">
-        <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
-        <div class="card-body p-2">
-          <!-- Categorys -->
-          <div class="d-flex justify-content-start p-2 d-block mt-3">                    
-            <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-            <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-          </div>
-          <!-- Title -->
-          <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-          <div class="d-flex justify-content-start mt-3 ml-2">
-            <!-- Poster info -->
-            <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href="#"> Okt 3, 2023</a></p> 
-            <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> Kelvin de Reus</a></p>
-          </div>
-          <!-- Card text -->
-          <p class="pl-2">
-            Deepfake is een probleem dat steeds groter word, dankzij deepfake video’s
-            weetje soms niet meer zeker of een video echt of nep is. Daar heeft Intel een software-oplossing voor bedacht
-            Fakecatcher is software dat werkt doormiddel van photoplethysmography en ook deep-learning algoritme’s dat nepvideo’s kan detecteren
-          </p>
-        </div>
-      </div>   
-      
-      <!-- Article card -->
-      <div class="card flex-row mb-2">
-        <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
-        <div class="card-body p-2">
-          <!-- Categorys -->
-          <div class="d-flex justify-content-start p-2 d-block mt-3">                    
-            <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-            <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-          </div>
-          <!-- Title -->
-          <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-          <div class="d-flex justify-content-start mt-3 ml-2">
-            <!-- Poster info -->
-            <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href="#"> Okt 3, 2023</a></p> 
-            <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> Kelvin de Reus</a></p>
-          </div>
-          <!-- Card text -->
-          <p class="pl-2">
-            Deepfake is een probleem dat steeds groter word, dankzij deepfake video’s
-            weetje soms niet meer zeker of een video echt of nep is. Daar heeft Intel een software-oplossing voor bedacht
-            Fakecatcher is software dat werkt doormiddel van photoplethysmography en ook deep-learning algoritme’s dat nepvideo’s kan detecteren
-          </p>
-        </div>
-      </div>   
-      <!-- End article cards -->
+        </div>   
+      @endforeach
+
+
     </div>
     <!-- End articles/embeds -->
 

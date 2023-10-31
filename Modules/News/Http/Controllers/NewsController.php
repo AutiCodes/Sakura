@@ -5,7 +5,7 @@ namespace Modules\News\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\news\Entities\articles;
+use Modules\news\Entities\Articles;
 use Modules\News\Entities\categorys;
 
 class NewsController extends Controller
@@ -14,20 +14,25 @@ class NewsController extends Controller
     public function index()
     {   
       // Getting articles
-      $articles = articles::with(['category', 'secondCategory'])->orderBy('publish_date', 'desc')->where('status', 'Gepubliceerd')->get();
+      $articles = Articles::with(['category', 'secondCategory'])->orderBy('publish_date', 'desc')->where('status', 'Gepubliceerd')->get();
       return view('news::pages.home', ['articles' => $articles]);
     }
 
     // Shows article list page with
     public function articleList($CategorySlug)
-    {
-      return view('news::pages.article_list');
+    { 
+      $category = Categorys::where('slug', $CategorySlug)->first();
+      $articles = Articles::with(['category', 'secondCategory'])->where('category_1', $category['id'])->get();
+      if ($category === null or $articles === null) {
+        return redirect('/404');
+      }
+      return view('news::pages.article_list', ['articles' => $articles]);
     }  
 
     // Shows an individual article
     public function article($articleSlug)
     { 
-      $article = articles::with(['category', 'secondCategory'])->where('slug', $articleSlug)->first();
+      $article = Articles::with(['category', 'secondCategory'])->where('slug', $articleSlug)->first();
       if ($article === null) {
         return redirect('/404');
       }
