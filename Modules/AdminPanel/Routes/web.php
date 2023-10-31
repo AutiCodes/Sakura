@@ -72,6 +72,11 @@ Route::get('/admin/backup/aanmaken', [AdminPanelController::class, 'backupCreate
 Route::get('/admin/backup/automatisch', [AdminPanelController::class, 'backup_automatic']);
 
 /*
+* Updates
+*/
+Route::get('/admin/updates', [AdminPanelController::class, 'updates']);
+
+/*
 * Site settings
 */
 Route::get('/admin/instellingen/algemeen', [AdminPanelController::class, 'settingsGeneral']);

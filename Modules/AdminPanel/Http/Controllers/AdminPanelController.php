@@ -142,6 +142,14 @@ class AdminPanelController extends Controller
     }
 
     /*
+    * Updates
+    */
+    public function updates()
+    {
+      return view('adminpanel::pages.updates');
+    }
+    
+    /*
     * Site settings
     */
     public function settingsGeneral()

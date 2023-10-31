@@ -181,6 +181,13 @@
       </div>
     </li>                  
 
+    <!-- Nav item - Comments -->
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/updates">
+          <i class="fa-solid fa-fw fa-arrows-rotate"></i>
+          <span>Updates</span></a>
+    </li>                   
+
     <!-- Nav Item - Site settings Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseSiteSettings"
