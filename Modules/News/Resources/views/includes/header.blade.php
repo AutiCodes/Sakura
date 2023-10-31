@@ -15,7 +15,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 <div class="lp-b p-0">
   <nav class="navbar navbar-expand-lg navbar-dark w-100 container-fluid d-block d-lg-flex justify-content-around">
     <div class="d-flex d-md-flex d-lg-block justify-content-around">
-      <a href="#" class="navbar-brand fa fa-home fa-2x icon-h-ld-c" id=""></a>
+      <a href="/" class="navbar-brand fa fa-home fa-2x icon-h-ld-c" id=""></a>
 
       <button class="navbar-toggler icon-h-ld-b" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon icon-h-ld-b"></span>
@@ -28,7 +28,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       <ul class="navbar-nav mr-auto">
         <!-- Facebook groups-->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle font-weight-bold text-uppercase fnt-ss" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle font-weight-bold text-uppercase fnt-ss" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Facebook groepen
           </a>
           <div class="dropdown-menu ld2-b mt-0 p-0 ani-05s-o" style="border-radius: 12px; top: 80%;" aria-labelledby="navbarDropdown"> <!-- fix style! -->
