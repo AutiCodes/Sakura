@@ -102,6 +102,7 @@ Admin page theme: SB Admin 2
   </div>
 
   <button type="button" class="btn btn-primary btn-lg mb-4">Publiceer</button>
+  <button type="button" class="btn btn-primary btn-lg mb-4">Opslaan als concept</button>
 
 </div>
 <!-- /.container-fluid -->
