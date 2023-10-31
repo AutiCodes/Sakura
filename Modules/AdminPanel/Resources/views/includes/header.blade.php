@@ -11,7 +11,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-left" href="dashboard.html">
 <div class="sidebar-brand-icon">
-    <img src="../assets/img/ADT&G_logo.png" class="w-50 pr-0">
+    <img src="{{ URL::asset('assets-admin/img/ADT&G_logo.png') }}" class="w-50 pr-0">
 </div>
 </a>
 
@@ -20,7 +20,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item">
-<a class="nav-link" href="dashboard.html">
+<a class="nav-link" href="/admin">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
@@ -35,24 +35,24 @@ CMS
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+<a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
     aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-thumbtack fa-cog"></i>
     <span>Berichten</span>
 </a>
 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="#">Alle berichten</a>
-        <a class="collapse-item" href="#">Nieuw bericht</a>
-        <a class="collapse-item" href="#">Categorieën</a>
-        <a class="collapse-item" href="#">Tags</a>
+        <a class="collapse-item" href="/admin/berichten/allemaal">Alle berichten</a>
+        <a class="collapse-item" href="/admin/berichten/toevoegen">Nieuw bericht</a>
+        <a class="collapse-item" href="/admin/berichten/categorieen">Categorieën</a>
+        <a class="collapse-item" href="/admin/berichten/tags">Tags</a>
     </div>
 </div>
 </li>
 
 <!-- Nav Item - Media Collapse Menu -->
 <li class="nav-item">
-<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMedia"
+<a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseMedia"
     aria-expanded="true" aria-controls="collapseMedia">
     <i class="fa-solid fa-fw fa-photo-film"></i>
     <span>Media</span>
@@ -60,8 +60,8 @@ CMS
 <div id="collapseMedia" class="collapse" aria-labelledby="headingMedia"
     data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="utilities-color.html">Bibliotheek</a>
-        <a class="collapse-item" href="utilities-border.html">Media toevoegen</a>
+        <a class="collapse-item" href="/admin/media/allemaal">Bibliotheek</a>
+        <a class="collapse-item" href="/admin/media/toev">Media toevoegen</a>
     </div>
 </div>
 </li>

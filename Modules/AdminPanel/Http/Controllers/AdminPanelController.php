@@ -125,7 +125,7 @@ class AdminPanelController extends Controller
 
     public function notifications()
     {
-      return view('adminpanel::pages.notification');
+      return view('adminpanel::pages.notifications');
     }
 
     /*

@@ -20,10 +20,12 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
 <!-- JavaScripts internal -->
 <!-- Core plugin JavaScript-->
-<script src="{{ URL::asset('assets-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ URL::asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="{{ URL::asset('assets-admin/js/sb-admin-2.min.js') }}"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
 <!-- Custom scripts per page -->
 @yield('scripts')

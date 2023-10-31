@@ -21,5 +21,8 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 <!-- Custom style -->
 <link href="{{ URL::asset('assets-admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+<link href="{{ URL::asset('assets/vendor/mdb/mdb.min.css') }}" rel=stylesheet type="text/css">
+
+
 <!-- Custom css per page --> 
 @yield('css')

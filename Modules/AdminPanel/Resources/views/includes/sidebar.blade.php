@@ -35,17 +35,17 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Alle berichten</a>
-                <a class="collapse-item" href="#">Nieuw bericht</a>
-                <a class="collapse-item" href="#">Categorieën</a>
-                <a class="collapse-item" href="#">Tags</a>
+                <a class="collapse-item" href="/admin/berichten/allemaal">Alle berichten</a>
+                <a class="collapse-item" href="/admin/berichten/toevoegen">Nieuw bericht</a>
+                <a class="collapse-item" href="/admin/berichten/categorieen">Categorieën</a>
+                <a class="collapse-item" href="/admin/berichten/tags">Tags</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Media Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMedia"
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseMedia"
             aria-expanded="true" aria-controls="collapseMedia">
             <i class="fa-solid fa-fw fa-photo-film"></i>
             <span>Media</span>
@@ -53,15 +53,15 @@
         <div id="collapseMedia" class="collapse" aria-labelledby="headingMedia"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Bibliotheek</a>
-                <a class="collapse-item" href="utilities-border.html">Media toevoegen</a>
+                <a class="collapse-item" href="/admin/media/allemaal">Bibliotheek</a>
+                <a class="collapse-item" href="/admin/media/toevoegen">Media toevoegen</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapsePages"
           aria-expanded="true" aria-controls="collapsePages">
           <i class="fa-regular fa-fw fa-file-lines"></i>
           <span>Pagina's</span>
@@ -69,8 +69,8 @@
       <div id="collapsePages" class="collapse" aria-labelledby="collapsePages"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Alle pagina's</a>
-              <a class="collapse-item" href="#">Pagina toevoegen</a>
+              <a class="collapse-item" href="/admin/paginas/allemaal">Alle pagina's</a>
+              <a class="collapse-item" href="/admin/paginas/toevoegen">Pagina toevoegen</a>
           </div>
       </div>
     </li>            
@@ -78,7 +78,7 @@
 
     <!-- Nav item - Comments -->
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="/admin/comments">
           <i class="fas fa-fw fa-comments"></i>
           <span>Comments</span></a>
     </li>              
@@ -93,7 +93,7 @@
 
     <!-- Nav Item - Site view Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseView"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseView"
           aria-expanded="true" aria-controls="collapseView">
           <i class="fa-regular fa-fw fa-file-lines"></i>
           <span>Weergave</span>
@@ -101,15 +101,15 @@
       <div id="collapseView" class="collapse" aria-labelledby="collapseView"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Tekst aanpassen</a>
-              <a class="collapse-item" href="#">Afbeeldingen wijzigen</a>
+              <a class="collapse-item" href="/admin/weergave/tekst">Tekst aanpassen</a>
+              <a class="collapse-item" href="/admin/weergave/afbeeldingen">Afbeeldingen wijzigen</a>
           </div>
       </div>
     </li>      
 
     <!-- Nav Item - Users Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUsers"
           aria-expanded="true" aria-controls="collapseUsers">
           <i class="fa-solid fa-fw fa-person"></i>
           <span>Gebruikers</span>
@@ -117,16 +117,16 @@
       <div id="collapseUsers" class="collapse" aria-labelledby="collapseUsers"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Alle gebruikers</a>
-              <a class="collapse-item" href="#">Jouw profiel</a>
-              <a class="collapse-item" href="#">Gebruikers toevoegen</a>
+              <a class="collapse-item" href="/admin/gebruikers/allemaal">Alle gebruikers</a>
+              <a class="collapse-item" href="/admin/gebruikers/profiel/2891223">Jouw profiel</a>
+              <a class="collapse-item" href="/admin/gebruikers/toevoegen">Gebruikers toevoegen</a>
           </div>
       </div>
     </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStats"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseStats"
           aria-expanded="true" aria-controls="collapseStats">
           <i class="fa-solid fa-fw fa-chart-column"></i>
           <span>Statistieken</span>
@@ -134,8 +134,8 @@
       <div id="collapseStats" class="collapse" aria-labelledby="collapseStats"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Website</a>
-              <a class="collapse-item" href="#">Discord</a>
+              <a class="collapse-item" href="/admin/statistieken/website">Website</a>
+              <a class="collapse-item" href="/admin/statistieken/discord">Discord</a>
           </div>
       </div>
     </li>     
@@ -151,7 +151,7 @@
 
     <!-- Nav Item - Modules Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseModules"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseModules"
           aria-expanded="true" aria-controls="collapseModules">
           <i class="fa-solid fa-fw fa-plug"></i>
           <span>Modules</span>
@@ -159,15 +159,15 @@
       <div id="collapseModules" class="collapse" aria-labelledby="collapseModules"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Discord auto post</a>
-              <a class="collapse-item" href="#">Notificaties</a>
+              <a class="collapse-item" href="/admin/modules/discord_autoposter">Discord auto post</a>
+              <a class="collapse-item" href="/admin/modules/notificaties">Notificaties</a>
           </div>
       </div>
     </li>      
 
     <!-- Nav Item - Backup Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBackup"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseBackup"
           aria-expanded="true" aria-controls="collapseBackup">
           <i class="fa-solid fa-fw fa-database"></i>
           <span>Backup</span>
@@ -175,15 +175,15 @@
       <div id="collapseBackup" class="collapse" aria-labelledby="collapseBackup"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Backup maken</a>
-              <a class="collapse-item" href="#">Automatische backup</a>
+              <a class="collapse-item" href="/admin/backup/aanmaken">Backup maken</a>
+              <a class="collapse-item" href="/admin/backup/automatisch">Automatische backup</a>
           </div>
       </div>
     </li>                  
 
     <!-- Nav Item - Site settings Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSiteSettings"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseSiteSettings"
           aria-expanded="true" aria-controls="collapseSiteSettings">
           <i class="fa-solid fa-fw fa-gears"></i>
           <span>Site instellingen</span>
@@ -191,18 +191,18 @@
       <div id="collapseSiteSettings" class="collapse" aria-labelledby="collapseSiteSettings"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Algemeen</a>
-              <a class="collapse-item" href="#">Artikelen</a>
-              <a class="collapse-item" href="#">Comments</a>      
-              <a class="collapse-item" href="#">URL's</a>   
-              <a class="collapse-item" href="#">Email server</a>
+              <a class="collapse-item" href="/admin/instellingen/algemeen">Algemeen</a>
+              <a class="collapse-item" href="/admin/instellingen/artikelen">Artikelen</a>
+              <a class="collapse-item" href="/admin/instellingen/comments">Comments</a>      
+              <a class="collapse-item" href="/admin/instellingen/urls">URL's</a>   
+              <a class="collapse-item" href="/admin/instellingen/email-server">Email server</a>
           </div>
       </div>
     </li>    
 
     <!-- Nav Item - Technical config Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTechConfig"
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTechConfig"
           aria-expanded="true" aria-controls="collapseTechConfig">
           <i class="fa-solid fa-fw fa-sliders"></i>
           <span>Technisch</span>
@@ -210,9 +210,9 @@
       <div id="collapseTechConfig" class="collapse" aria-labelledby="collapseTechConfig"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Site&server informatie</a>
-              <a class="collapse-item" href="#">Cache</a>
-              <a class="collapse-item" href="#">Beveiliging</a>
+              <a class="collapse-item" href="/admin/technisch/informatie">Site&server informatie</a>
+              <a class="collapse-item" href="/admin/technisch/cache">Cache</a>
+              <a class="collapse-item" href="/admin/technisch/beveiliging">Beveiliging</a>
           </div>
       </div>
     </li>        
@@ -227,9 +227,9 @@
       <div id="collapseLogs" class="collapse" aria-labelledby="collapseLogs"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">Systeem</a>
-              <a class="collapse-item" href="#">Error</a>
-              <a class="collapse-item" href="#">Access</a>
+              <a class="collapse-item" href="/admin/logs/systeem">Systeem</a>
+              <a class="collapse-item" href="/admin/logs/error">Error</a>
+              <a class="collapse-item" href="/admin/logs/access">Access</a>
           </div>
       </div>
     </li>
