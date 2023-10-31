@@ -9,7 +9,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; AllDayTech&Gaming 2023</span>
+            <span>Copyright &copy; AllDayTech&Gaming 2023 - Driven by Sakura</span>
         </div>
     </div>
 </footer>
