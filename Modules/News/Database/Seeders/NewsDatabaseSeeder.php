@@ -4,6 +4,7 @@ namespace Modules\News\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class NewsDatabaseSeeder extends Seeder
 {
@@ -14,8 +15,14 @@ class NewsDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-        // $this->call("OthersTableSeeder");
+      DB::table('sk_articles')->insert([
+        'author_id' => 1,
+        'category_1' => 1,
+        'publish_date' => fake()->dateTime(),
+        'title' => fake()->title(),
+        'content' => fake()->sentence(400),
+        'slug' => fake()->slug(),
+        'status' => 'Gepubliceerd'
+      ]);
     }
 }

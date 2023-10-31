@@ -13,39 +13,35 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
     <div class="col-lg-5 text-center px-0 mb-4 mr-sm-3 ml-sm-3" id="col-slideshow">
       <div id="carousel-slide" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <!-- Item -->
-          <div class="carousel-item carousel-slide-left active">
-            <img class="d-block w-100 rounded-lg" style="height: 575px;" src="https://pixelprowess.com/i/pow_angle.webp" alt="First">
+          @foreach($articles->take(2) as $article)            
+            <!-- Item -->
+            @if ($loop->index === 0)
+              <div class="carousel-item carousel-slide-left active">
+            @else 
+              <div class="carousel-item carousel-slide-left">
+            @endif
+            <!-- Article image -->
+            <img class="d-block w-100 rounded-lg" style="height: 575px;" src="//placehold.it/400" alt="">
             <div class="carousel-caption text-left">
+              <!-- article categorys -->
               <div class="d-flex justify-content-start p-0">                    
-                <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-                <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
+                <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling">{{ $article->category->name }}</a></p>
+                
+                @if ($article->secondCategory != '')
+                  <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="ml-2 home-category-styling">{{ $article->secondCategory->name }}</a></p>
+                @endif
               </div>
-              <h2 class="p-0"><a class="text-white" href="#">AM4 processoren door het dak</a></h2>
+              <!-- Title -->
+              <h2 class="p-0"><a class="text-white" href="/artikel/{{ $article->slug }}">{{ $article->title }}</a></h2>
               <div class="d-flex justify-content-start mt-3">
-                <p><i class="fa fa-clock"></i><a class="text-white mr-2" href="#"> Okt 3, 2023</a></p> 
-                <p><i class="fa fa-circle-user"></i><a class="text-white" href="#"> Kelvin de Reus</a></p>
+                <!-- info -->
+                <p><i class="fa fa-clock"></i><a class="text-white pl-2" href="#">{{ $article->publish_date }}</a></p> 
+                <p><i class="fa fa-circle-user ml-2"></i><a class="text-white pl-2" href="#">{{ $article->author }}</a></p>
               </div>
             </div>
           </div>
-
-          <!-- Item -->
-          <div class="carousel-item carousel-slide-left">
-            <img class="d-block w-100 rounded-lg" style="height: 575px;" src="https://pixelprowess.com/i/spoon.webp" alt="Second slide">
-            <div class="carousel-caption text-left">
-              <div class="d-flex justify-content-start p-0">                    
-                <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-                <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-              </div>
-              <h2 class="p-0"><a class="text-white" href="#">AM4 processoren door het dak</a></h2>
-              <div class="d-flex justify-content-start mt-3">
-                <p><i class="fa fa-clock"></i><a class="text-white mr-2" href="#"> Okt 3, 2023</a></p> 
-                <p><i class="fa fa-circle-user"></i><a class="text-white" href="#"> Kelvin de Reus</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+          @endforeach
+        </div
         <!-- Back button -->
         <a class="carousel-control-prev" href="#carousel-slide" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -73,59 +69,24 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
         <!-- Tab content 1 -->
         <div class="tab-pane active" id="tab-1">
-  
-          <!-- Article card -->
-          <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-            <div class="card-body p-2">
-              <!-- Categorys -->
-              <div class="d-flex justify-content-start p-2 d-block">                    
-                <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-                <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-              </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-            </div>
-          </div>      
 
-          <!-- Article card -->
-          <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-            <div class="card-body p-2">
-              <!-- Categorys -->
-              <div class="d-flex justify-content-start p-2 d-block">                    
-                <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-                <p><a href="#" class="ml-2 home-category-styling" id="home-category-styling">Processoren</a></p>
-              </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-            </div>
-          </div>
 
-          <!-- Article card -->
-          <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-            <div class="card-body p-2">
-              <!-- Categorys -->
-              <div class="d-flex justify-content-start p-2 d-block">                    
-                <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-                <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
+          @foreach($articles->take(4) as $article)
+            <!-- Article card -->
+            <div class="card flex-row">
+              <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+              <div class="card-body p-2">
+                <!-- Categorys -->
+                <div class="d-flex justify-content-start p-2 d-block">                    
+                  <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling mr-3">{{ $article->category->name }}</a></p>
+                  @if($article->secondCategory != '')
+                    <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="home-category-styling mr-3">{{ $article->secondCategory->name }}</a></p>
+                  @endif
+                </div>
+                <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
               </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-            </div>
-          </div>           
-          
-          <!-- Article card -->
-          <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-            <div class="card-body p-2">
-              <!-- Categorys -->
-              <div class="d-flex justify-content-start p-2 d-block">                    
-                <p><a href="#" class="home-category-styling">Berichten over hardware</a></p>
-                <p><a href="#" class="ml-2 home-category-styling">Processoren</a></p>
-              </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="#" class="text-dark font-weight-bold">Prijzen AM4 processoren door het dak</a></h5>
-            </div>
-          </div>                       
-
+            </div>      
+          @endforeach
         </div>
         <!-- Tab content 2 -->
         <div class="tab-pane" id="tab-2">
