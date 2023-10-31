@@ -14,12 +14,12 @@ class NewsController extends Controller
     public function index()
     {   
       // Getting articles
-      $articles = articles::with('category')->with('secondCategory')->orderBy('publish_date', 'desc')->where('status', 'Gepubliceerd')->get();
+      $articles = articles::with(['category', 'secondCategory'])->orderBy('publish_date', 'desc')->where('status', 'Gepubliceerd')->get();
       return view('news::pages.home', ['articles' => $articles]);
     }
 
     // Shows article list page with
-    public function articleList($articleCategory)
+    public function articleList($CategorySlug)
     {
       return view('news::pages.article_list');
     }  
@@ -27,7 +27,7 @@ class NewsController extends Controller
     // Shows an individual article
     public function article($articleSlug)
     { 
-      $article = articles::with('category')->with('secondCategory')->where('slug', $articleSlug)->first();
+      $article = articles::with(['category', 'secondCategory'])->where('slug', $articleSlug)->first();
       if ($article === null) {
         return redirect('/404');
       }

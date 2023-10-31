@@ -16,7 +16,7 @@ use Modules\News\Http\Controllers\NewsController;
 Route::get('/', [NewsController::class, 'index']);
 
 // Article list route
-Route::get('/artikelen/{articleCategory}', [NewsController::class,'articleList']);
+Route::get('/artikelen/{CategorySlug}', [NewsController::class,'articleList']);
 
 // Article route
 Route::get('/artikel/{articleSlug}', [NewsController::class, 'article']);

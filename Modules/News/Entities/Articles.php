@@ -32,5 +32,4 @@ class articles extends Model
     {
       return $this->belongsTo(categorys::class, 'category_2');
     }
-    
 }
