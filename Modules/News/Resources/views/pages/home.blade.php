@@ -69,8 +69,6 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
         <!-- Tab content 1 -->
         <div class="tab-pane active" id="tab-1">
-
-
           @foreach($articles->take(4) as $article)
             <!-- Article card -->
             <div class="card flex-row">
@@ -90,11 +88,45 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         </div>
         <!-- Tab content 2 -->
         <div class="tab-pane" id="tab-2">
-            <h1>Hardware</h1>
+          @foreach($articles as $article)
+            @if ($article->category->slug === 'hardware' or $article->secondCategory != null and $article->secondCategory->name === 'name')
+              <!-- Article card -->
+              <div class="card flex-row">
+                <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+                <div class="card-body p-2">
+                  <!-- Categorys -->
+                  <div class="d-flex justify-content-start p-2 d-block">                    
+                    <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling mr-3">{{ $article->category->name }}</a></p>
+                    @if($article->secondCategory != '')
+                      <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="home-category-styling mr-3">{{ $article->secondCategory->name }}</a></p>
+                    @endif
+                  </div>
+                  <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+                </div>
+              </div>      
+            @endif
+          @endforeach
         </div>
         <!-- Tab content 3-->
         <div class="tab-pane" id="tab-3">
-            <h1>Software</h1>
+          @foreach($articles as $article)
+            @if ($article->category->slug === 'software' or $article->secondCategory != null and $article->secondCategory->name === 'software')
+              <!-- Article card -->
+              <div class="card flex-row">
+                <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+                <div class="card-body p-2">
+                  <!-- Categorys -->
+                  <div class="d-flex justify-content-start p-2 d-block">                    
+                    <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling mr-3">{{ $article->category->name }}</a></p>
+                    @if($article->secondCategory != '')
+                      <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="home-category-styling mr-3">{{ $article->secondCategory->name }}</a></p>
+                    @endif
+                  </div>
+                  <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+                </div>
+              </div>      
+            @endif
+          @endforeach
         </div>
     </div>
     <!-- End article-tabs -->

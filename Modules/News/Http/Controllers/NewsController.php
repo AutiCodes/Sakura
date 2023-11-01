@@ -15,6 +15,7 @@ class NewsController extends Controller
     {   
       // Getting articles
       $articles = Articles::with(['category', 'secondCategory'])->orderBy('publish_date', 'desc')->where('status', 'Gepubliceerd')->get();
+
       return view('news::pages.home', ['articles' => $articles]);
     }
 
@@ -26,7 +27,8 @@ class NewsController extends Controller
       if ($category === null or $articles === null) {
         return redirect('/404');
       }
-      return view('news::pages.article_list', ['articles' => $articles]);
+
+      return view('news::pages.article_list', ['articles' => $articles, 'listFilter' => $category->name]);
     }  
 
     // Shows an individual article
