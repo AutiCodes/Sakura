@@ -10,6 +10,7 @@ class articles extends Model
 {
     use HasFactory;
     protected $table = "sk_articles";
+    public $timestamps = false;
 
     protected $fillable = [
       'author_id',
@@ -31,5 +32,12 @@ class articles extends Model
     public function secondCategory()
     {
       return $this->belongsTo(categorys::class, 'category_2');
+    }
+
+    public static function updateArticleViewCount($articleSlug, $currentViewCount)
+    {
+      $article = articles::where('slug', $articleSlug)->first();
+      $article->view_count = $currentViewCount + 1;
+      $article->save();
     }
 }
