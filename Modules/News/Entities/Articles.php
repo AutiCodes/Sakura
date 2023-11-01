@@ -16,8 +16,6 @@ class articles extends Model
       'author_id',
       'category_1',
       'category_2',
-      'category_3',
-      'category_4',
       'publish_date',
       'title',
       'content',
