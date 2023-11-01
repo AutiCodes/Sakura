@@ -23,7 +23,7 @@ class NewsController extends Controller
     public function articleList(Request $request, $CategorySlug)
     { 
       $category = Categorys::where('slug', $CategorySlug)->first();
-      $articles = Articles::with(['category', 'secondCategory'])->where('category_1', $category['id'])->get();
+      $articles = Articles::with(['category', 'secondCategory'])->where('category_1', $category['id'])->orWhere('category_2', $category['id'])->get();
       if ($category === null or $articles === null) {
         return redirect('/404');
       }

@@ -29,7 +29,7 @@ return new class extends Migration
           $table->string('title', 50);
           $table->text('content');
           $table->string('slug', 50);
-          $table->string('status', 20);
+          $table->integer('status', 1);
           $table->integer('view_count')->nullable();          
           $table->integer('comments_count')->nullable();          
         });
