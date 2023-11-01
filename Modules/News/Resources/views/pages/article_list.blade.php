@@ -31,8 +31,8 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
             <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
             <div class="d-flex justify-content-start mt-3 ml-2">
               <!-- Poster info -->
-              <p><i class="fa fa-clock"></i><a class="text-dark mr-2" href=""> {{ $article->publish_date }}</a></p> 
-              <p><i class="fa fa-circle-user"></i><a class="text-dark" href="#"> {{ $article->author_id }}</a></p>
+              <p><i class="fa fa-clock lp-c""></i><a class="text-dark mr-2 href=""> {{ $article->publish_date }}</a></p> 
+              <p><i class="fa fa-circle-user lp-c""></i><a class="text-dark" href="#"> {{ $article->author_id }}</a></p>
             </div>
             <!-- Card text -->
             <p class="pl-2"> 
