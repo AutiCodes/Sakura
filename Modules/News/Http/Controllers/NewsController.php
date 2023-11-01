@@ -14,7 +14,7 @@ class NewsController extends Controller
     public function index(Request $request)
     {   
       // Getting articles
-      $articles = Articles::with(['category', 'secondCategory'])->orderBy('publish_date', 'desc')->where('status', 'Gepubliceerd')->get();
+      $articles = Articles::with(['category', 'secondCategory'])->orderBy('publish_date', 'desc')->where('status', 1)->get();
 
       return view('news::pages.home', ['articles' => $articles]);
     }
@@ -23,7 +23,7 @@ class NewsController extends Controller
     public function articleList(Request $request, $CategorySlug)
     { 
       $category = Categorys::where('slug', $CategorySlug)->first();
-      $articles = Articles::with(['category', 'secondCategory'])->where('category_1', $category['id'])->orWhere('category_2', $category['id'])->get();
+      $articles = Articles::with(['category', 'secondCategory'])->where('category_1', $category['id'])->orWhere('category_2', $category['id'])->where('status', 1)->get();
       if ($category === null or $articles === null) {
         return redirect('/404');
       }
@@ -34,7 +34,7 @@ class NewsController extends Controller
     // Shows an individual article
     public function article(Request $request, $articleSlug)
     { 
-      $article = Articles::with(['category', 'secondCategory'])->where('slug', $articleSlug)->first();
+      $article = Articles::with(['category', 'secondCategory'])->where('slug', $articleSlug)->where('status', 1)->first();
       if ($article === null) {
         return redirect('/404');
       }
