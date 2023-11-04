@@ -3,39 +3,36 @@
 namespace Modules\News\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\news\Entities\Article;
 use Modules\News\Entities\Category;
+use Modules\News\Enums\ArticleStatusEnum;
 
 class NewsController extends Controller
 {
     // Homepage
     public function index(Request $request)
     {   
-      // Getting all articles with categories
-      $articles = Article::orderBy('publish_date', 'desc')->where('status', 1)->with('categories')->get();
-      return view('news::pages.home', ['articles' => $articles]);
-    }
+        // Getting all articles with categories
+        $articles = Article::orderBy('publish_date', 'desc')
+            ->published()
+            ->with('categories')
+            ->get();
+        
+        $hardWareArticles = $articles->filter(function (Article $article) {
+                return $article->categories->search(function (Category $category) {
+                    return $category->name === 'Hardware';
+                }) !== false;
+            });
 
-    // Shows article list page with
-    public function articleList(Request $request, $CategorySlug)
-    { 
-      $articles = Article::orderBy('publish_date','desc')->where('status', 1)->whereRelation('categories','slug', $CategorySlug)->get();
-      return view('news::pages.article_list', ['articles' => $articles]);
-    }  
-
-    // Shows an individual article
-    public function article(Request $request, $articleSlug)
-    { 
-      $article = Article::where('status', 1)->where('slug', $articleSlug)->with('categories')->first();
-
-      return view('news::pages.article', ['article' => $article]);
+        return view('news::pages.home', ['articles' => $articles]);
     }
 
     // 404 error
     public function notFound(Request $request)
     {
-      return view('news::pages.404');
+        return view('news::pages.404');
     }
 }

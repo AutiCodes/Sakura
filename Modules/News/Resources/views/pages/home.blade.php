@@ -30,7 +30,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
                 @endforeach
               </div>
               <!-- Title -->
-              <h2 class="p-0"><a class="text-white" href="/artikel/{{ $article->slug }}">{{ $article->title }}</a></h2>
+              <h2 class="p-0"><a class="text-white" href="{{ route('articles.show', $article->slug) }}">{{ $article->title }}</a></h2>
               <div class="d-flex justify-content-start mt-3">
                 <!-- info -->
                 <p><i class="fa fa-clock"></i><a class="text-white pl-2" href="#">{{ $article->publish_date }}</a></p> 
@@ -77,7 +77,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
                   <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
                 @endforeach
               </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
             </div>
           </div>      
         @endforeach
@@ -96,7 +96,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
                   <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
                 @endforeach
               </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
             </div>
           </div>      
         @endforeach
@@ -104,7 +104,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       
       <!-- Tab content 3-->
       <div class="tab-pane" id="tab-3">
-        @foreach($articles->take(4) as $article)
+        @foreach($articles->where('') as $article)
           <!-- Article card -->
           <div class="card flex-row">
             <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
@@ -115,7 +115,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
                   <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
                 @endforeach
               </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
             </div>
           </div>      
         @endforeach

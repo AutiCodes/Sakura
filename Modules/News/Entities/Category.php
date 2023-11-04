@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\News\Entities\Article;
 
-class category extends Model
+class Category extends Model
 {
   use HasFactory;
   protected $table = 'sk_categorys';

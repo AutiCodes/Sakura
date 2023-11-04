@@ -2,28 +2,31 @@
 
 namespace Modules\News\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\News\Entities\Article;
 
 class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return Renderable
      */
     public function index()
     {
-        return view('news::index');
+        $articles = Article::published()
+            ->orderBy('publish_date', 'desc')
+            ->get();
+
+        return view('news::pages.articles.index', [
+            'articles' => $articles,
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     * Display the specified resource.
      */
-    public function create()
+    public function show(Article $article)
     {
-        return view('news::create');
+        return view('news::pages.article', ['article' => $article]);
     }
-
 }

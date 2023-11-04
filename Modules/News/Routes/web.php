@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Facades\Route;
+use Modules\News\Http\Controllers\ArticleController;
 use Modules\News\Http\Controllers\NewsController;
 
 /*
@@ -19,7 +22,10 @@ Route::get('/', [NewsController::class, 'index']);
 Route::get('/artikelen/{CategorySlug}', [NewsController::class,'articleList']);
 
 // Article route
-Route::get('/artikel/{articleSlug}', [NewsController::class, 'article']);
+Route::get('/artikel/{article}', [NewsController::class, 'article']);
 
 // 404 route
 Route::get('/404', [NewsController::class, 'notFound']);
+
+Route::resource('articles', ArticleController::class)
+    ->only(['index', 'show']);
