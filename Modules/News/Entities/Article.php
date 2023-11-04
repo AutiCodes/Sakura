@@ -11,7 +11,6 @@ class Article extends Model
 {
     use HasFactory;
     protected $table = "sk_articles";
-    public $timestamps = false;
 
     protected $fillable = [
       'id',
@@ -22,13 +21,6 @@ class Article extends Model
       'content',
       'slug',                  
     ];
-
-    public static function updateArticleViewCount($articleSlug, $currentViewCount)
-    {
-      $article = Article::where('slug', $articleSlug)->first();
-      $article->view_count = $currentViewCount + 1;
-      $article->save();
-    }
 
     public function categories(): BelongsToMany
     {

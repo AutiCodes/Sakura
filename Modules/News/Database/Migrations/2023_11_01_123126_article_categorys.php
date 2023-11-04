@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
       Schema::create('sk_article_categorys', function (Blueprint $table) {
+        $table->id();
         $table->integer('article_id');
         $table->integer('category_id');
+        $table->timestamps();
       });
 
     }

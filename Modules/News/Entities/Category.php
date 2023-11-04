@@ -12,7 +12,6 @@ class category extends Model
 {
   use HasFactory;
   protected $table = 'sk_categorys';
-  public $timestamps = false;
 
   protected $fillable = [
     'category_id',

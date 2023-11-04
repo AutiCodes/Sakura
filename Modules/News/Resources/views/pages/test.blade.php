@@ -13,7 +13,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
     <h1>{{ $article->title }}</h1>
     
     @foreach ($article->categories as $category)        
-     <p>{{ $category }}</p>
+     <p>{{ $category->name }}</p>
     @endforeach
 
   @endforeach

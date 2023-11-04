@@ -8,7 +8,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 @extends('news::layouts.default')
 
 <!-- Custom title -->
-<title>{{ $listFilter }}</title>
+<title>Placeholder</title>
 
 @section('content')
 <div class="row justify-content-center  mt-4">
@@ -22,10 +22,9 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
           <div class="card-body p-2">
             <!-- Categorys -->
             <div class="d-flex justify-content-start p-2 d-block mt-3">                    
-              <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling">{{ $article->category->name }}</a></p>
-              @if ($article->secondCategory != '')
-                <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="ml-2 home-category-styling">{{ $article->secondCategory->name }}</a></p>
-              @endif
+              @foreach($article->categories as $category)
+               <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
+              @endforeach
             </div>
             <!-- Title -->
             <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>

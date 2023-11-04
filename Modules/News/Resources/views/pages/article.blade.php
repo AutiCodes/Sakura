@@ -18,10 +18,9 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       <article class="p-4">
         <!-- Article category -->
         <div class="d-flex justify-content-start d-block">                    
-          <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling">{{ $article->category->name }}</a></p>
-          @if ($article->secondCategory != '')
-            <p><a href="{{ $article->secondCategory->slug }}" class="ml-2 home-category-styling">{{ $article->secondCategory->name }}</a></p>
-          @endif
+          @foreach($article->categories as $category)
+            <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
+          @endforeach
         </div>
 
         <!-- Article title -->

@@ -24,21 +24,22 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
             <img class="d-block w-100 rounded-lg" style="height: 575px;" src="//placehold.it/400" alt="">
             <div class="carousel-caption text-left">
               <!-- article categorys -->
-              <div class="d-flex justify-content-start p-0">            
-                @foreach ($article->categorys as $category)        
-                  <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling">{{ $category->name }}</a></p>
+              <div class="d-flex justify-content-start p-0">                    
+                @foreach($article->categories as $category)
+                  <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
                 @endforeach
+              </div>
               <!-- Title -->
               <h2 class="p-0"><a class="text-white" href="/artikel/{{ $article->slug }}">{{ $article->title }}</a></h2>
               <div class="d-flex justify-content-start mt-3">
                 <!-- info -->
                 <p><i class="fa fa-clock"></i><a class="text-white pl-2" href="#">{{ $article->publish_date }}</a></p> 
-                <p><i class="fa fa-circle-user ml-2"></i><a class="text-white pl-2" href="#">{{ $article->author }}</a></p>
+                <p><i class="fa fa-circle-user ml-2"></i><a class="text-white pl-2" href="#">{{ $article->author_id }}</a></p>
               </div>
             </div>
           </div>
           @endforeach
-        </div
+        </div>
         <!-- Back button -->
         <a class="carousel-control-prev" href="#carousel-slide" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,79 +55,73 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       <!-- End slideshow -->
     </div>
 
-    <!-- Article-tabs -->
-    <div class="col-lg-auto text-center rounded-lg">
-      <ul class="nav nav-tabs rounded-top" role="tablist">
-        <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab"><i class="fa-solid fa-clock"></i> Laatste berichten</a></li>
-        <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab"><i class="fa-solid fa-microchip"></i> Hardware</a></li>
-        <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab"><i class="fa-solid fa-laptop-code"></i> Software</a></li>
-      </ul>
-      
-      <div class="tab-content tab-articles bg-white">
+        <!-- Article-tabs -->
+  <div class="col-lg-auto text-center rounded-lg">
+    <ul class="nav nav-tabs rounded-top" role="tablist">
+      <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-1" role="tab"><i class="fa-solid fa-clock"></i> Laatste berichten</a></li>
+      <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-2" role="tab"><i class="fa-solid fa-microchip"></i> Hardware</a></li>
+      <li class="d-flex p-2 bg-white"><a class="mt-1 text-dark fnt-ss font-weight-bold h5" data-toggle="tab" href="#tab-3" role="tab"><i class="fa-solid fa-laptop-code"></i> Software</a></li>
+    </ul>
+    <div class="tab-content tab-articles bg-white">
 
-        <!-- Tab content 1 -->
-        <div class="tab-pane active" id="tab-1">
-          @foreach($articles->take(4) as $article)
-            <!-- Article card -->
-            <div class="card flex-row">
-              <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-              <div class="card-body p-2">
-                <!-- Categorys -->
-                <div class="d-flex justify-content-start p-2 d-block">                    
-                  <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling mr-3">{{ $article->category->name }}</a></p>
-                  @if($article->secondCategory != '')
-                    <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="home-category-styling mr-3">{{ $article->secondCategory->name }}</a></p>
-                  @endif
-                </div>
-                <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+      <!-- Tab content 1 -->
+      <div class="tab-pane active" id="tab-1">
+        @foreach($articles->take(4) as $article)
+          <!-- Article card -->
+          <div class="card flex-row">
+            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+            <div class="card-body p-2">
+              <!-- Categorys -->
+              <div class="d-flex justify-content-start p-2 d-block">       
+                @foreach($article->categories as $category)             
+                  <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
+                @endforeach
               </div>
-            </div>      
-          @endforeach
-        </div>
-        <!-- Tab content 2 -->
-        <div class="tab-pane" id="tab-2">
-          @foreach($articles as $article)
-            @if ($article->category->slug === 'hardware' or $article->secondCategory != null and $article->secondCategory->name === 'name')
-              <!-- Article card -->
-              <div class="card flex-row">
-                <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-                <div class="card-body p-2">
-                  <!-- Categorys -->
-                  <div class="d-flex justify-content-start p-2 d-block">                    
-                    <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling mr-3">{{ $article->category->name }}</a></p>
-                    @if($article->secondCategory != '')
-                      <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="home-category-styling mr-3">{{ $article->secondCategory->name }}</a></p>
-                    @endif
-                  </div>
-                  <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
-                </div>
-              </div>      
-            @endif
-          @endforeach
-        </div>
-        <!-- Tab content 3-->
-        <div class="tab-pane" id="tab-3">
-          @foreach($articles as $article)
-            @if ($article->category->slug === 'software' or $article->secondCategory != null and $article->secondCategory->name === 'software')
-              <!-- Article card -->
-              <div class="card flex-row">
-                <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
-                <div class="card-body p-2">
-                  <!-- Categorys -->
-                  <div class="d-flex justify-content-start p-2 d-block">                    
-                    <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling mr-3">{{ $article->category->name }}</a></p>
-                    @if($article->secondCategory != '')
-                      <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="home-category-styling mr-3">{{ $article->secondCategory->name }}</a></p>
-                    @endif
-                  </div>
-                  <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
-                </div>
-              </div>      
-            @endif
-          @endforeach
-        </div>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+            </div>
+          </div>      
+        @endforeach
+      </div>
+      
+      <!-- Tab content 2 -->
+      <div class="tab-pane" id="tab-2">
+        @foreach($articles->take(4) as $article)
+          <!-- Article card -->
+          <div class="card flex-row">
+            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+            <div class="card-body p-2">
+              <!-- Categorys -->
+              <div class="d-flex justify-content-start p-2 d-block">                    
+                @foreach($article->categories as $category)             
+                  <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
+                @endforeach
+              </div>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+            </div>
+          </div>      
+        @endforeach
+      </div>
+      
+      <!-- Tab content 3-->
+      <div class="tab-pane" id="tab-3">
+        @foreach($articles->take(4) as $article)
+          <!-- Article card -->
+          <div class="card flex-row">
+            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+            <div class="card-body p-2">
+              <!-- Categorys -->
+              <div class="d-flex justify-content-start p-2 d-block">                    
+                @foreach($article->categories as $category)             
+                  <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
+                @endforeach
+              </div>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+            </div>
+          </div>      
+        @endforeach
+      </div>
     </div>
-    <!-- End article-tabs -->
+  <!-- End article-tabs -->
   </div>
 
   <div class="row justify-content-center ml-0 mr-0">

@@ -15,20 +15,18 @@ return new class extends Migration
     {
         Schema::create('sk_articles', function (Blueprint $table)
         {
-          // Article id
           $table->id();
-          // Article maker
           $table->foreignId('author_id')->constrained('users');
-          // Dates
           $table->dateTime('publish_date');
           $table->dateTime('last_edited_date')->nullable();
-          // Article contents
           $table->string('title', 50);
           $table->text('content');
+          $table->string('image');
           $table->string('slug');
           $table->integer('status');
           $table->integer('view_count')->nullable();          
           $table->integer('comments_count')->nullable();          
+          $table->timestamps();
         });
     }
 

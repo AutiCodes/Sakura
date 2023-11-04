@@ -33,14 +33,14 @@ class ArticleController extends Controller
         'publish_date' => now(),
         'title' => $request->input('title'),
         'content' => $request->input('editorData'),
-        'status' => 1,
         'slug' => Str::slug($request->input('title')),
-
+        'status' => 1,
       ]); 
 
       foreach ($request->input('categorys') as $category) {
-        $article->categorys()->attach(intval($category));
+        $article->categories()->attach(intval($category));
       }
+      
     }
 
     public function articlesCategorys()
