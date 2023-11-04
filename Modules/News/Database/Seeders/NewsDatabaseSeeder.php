@@ -5,6 +5,8 @@ namespace Modules\News\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Modules\News\Entities\Category;
+use Modules\News\Entities\Article;
 
 class NewsDatabaseSeeder extends Seeder
 {
@@ -15,14 +17,20 @@ class NewsDatabaseSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('sk_articles')->insert([
+      Category::create([
+        'name' => fake()->name(),
+        'slug' => fake()->slug() 
+      ]);
+      
+      Article::create([
         'author_id' => 1,
-        'category_1' => 1,
         'publish_date' => fake()->dateTime(),
         'title' => fake()->title(),
-        'content' => fake()->sentence(400),
+        'content' => fake()->sentence(),
         'slug' => fake()->slug(),
-        'status' => 'Gepubliceerd'
+        'status' => 1
       ]);
+
+
     }
 }

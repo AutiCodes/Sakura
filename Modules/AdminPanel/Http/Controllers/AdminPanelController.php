@@ -15,29 +15,6 @@ class AdminPanelController extends Controller
     } 
 
     /*
-    * CMS - Messages
-    */
-    public function messagesAll()
-    {
-      return view('adminpanel::pages.messages_all');
-    }
-
-    public function messagesAdd()
-    {
-      return view('adminpanel::pages.messages_new');
-    }
-
-    public function messagesCategorys()
-    {
-      return view('adminpanel::pages.messages_categorys');
-    }
-
-    public function messagesTags()
-    {
-      return view('adminpanel::pages.messages_tags');
-    }
-
-    /*
     * Media
     */
     public function mediaAll()

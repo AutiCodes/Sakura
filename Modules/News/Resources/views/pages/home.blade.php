@@ -24,13 +24,10 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
             <img class="d-block w-100 rounded-lg" style="height: 575px;" src="//placehold.it/400" alt="">
             <div class="carousel-caption text-left">
               <!-- article categorys -->
-              <div class="d-flex justify-content-start p-0">                    
-                <p><a href="/artikelen/{{ $article->category->slug }}" class="home-category-styling">{{ $article->category->name }}</a></p>
-                
-                @if ($article->secondCategory != '')
-                  <p><a href="/artikelen/{{ $article->secondCategory->slug }}" class="ml-2 home-category-styling">{{ $article->secondCategory->name }}</a></p>
-                @endif
-              </div>
+              <div class="d-flex justify-content-start p-0">            
+                @foreach ($article->categorys as $category)        
+                  <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling">{{ $category->name }}</a></p>
+                @endforeach
               <!-- Title -->
               <h2 class="p-0"><a class="text-white" href="/artikel/{{ $article->slug }}">{{ $article->title }}</a></h2>
               <div class="d-flex justify-content-start mt-3">

@@ -1,6 +1,6 @@
 <?php
 use Modules\AdminPanel\Http\Controllers\AdminPanelController;
-
+use Modules\AdminPanel\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +16,13 @@ use Modules\AdminPanel\Http\Controllers\AdminPanelController;
 Route::get('/admin', [AdminPanelController::class, 'index']);
 
 /*
-* Messages 
+* Articles 
 */
-Route::get('/admin/berichten/allemaal', [AdminPanelController::class, 'messagesAll']);
-Route::get('/admin/berichten/toevoegen', [AdminPanelController::class, 'messagesAdd']);
-Route::get('/admin/berichten/categorieen', [AdminPanelController::class, 'messagesCategorys']);
-Route::get('/admin/berichten/tags', [AdminPanelController::class, 'messagesTags']);
+Route::get('/admin/artikelen/allemaal', [ArticleController::class, 'articlesAll']);
+Route::get('/admin/artikelen/toevoegen', [ArticleController::class, 'articlesAdd']);
+Route::post('/admin/artikelen/toevoegen-post', [ArticleController::class, 'articlesAddStore']);
+Route::get('/admin/artikelen/categorieen', [ArticleController::class, 'articlesCategorys']);
+Route::get('/admin/artikelen/tags', [ArticleController::class, 'articlesTags']);
 
 /*
 * Media

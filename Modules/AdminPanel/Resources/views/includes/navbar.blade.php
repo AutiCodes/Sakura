@@ -47,7 +47,7 @@
           <!-- Dropdown - New actions -->
           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="newDropdown">
-            <a class="dropdown-item" href="/admin/berichten/toevoegen">
+            <a class="dropdown-item" href="/admin/artikelen/toevoegen">
                 <i class="fas fa-newspaper fa-sm fa-fw mr-2 text-gray-400"></i>
                 Artikel
             </a>

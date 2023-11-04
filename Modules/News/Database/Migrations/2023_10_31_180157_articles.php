@@ -19,17 +19,14 @@ return new class extends Migration
           $table->id();
           // Article maker
           $table->foreignId('author_id')->constrained('users');
-          // Categorys
-          $table->integer('category_1');
-          $table->integer('category_2')->nullable();
           // Dates
           $table->dateTime('publish_date');
           $table->dateTime('last_edited_date')->nullable();
           // Article contents
           $table->string('title', 50);
           $table->text('content');
-          $table->string('slug', 50);
-          $table->integer('status', 1);
+          $table->string('slug');
+          $table->integer('status');
           $table->integer('view_count')->nullable();          
           $table->integer('comments_count')->nullable();          
         });
@@ -42,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sk_articles');
+      Schema::dropIfExists('sk_articles');
     }
 };

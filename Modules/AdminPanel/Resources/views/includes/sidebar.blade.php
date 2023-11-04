@@ -35,10 +35,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/admin/berichten/allemaal">Alle berichten</a>
-                <a class="collapse-item" href="/admin/berichten/toevoegen">Nieuw bericht</a>
-                <a class="collapse-item" href="/admin/berichten/categorieen">Categorieën</a>
-                <a class="collapse-item" href="/admin/berichten/tags">Tags</a>
+                <a class="collapse-item" href="/admin/artikelen/allemaal">Alle berichten</a>
+                <a class="collapse-item" href="/admin/artikelen/toevoegen">Nieuw bericht</a>
+                <a class="collapse-item" href="/admin/artikelen/categorieen">Categorieën</a>
+                <a class="collapse-item" href="/admin/artikelen/tags">Tags</a>
             </div>
         </div>
     </li>

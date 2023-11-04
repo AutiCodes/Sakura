@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        // 
-        Schema::create('sk_categorys', function (Blueprint $table) {
-          $table->id();
-          $table->string('name');
-          $table->string('slug', 50);
-        });
+      Schema::create('sk_article_categorys', function (Blueprint $table) {
+        $table->integer('article_id');
+        $table->integer('category_id');
+      });
 
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sk_article_categorys');
     }
 };

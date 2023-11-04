@@ -29,3 +29,5 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
 <!-- Site icon -->
 <link rel="icon" href="{{ URL::asset('/assets/img/Sakura.png') }}">
+
+@yield('headScrips')
