@@ -8,7 +8,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 @extends('news::layouts.default')
 
 <!-- Custom title -->
-<title>Placeholder</title>
+<title>{{ $title }}</title>
 
 @section('content')
 <div class="row justify-content-center  mt-4">
