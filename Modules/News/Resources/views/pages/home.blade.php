@@ -85,18 +85,18 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       
       <!-- Tab content 2 -->
       <div class="tab-pane" id="tab-2">
-        @foreach($articles->take(4) as $article)
+        @foreach($hardware->take(4) as $articleHardware)
           <!-- Article card -->
           <div class="card flex-row">
             <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
             <div class="card-body p-2">
               <!-- Categorys -->
               <div class="d-flex justify-content-start p-2 d-block">                    
-                @foreach($article->categories as $category)             
+                @foreach($articleHardware->categories as $category)             
                   <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
                 @endforeach
               </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $articleHardware->slug) }}" class="text-dark font-weight-bold">{{ $articleHardware->title }}</a></h5>
             </div>
           </div>      
         @endforeach
@@ -104,18 +104,18 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       
       <!-- Tab content 3-->
       <div class="tab-pane" id="tab-3">
-        @foreach($articles->where('') as $article)
+        @foreach($software->take(4) as $articleSoftware)
           <!-- Article card -->
           <div class="card flex-row">
             <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
             <div class="card-body p-2">
               <!-- Categorys -->
               <div class="d-flex justify-content-start p-2 d-block">                    
-                @foreach($article->categories as $category)             
+                @foreach($articleSoftware->categories as $category)             
                   <p><a href="/artikelen/{{ $category->slug }}" class="home-category-styling mr-3">{{ $category->name }}</a></p>
                 @endforeach
               </div>
-              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+              <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $articleSoftware->slug) }}" class="text-dark font-weight-bold">{{ $articleSoftware->title }}</a></h5>
             </div>
           </div>      
         @endforeach

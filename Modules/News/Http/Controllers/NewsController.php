@@ -21,13 +21,23 @@ class NewsController extends Controller
             ->with('categories')
             ->get();
         
-        $hardWareArticles = $articles->filter(function (Article $article) {
+        $articlesHardware = $articles->filter(function (Article $article) {
                 return $article->categories->search(function (Category $category) {
                     return $category->name === 'Hardware';
                 }) !== false;
             });
+        
+        $articlesSoftware = $articles->filter(function (Article $article) {
+            return $article->categories->search(function (Category $category) {
+                return $category->name === 'Software';
+                }) !== false;
+            });            
 
-        return view('news::pages.home', ['articles' => $articles]);
+        return view('news::pages.home', [
+            'articles' => $articles,
+            'hardware' => $articlesHardware,
+            'software' => $articlesSoftware
+        ]);
     }
 
     // 404 error
