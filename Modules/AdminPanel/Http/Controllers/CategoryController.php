@@ -5,6 +5,7 @@ namespace Modules\AdminPanel\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\News\Entities\Category;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('adminpanel::index');
+        // Get all categories
+        $categories = Category::orderBy('name')->get();
+
+        return view('adminpanel::pages.articles_categories', ['categories' => $categories]);
     }
 
     /**
@@ -29,11 +33,29 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      * @param Request $request
-     * @return Renderable
+     * @return
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:30', 'unique:sk_categorys,name'],
+            'slug' => ['required', 'string', 'max:30', 'unique:sk_categorys,name']
+        ]);
+
+        $category = Category::create([
+            'name' => $validated['name'],
+            'slug' => $validated['slug']
+        ]);
+
+        if (!$category) {
+            return redirect()
+                ->route('categorieen.index')
+                ->with('error','Er ging iets mis met het maken van een categorie!');
+        }
+
+        return redirect()
+        ->route('categorieen.index')
+        ->with('success', 'Categorie is aangemaakt!');
     }
 
     /**
@@ -51,9 +73,10 @@ class CategoryController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        return view('adminpanel::edit');
+        $category = Category::where('slug', $slug)->first();
+        return view('adminpanel::pages.articles_categories_edit', ['category' => $category]);
     }
 
     /**
@@ -62,18 +85,47 @@ class CategoryController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:30', 'unique:sk_categorys,name'],
+            'slug' => ['required', 'string', 'max:30', 'unique:sk_categorys,slug']
+        ]);
+
+        $category = Category::where('slug', $slug)->first();
+
+        if($category === null) {
+            return redirect(route('categorieen.index'))
+                ->with('error','De categorie kon niet gevonden worden!');
+        }
+
+        $category->update([
+            'name' => $validated['name'],
+            'slug' => $validated['slug']
+        ]);
+
+        return redirect(route('categorieen.index'))
+            ->with('success','De categorie is geupdated!');
     }
 
     /**
      * Remove the specified resource from storage.
      * @param int $id
-     * @return Renderable
+     * @return
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $category = Category::where('slug', $slug)->first();
+        
+        if($category === null) { 
+            return redirect(route('categorieen.index'))
+            ->with('error','Ik kon de categorie niet vinden');
+        }
+
+        $category->articles()->detach();
+        $category->delete();
+        
+        return redirect(route('categorieen.index'))
+            ->with('success','Ik heb de categorie verwijderd!');
     }
 }

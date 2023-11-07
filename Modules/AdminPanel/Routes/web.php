@@ -1,6 +1,8 @@
 <?php
 use Modules\AdminPanel\Http\Controllers\AdminPanelController;
 use Modules\AdminPanel\Http\Controllers\ArticleController;
+use Modules\AdminPanel\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +30,9 @@ Route::resource('artikelen', ArticleController::class)->only([
     ]);
 
 /**
- * 
+ * Categories
  */
+Route::resource('categorieen', CategoryController::class);
 
 /**
  * Media
