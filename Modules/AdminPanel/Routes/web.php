@@ -18,14 +18,18 @@ Route::get('/admin', [AdminPanelController::class, 'index']);
 /*
 * Articles 
 */
-Route::get('/admin/artikelen/allemaal', [ArticleController::class, 'articlesAll']);
-Route::get('/admin/artikelen/toevoegen', [ArticleController::class, 'articlesAdd']);
-Route::post('/admin/artikelen/toevoegen-post', [ArticleController::class, 'articlesAddStore']);
-Route::get('/admin/artikelen/categorieen', [ArticleController::class, 'articlesCategorys']);
-Route::get('/admin/artikelen/tags', [ArticleController::class, 'articlesTags']);
+Route::resource('artikelen', ArticleController::class)->only([
+        'index',
+        'create',
+        'store',
+        'edit',
+        'update',
+        'destroy'
+    ]);
+
 
 /*
-* Media
+* MediaForgort
 */
 Route::get('/admin/media/allemaal', [AdminPanelController::class, 'mediaAll']);
 Route::get('/admin/media/toevoegen', [AdminPanelController::class, 'mediaAdd']);

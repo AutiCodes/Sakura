@@ -34,7 +34,7 @@ Admin page theme: SB Admin 2
   <!-- Begin Page Content -->
   <div class="container-fluid">            
     <!-- Page header -->
-    <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuw artikel</h1>
+    <h1 class="h3 mb-2 text-gray-800 ml-0">"{{ $article->title }}" bewerken</h1>
 
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -47,10 +47,16 @@ Admin page theme: SB Admin 2
       </div>
     @endif
 
-    <form id="articles_new_form" action="{{ route('artikelen.store') }}" method="POST">
+    @if (session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        <h4>{{session('success')}}</h4>
+    </div>
+    @endif
 
+    <form id="articles_new_form" action="{{ route('artikelen.update', $article->slug) }}" method="POST">
+      @method('PUT')
       @csrf
-
+    
       <div class="row">
         <!-- Text editor -->
         <div class="col-8 rounded">
@@ -58,11 +64,11 @@ Admin page theme: SB Admin 2
           <div class="editor" id="editor" name="editor">
           </div>
           -->
-          <input class="form-control mt-2 mb-2" type="text" placeholder="Titel" name="title">
+          <input class="form-control mt-2 mb-2" type="text" placeholder="Titel" value="{{ $article->title }}" name="title">
 
 
           <textarea id="summernote" name="editorData">
-
+          {{ $article->content }}
           </textarea>
 
           <script>
@@ -91,30 +97,18 @@ Admin page theme: SB Admin 2
                 <h1>Categorieën</h1>
                 <hr class="pt-0">
                 <div class="form-group" name="categories">
-                  <div class="form-check">
-                    <input class="form-check-input " type="checkbox" value=4 name="categories[]" style="transform: scale(1.5);" checked>
-                    <label class="form-check-label ml-4" for="category_general">
-                      Algemeen
-                    </label>
-                  </div>
-                  <div class="form-check pt-2">
-                    <input class="form-check-input" type="checkbox" value=1 name="categories[]" style="transform: scale(1.5);">
-                    <label class="form-check-label ml-4" for="category_hardware">
-                      Hardware
-                    </label>
-                  </div>
-                  <div class="form-check pt-2">
-                    <input class="form-check-input" type="checkbox" value=2 name="categories[]" style="transform: scale(1.5);">
-                    <label class="form-check-label ml-4" for="category_software">
-                      Software
-                    </label>
-                  </div>
-                  <div class="form-check pt-2">
-                    <input class="form-check-input" type="checkbox" value=3 name="categories[]" style="transform: scale(1.5);">
-                    <label class="form-check-label ml-4" for="category_processoren">
-                      Processoren
-                    </label>
-                  </div>                
+                    @foreach($categories as $category)
+                        <div class="form-check mb-2">
+                            @if(in_array($category->id, $categoriesIds))
+                            <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);" checked>
+                            @else 
+                            <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);">
+                            @endif
+                            <label class="form-check-label ml-4" for="category_general">
+                            {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach             
                 </div>    
                 <hr>         
                 <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
