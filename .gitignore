@@ -1,3 +1,8 @@
 test.html
 save_things.txt
 .env
+.DS_Store
+/vendor
+/node_modules
+/public/build
+/public/hot

@@ -3,7 +3,7 @@
 use Illuminate\Support\Str;
 
 return [
-
+    'domain' => env('SESSION_DOMAIN', ''),
     /*
     |--------------------------------------------------------------------------
     | Default Session Driver
