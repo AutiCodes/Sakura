@@ -103,10 +103,9 @@ Admin page theme: SB Admin 2
                     </label>
                   </div>
                   @endforeach
-
                 </div>    
                 <hr>         
-                <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
+                <p><a class="text-dark pb-4" href="{{ route('categorieen.index') }}">Categorie toevoegen</a></p>                                                                                               
               </div>
 
               <!-- Tab content 2 -->
