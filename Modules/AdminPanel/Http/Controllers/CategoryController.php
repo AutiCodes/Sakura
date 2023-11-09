@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\News\Entities\Category;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -109,21 +110,46 @@ class CategoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Destroy category
      * @param int $id
      * @return
      */
     public function destroy($slug)
     {
-        $category = Category::where('slug', $slug)->first();
-        
+        // Gets category
+        $category = Category::where('slug', $slug)
+            ->first();
+
+        // Redirect if no category has been found
         if($category === null) { 
             return redirect(route('categorieen.index'))
-            ->with('error','Ik kon de categorie niet vinden');
+                ->with('error','Ik kon de categorie niet vinden');
         }
 
-        $category->articles()->detach();
-        $category->delete();
+        // Get articles that are related to the category
+        // That doesn't have any other category
+        $articlesAttached = $category->articles()
+            ->with('categories.articles')
+            ->with('categories')
+            ->has('categories', '<', 2)
+            ->get();
+        
+        DB::table('sk_article_categorys')->insert(
+            $articlesAttached->map(function($article) {
+                return [ 
+                    'article_id' => $article->id,
+                    'category_id' => 4
+                ];
+            })->all()
+        );
+
+        // Remove category from all the related articles
+        $category
+            ->articles()
+            ->detach();
+        // Delete category
+        $category
+            ->delete();
         
         return redirect(route('categorieen.index'))
             ->with('success','Ik heb de categorie verwijderd!');
