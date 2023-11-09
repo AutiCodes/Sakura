@@ -37,8 +37,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('artikelen.index') }}">Alle berichten</a>
                 <a class="collapse-item" href="{{ route('artikelen.create') }}">Nieuw bericht</a>
-                <a class="collapse-item" href="/admin/artikelen/categorieen">Categorieën</a>
-                <a class="collapse-item" href="/admin/artikelen/tags">Tags</a>
+                <a class="collapse-item" href="{{ route('categorieen.index') }}">Categorieën</a>
             </div>
         </div>
     </li>

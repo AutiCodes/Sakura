@@ -91,33 +91,21 @@ Admin page theme: SB Admin 2
                 <h1>Categorieën</h1>
                 <hr class="pt-0">
                 <div class="form-group" name="categories">
+                  @foreach($categories as $category)
                   <div class="form-check">
-                    <input class="form-check-input " type="checkbox" value=4 name="categories[]" style="transform: scale(1.5);" checked>
-                    <label class="form-check-label ml-4" for="category_general">
-                      Algemeen
+                    @if($category->name === "Algemeen")
+                      <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);" checked>
+                    @else
+                      <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);">
+                    @endif
+                    <label class="form-check-label ml-4 mb-2" for="category_general">
+                      {{ $category->name }}
                     </label>
                   </div>
-                  <div class="form-check pt-2">
-                    <input class="form-check-input" type="checkbox" value=1 name="categories[]" style="transform: scale(1.5);">
-                    <label class="form-check-label ml-4" for="category_hardware">
-                      Hardware
-                    </label>
-                  </div>
-                  <div class="form-check pt-2">
-                    <input class="form-check-input" type="checkbox" value=2 name="categories[]" style="transform: scale(1.5);">
-                    <label class="form-check-label ml-4" for="category_software">
-                      Software
-                    </label>
-                  </div>
-                  <div class="form-check pt-2">
-                    <input class="form-check-input" type="checkbox" value=3 name="categories[]" style="transform: scale(1.5);">
-                    <label class="form-check-label ml-4" for="category_processoren">
-                      Processoren
-                    </label>
-                  </div>                
+                  @endforeach
                 </div>    
                 <hr>         
-                <p><a class="text-dark pb-4" href="#">Categorie toevoegen</a></p>                                                                                               
+                <p><a class="text-dark pb-4" href="{{ route('categorieen.index') }}">Categorie toevoegen</a></p>                                                                                               
               </div>
 
               <!-- Tab content 2 -->

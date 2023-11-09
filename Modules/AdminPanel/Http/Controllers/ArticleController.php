@@ -31,7 +31,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('adminpanel::pages.articles_new');
+        $categories = Category::orderBy('name')->get();
+
+        return view('adminpanel::pages.articles_new', ['categories'=> $categories]);
     }
 
     /**
