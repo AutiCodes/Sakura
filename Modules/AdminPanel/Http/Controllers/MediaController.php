@@ -42,24 +42,21 @@ class MediaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'image' => [
-                'required',
-                'max:4096'
-            ]
+            'file' => ['required', 'max:4096']
         ]);
 
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $fileName = time().'.'.$request->file->getClientOriginalExtension();
         
         // Put media in /public/media
-        $validated['image']->move(public_path('/media'), $imageName);
+        $validated['file']->move(public_path('/media'), $fileName);
         
         // Gets file dimentions
-        $fileDimentions = getimagesize(public_path('media/'.$imageName));
+        $fileDimentions = getimagesize(public_path('media/'.$fileName));
 
         // Add media info to DB
         Media::create([
-            'name' => $imageName,
-            'size' => File::size(public_path('/media/'. $imageName)),
+            'name' => $fileName,
+            'size' => File::size(public_path('/media/'. $fileName)),
             'uploaded_by' => 1,
             'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
         ]);
@@ -109,6 +106,10 @@ class MediaController extends Controller
                 ->back()
                 ->with('error', 'Bestandsnaam is hetzelfde als eerst!');
         }
+
+        $request->validate([
+            'name' => ['unique:sk_media,name']
+        ]);
 
         $media->update([
             'name' => $request->input('name')

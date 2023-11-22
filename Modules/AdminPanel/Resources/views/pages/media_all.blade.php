@@ -43,7 +43,7 @@ Admin page theme: SB Admin 2
     
     <form action="{{ route('uploads.store') }}" method="POST" enctype="multipart/form-data">
       @csrf
-      <input class="form-control mt-0 mb-1" type="file" id="image" name="image" multiple style="max-width: 20%;">
+      <input class="form-control mt-0 mb-1" type="file" id="file" name="file" multiple style="max-width: 20%;">
       <button type="submit" class="btn btn-primary btn-sm mb-4 mt-0">Toevoegen</button>
     </form>
     
