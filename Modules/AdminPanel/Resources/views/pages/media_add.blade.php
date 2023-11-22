@@ -17,30 +17,38 @@ Admin page theme: SB Admin 2
 
 @section('content')
 
+@if (session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
+
   <!-- Begin Page Content -->
   <div class="container-fluid align-items-center">            
     <!-- Page header -->
     <h1 class="h3 mb-2 text-gray-800 ml-0">Media toevoegen</h1>
 
-    <div class="drop-it-hot" id="drop-area">
+    <div class="drop-it-hot shadow" id="drop-area">
       <div class="circle">
         <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none" />
             <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
         </svg>
       </div>
-      <form class="choose-files">
+
+      <form class="choose-files" action="{{ route('uploads.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="button-wrapper">
-          <label class="label" for="fileElem">Drag image here to upload or</label>
-          <button type="button" class="btn">Choose image</button>
-          <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+          <label class="label" for="file">Sleep een bestand hier heen of</label>
+          <button type="button" class="btn">Kies een bestand</button>
+          <input type="file" id="file" name="file" onchange="handleFiles(this.files)">
         </div>
-      </form>
 
       <div id="gallery"></div>
 
     </div>
     
+    <!--
     <div class="editor-media">
       <div class="range-wrapper">
         <label for="contrast">Contrast</label>
@@ -59,10 +67,12 @@ Admin page theme: SB Admin 2
         <input class="range" name="sepia" value="0" type="range" min="0" max="200" data-unit="%">
       </div>
     </div>
-
-    <button type="button" class="btn btn-primary btn-lg mt-2 mb-4">Uploaden</button>
+    -->
+    <button type="submit" class="btn btn-primary btn-lg mt-2 mb-4">Uploaden</button>
 
   </div>
+  </form>
+
   <!-- /.container-fluid -->
 @stop                
 
