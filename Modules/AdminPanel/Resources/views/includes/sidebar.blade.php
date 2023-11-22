@@ -52,8 +52,8 @@
         <div id="collapseMedia" class="collapse" aria-labelledby="headingMedia"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/admin/media/allemaal">Bibliotheek</a>
-                <a class="collapse-item" href="/admin/media/toevoegen">Media toevoegen</a>
+                <a class="collapse-item" href="{{ route('uploads.index') }}">Bibliotheek</a>
+                <a class="collapse-item" href="{{ route('uploads.create') }}">Media toevoegen</a>
             </div>
         </div>
     </li>

@@ -47,12 +47,12 @@
           <!-- Dropdown - New actions -->
           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="newDropdown">
-            <a class="dropdown-item" href="/admin/artikelen/toevoegen">
+            <a class="dropdown-item" href="{{ route('artikelen.index') }}">
                 <i class="fas fa-newspaper fa-sm fa-fw mr-2 text-gray-400"></i>
                 Artikel
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/admin/media/toevoegen">
+            <a class="dropdown-item" href="{{ route('uploads.create') }}">
                 <i class="fas fa-image fa-sm fa-fw mr-2 text-gray-400"></i>
                 Media
             </a>

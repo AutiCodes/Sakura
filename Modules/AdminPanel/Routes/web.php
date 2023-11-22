@@ -2,6 +2,7 @@
 use Modules\AdminPanel\Http\Controllers\AdminPanelController;
 use Modules\AdminPanel\Http\Controllers\ArticleController;
 use Modules\AdminPanel\Http\Controllers\CategoryController;
+use Modules\AdminPanel\Http\Controllers\MediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,7 @@ Route::resource('categorieen', CategoryController::class);
 /**
  * Media
  */
-Route::get('/admin/media/allemaal', [AdminPanelController::class, 'mediaAll']);
-Route::get('/admin/media/toevoegen', [AdminPanelController::class, 'mediaAdd']);
+Route::resource('uploads', MediaController::class);
 
 /** 
  * Pages
