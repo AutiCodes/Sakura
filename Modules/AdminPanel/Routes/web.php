@@ -30,6 +30,9 @@ Route::resource('artikelen', ArticleController::class)->only([
         'destroy'
     ]);
 
+// Save article media
+Route::post('artikelen/media-opslaan', [ArticleController::class, 'articleSaveMedia']);
+
 /**
  * Categories
  */

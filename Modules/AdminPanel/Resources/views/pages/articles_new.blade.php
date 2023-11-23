@@ -67,10 +67,50 @@ Admin page theme: SB Admin 2
 
           <script>
             $(document).ready(function() {
-                $('#summernote').summernote({
-                  minHeight: 600,
-                });
+              $('#summernote').summernote({
+                height: 600,
+                callbacks: {
+                  onImageUpload: function(files, editor, $editable) {
+                    // Debug
+                    console.log('onImageUpload called')
+                    sendFile(files[0], editor, $editable);
+                  }
+                }
+              });
             });
+
+            function sendFile(file, editor, welEditable) {
+              // Debug
+              console.log('sendFile called');
+
+              data = new FormData();
+              data.append('file', file);
+              
+              // Debug
+              for (const value of data.values()) {
+                console.log(value);
+              }
+
+              $.ajax({
+               data: data,
+               type: 'POST',
+               url: '/artikelen/media-opslaan',
+               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+               cache: false,
+               contentType: false,
+               processData: false,
+               success: function (data) {
+                // Debug
+                console.log('success called');
+                console.log(data);
+                $('#summernote').summernote('insertImage', data, 'TestName.png')
+               },   
+               // Debug
+               error: function (error) {
+                console.log(error);
+               }
+              });
+            }
           </script>
         </div>
 
