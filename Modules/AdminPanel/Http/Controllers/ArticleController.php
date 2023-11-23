@@ -77,7 +77,9 @@ class ArticleController extends Controller
     }
 
     /**
-     * Saves media from articles
+     * Saves media from article
+     * @param Request $request media file
+     * @return string media url
      */
     public function articleSaveMedia(Request $request)
     {
@@ -85,24 +87,24 @@ class ArticleController extends Controller
         $validated = $request->validate([
             'file' => ['mimes:jpg,png,jpeg,ico,mp4,mp3', 'required']
         ]);
-
-        $file = $validated['file'];
         
         // Put media in /public/media 
-        $file->move(public_path('/media'), $file->getClientOriginalName());
+        $validated['file']
+            ->move(public_path('/media'), $validated['file']
+            ->getClientOriginalName());
 
         // Gets file dimentions
-        $fileDimentions = getimagesize(public_path('media/'.$file->getClientOriginalName()));
+        $fileDimentions = getimagesize(public_path('media/'.$validated['file']->getClientOriginalName()));
 
         // Add media info to DB
         Media::create([
-            'name' => $file->getClientOriginalName(),
-            'size' => File::size(public_path('/media/'. $file->getClientOriginalName())),
+            'name' => $validated['file']->getClientOriginalName(),
+            'size' => File::size(public_path('/media/'. $validated['file']->getClientOriginalName())),
             'uploaded_by' => 1, // Change to session author when having that module ready
             'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
         ]);
 
-        return 'http://127.0.0.1:8000/media/' . $file->getClientOriginalName();
+        return 'http://127.0.0.1:8000/media/' . $validated['file']->getClientOriginalName();
     }
 
     /**
