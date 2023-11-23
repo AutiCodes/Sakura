@@ -27,7 +27,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
               @endforeach
             </div>
             <!-- Title -->
-            <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+            <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
             <div class="d-flex justify-content-start mt-3 ml-2">
               <!-- Poster info -->
               <p><i class="fa fa-clock lp-c"></i><a class="text-dark mr-2" href="#"> {{ $article->publish_date }}</a></p> 
@@ -35,7 +35,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
             </div>
             <!-- Card text -->
             <p class="pl-2"> 
-              {{ \Illuminate\Support\Str::limit($article->content, 300, $end='...') }}
+              {!! strip_tags(\Illuminate\Support\Str::limit($article->content, 300, $end='...'), '<p><a>') !!}
             </p>
           </div>
         </div>   
