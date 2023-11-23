@@ -35,7 +35,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
             </div>
             <!-- Card text -->
             <p class="pl-2"> 
-              {{ \Illuminate\Support\Str::limit($article->content, 300, $end='...') }}
+              {!! strip_tags(\Illuminate\Support\Str::limit($article->content, 300, $end='...'), '<p><a>') !!}
             </p>
           </div>
         </div>   

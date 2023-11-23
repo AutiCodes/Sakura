@@ -42,7 +42,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         </div>
 
         <!-- Article text -->
-        {{ $article->content }}
+        {!! $article->content !!}
       </article>
       <!-- End article -->
     </div>
