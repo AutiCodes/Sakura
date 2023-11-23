@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\News\Http\Controllers\ArticleController;
 use Modules\News\Http\Controllers\NewsController;
+use Modules\News\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::get('/artikelen/{CategorySlug}', [NewsController::class,'articleList']);
 
 // Article route
 Route::get('/artikel/{article}', [NewsController::class, 'article']);
+
+// Page route
+Route::resource('/pagina', PageController::class)->only('show');
 
 // 404 route
 Route::get('/404', [NewsController::class, 'notFound']);

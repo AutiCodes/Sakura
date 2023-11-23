@@ -47,7 +47,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
           <div class="dropdown-menu ld2-b mt-0 p-0 ani-05s-o" style="border-radius: 12px; top: 80%;" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-white display-12 text-uppercase" style="border-radius: 12px;" href="#" target="_blank">Word lid van onze Discord server! <i class="fa fa-external-link"></i></a>
             <a class="dropdown-item text-white display-12 text-uppercase" style="border-radius: 12px;" href="#">Discord huisregels & richtlijnen</a>
-            <a class="dropdown-item text-white display-12 text-uppercase" style="border-radius: 12px;" href="#">All Day Bot</a>
+            <a class="dropdown-item text-white display-12 text-uppercase" style="border-radius: 12px;" href="{{ url('/pagina/all-day-bot') }}">All Day Bot</a>
           </div>
         </li>
         <div class="dropdown-divider lwp-c"></div>

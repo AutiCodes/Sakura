@@ -3,6 +3,7 @@ use Modules\AdminPanel\Http\Controllers\AdminPanelController;
 use Modules\AdminPanel\Http\Controllers\ArticleController;
 use Modules\AdminPanel\Http\Controllers\CategoryController;
 use Modules\AdminPanel\Http\Controllers\MediaController;
+use Modules\AdminPanel\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,8 +47,8 @@ Route::resource('uploads', MediaController::class);
 /** 
  * Pages
  */
-Route::get('/admin/paginas/allemaal', [AdminPanelController::class, 'pagesAll']);
-Route::get('/admin/paginas/toevoegen', [AdminPanelController::class, 'pagesAdd']);
+Route::resource('paginas', PageController::class);
+Route::post('paginas/media-opslaan', [PageController::class, 'saveMedia']);
 
 /**
  * Comments
