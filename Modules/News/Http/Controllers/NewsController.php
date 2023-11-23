@@ -40,13 +40,13 @@ class NewsController extends Controller
         ]);
     }
 
+
     public function articleList(Request $request, $categorySlug) 
     {
         $articles = Article::orderBy('publish_date','desc')
         ->where('status', 1)
         ->whereRelation('categories','slug', $categorySlug)
         ->get();
-
 
         return view('news::pages.article_list', ['articles' => $articles, 'title' => $categorySlug]);
     }

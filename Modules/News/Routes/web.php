@@ -21,6 +21,9 @@ Route::get('/', [NewsController::class, 'index']);
 // Article list route
 Route::get('/artikelen/{CategorySlug}', [NewsController::class,'articleList']);
 
+// Article route
+Route::get('/artikel/{article}', [NewsController::class, 'article']);
+
 // 404 route
 Route::get('/404', [NewsController::class, 'notFound']);
 

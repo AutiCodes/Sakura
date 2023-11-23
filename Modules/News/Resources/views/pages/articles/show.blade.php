@@ -42,9 +42,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         </div>
 
         <!-- Article text -->
-        @markdown
         {{ $article->content }}
-        @endmarkdown
       </article>
       <!-- End article -->
     </div>
