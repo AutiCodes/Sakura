@@ -59,6 +59,7 @@ class ArticleController extends Controller
             'publish_date' => now(),
             'title' => $validated['title'],
             'content' => $validated['editorData'],
+            'image' => FirstImgFinder($validated['editorData']),
             'slug' => Str::slug($validated['title']),
             'status' => ArticleStatusEnum::PUBLISHED
         ]);

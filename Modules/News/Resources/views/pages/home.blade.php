@@ -21,7 +21,8 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
               <div class="carousel-item carousel-slide-left">
             @endif
             <!-- Article image -->
-            <img class="d-block w-100 rounded-lg" style="height: 575px;" src="//placehold.it/400" alt="">
+            <img class="d-block w-100 rounded-lg" style="height: 575px;" src="{{ $article->image }}"
+            >
             <div class="carousel-caption text-left">
               <!-- article categorys -->
               <div class="d-flex justify-content-start p-0">                    
@@ -69,7 +70,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         @foreach($articles->take(4) as $article)
           <!-- Article card -->
           <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="{{ $article->image }}" style="max-width: 250px"/>
             <div class="card-body p-2">
               <!-- Categorys -->
               <div class="d-flex justify-content-start p-2 d-block">       
@@ -88,7 +89,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         @foreach($hardware->take(4) as $articleHardware)
           <!-- Article card -->
           <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="{{ $article->image }}" style="max-width: 250px"/>
             <div class="card-body p-2">
               <!-- Categorys -->
               <div class="d-flex justify-content-start p-2 d-block">                    
@@ -107,7 +108,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         @foreach($software->take(4) as $articleSoftware)
           <!-- Article card -->
           <div class="card flex-row">
-            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="//placehold.it/50"/>
+            <img class="card-img-left card-img-responsive p-2 w-25 rounded-lg" src="{{ $article->image }}" style="max-width: 250px"/>
             <div class="card-body p-2">
               <!-- Categorys -->
               <div class="d-flex justify-content-start p-2 d-block">                    

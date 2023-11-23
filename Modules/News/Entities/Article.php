@@ -21,7 +21,9 @@ class Article extends Model
       'publish_date',
       'title',
       'content',
+      'image',
       'slug',                  
+      'status'
     ];
 
     public function categories(): BelongsToMany
