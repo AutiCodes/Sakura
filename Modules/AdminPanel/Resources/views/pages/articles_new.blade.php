@@ -142,5 +142,5 @@ Admin page theme: SB Admin 2
 
 
 @section('scripts')
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="/assets-admin/summernote-0.8.18-dist/summernote.min.js"></script>
 @stop
