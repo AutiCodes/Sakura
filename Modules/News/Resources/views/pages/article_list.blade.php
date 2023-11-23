@@ -18,7 +18,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
       @foreach($articles as $article)
         <!-- Article card -->
         <div class="card flex-row mb-2">
-          <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="//placehold.it/300"/>
+          <img class="card-img-left card-img-responsive p-2 rounded-lg" style="width: 35%;" src="{{ $article->image }}"/>
           <div class="card-body p-2">
             <!-- Categorys -->
             <div class="d-flex justify-content-start p-2 d-block mt-3">                    
