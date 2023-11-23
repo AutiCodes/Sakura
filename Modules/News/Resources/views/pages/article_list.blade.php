@@ -27,7 +27,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
               @endforeach
             </div>
             <!-- Title -->
-            <h5 class="card-text d-block text-left ml-2 mb-2"><a href="/artikel/{{ $article->slug }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
+            <h5 class="card-text d-block text-left ml-2 mb-2"><a href="{{ route('articles.show', $article->slug) }}" class="text-dark font-weight-bold">{{ $article->title }}</a></h5>
             <div class="d-flex justify-content-start mt-3 ml-2">
               <!-- Poster info -->
               <p><i class="fa fa-clock lp-c"></i><a class="text-dark mr-2" href="#"> {{ $article->publish_date }}</a></p> 
