@@ -57,12 +57,12 @@
                 Media
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/admin/paginas/toevoegen">
+            <a class="dropdown-item" href="{{ route('paginas.index') }}">
                 <i class="fa-regular fa-file-lines fa-sm fa-fw mr-2 text-gray-400"></i>
                 Pagina
             </a>                          
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/admin/gebruikers/toevoegen">
+            <a class="dropdown-item" href="{{ route('paginas.create') }}">
                 <i class="fa fa-person fa-sm fa-fw mr-2 text-gray-400"></i>
                 Gebruiker
             </a>                                

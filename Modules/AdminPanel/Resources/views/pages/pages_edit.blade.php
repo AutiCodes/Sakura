@@ -10,7 +10,7 @@ Admin page theme: SB Admin 2
 
 
 <!-- Settings page title -->
-@section('title', 'Nieuwe pagina')
+@section('title', 'Pagina bewerken')
 
 
 @section('css')
@@ -34,7 +34,7 @@ Admin page theme: SB Admin 2
   <!-- Begin Page Content -->
   <div class="container-fluid">            
     <!-- Page header -->
-    <h1 class="h3 mb-2 text-gray-800 ml-0">Nieuwe pagina</h1>
+    <h1 class="h3 mb-2 text-gray-800 ml-0">Pagina bewerken</h1>
 
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -47,10 +47,10 @@ Admin page theme: SB Admin 2
       </div>
     @endif
 
-    <form id="page_new_form" action="{{ route('paginas.store') }}" method="POST">
+    <form id="page_new_form" action="{{ route('paginas.update', $page->slug) }}" method="POST">
 
       @csrf
-
+      @method('PUT')
       <div class="row">
         <!-- Text editor -->
         <div class="col-8 rounded">
@@ -58,11 +58,11 @@ Admin page theme: SB Admin 2
           <div class="editor" id="editor" name="editor">
           </div>
           -->
-          <input class="form-control mt-2 mb-2" type="text" placeholder="Titel" name="title">
+          <input class="form-control mt-2 mb-2" type="text" placeholder="Titel" name="title" value="{{ $page->title }}">
 
 
           <textarea id="summernote" name="editorData">
-
+            {{ $page->content }}
           </textarea>
 
           <script>
@@ -131,18 +131,18 @@ Admin page theme: SB Admin 2
                 <h1>Categorieën</h1>
                 <hr class="pt-0">
                 <div class="form-group" name="categories">
-                  @foreach($categories as $category)
-                  <div class="form-check">
-                    @if($category->name === "Algemeen")
-                      <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);" checked>
-                    @else
-                      <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);">
-                    @endif
-                    <label class="form-check-label ml-4 mb-2" for="category_general">
-                      {{ $category->name }}
-                    </label>
-                  </div>
-                  @endforeach
+                @foreach($allCategories as $category)
+                    <div class="form-check mb-2">
+                        @if(in_array($category->id, $categoriesIds))
+                        <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);" checked>
+                        @else 
+                        <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]" style="transform: scale(1.5);">
+                        @endif
+                        <label class="form-check-label ml-4" for="category_general">
+                        {{ $category->name }}
+                        </label>
+                    </div>
+                @endforeach  
                 </div>    
                 <hr>         
                 <p><a class="text-dark pb-4" href="{{ route('categorieen.index') }}">Categorie toevoegen</a></p>                                                                                               
@@ -174,7 +174,6 @@ Admin page theme: SB Admin 2
 
       </div>
       <button type="submit" class="btn btn-primary btn-lg mb-4">Publiceren</button>
-      <button type="submit" id="concept" class="btn btn-primary btn-lg mb-4">Als concept opslaan</button>
     </form>
   </div>
   <!-- /.container-fluid -->

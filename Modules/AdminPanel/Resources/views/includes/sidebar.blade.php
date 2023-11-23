@@ -68,8 +68,8 @@
       <div id="collapsePages" class="collapse" aria-labelledby="collapsePages"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="/admin/paginas/allemaal">Alle pagina's</a>
-              <a class="collapse-item" href="/admin/paginas/toevoegen">Pagina toevoegen</a>
+              <a class="collapse-item" href="{{ route('paginas.index') }}">Alle pagina's</a>
+              <a class="collapse-item" href="{{ route('paginas.create') }}">Pagina toevoegen</a>
           </div>
       </div>
     </li>            
