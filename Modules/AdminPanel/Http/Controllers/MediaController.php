@@ -47,8 +47,8 @@ class MediaController extends Controller
 
         $fileName = time().'.'.$request->file->getClientOriginalExtension();
         
-        // Put media in /public/media
-        $validated['file']->move(public_path('/media'), $fileName);
+        // Put media in /public/media 
+        $validated['file']->move(public_path('/media'),$fileName);
         
         // Gets file dimentions
         $fileDimentions = getimagesize(public_path('media/'.$fileName));

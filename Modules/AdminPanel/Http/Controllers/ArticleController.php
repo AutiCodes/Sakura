@@ -9,6 +9,8 @@ use Modules\News\Entities\Article;
 use Modules\News\Entities\Category;
 use Illuminate\Support\Str;
 use Modules\News\Enums\ArticleStatusEnum;
+use Modules\AdminPanel\Entities\Media;
+use File;
 
 class ArticleController extends Controller
 {
@@ -71,6 +73,35 @@ class ArticleController extends Controller
         // Return to all articles with succes message
         return redirect(route('artikelen.index'))
             ->with('success', 'Je artikel is geplaats!');
+    }
+
+    /**
+     * Saves media from articles
+     */
+    public function articleSaveMedia(Request $request)
+    {
+        // Validation
+        $validated = $request->validate([
+            'file' => ['mimes:jpg,png,jpeg,ico,mp4,mp3', 'required']
+        ]);
+
+        $file = $validated['file'];
+        
+        // Put media in /public/media 
+        $file->move(public_path('/media'), $file->getClientOriginalName());
+
+        // Gets file dimentions
+        $fileDimentions = getimagesize(public_path('media/'.$file->getClientOriginalName()));
+
+        // Add media info to DB
+        Media::create([
+            'name' => $file->getClientOriginalName(),
+            'size' => File::size(public_path('/media/'. $file->getClientOriginalName())),
+            'uploaded_by' => 1, // Change to session author when having that module ready
+            'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
+        ]);
+
+        return 'http://127.0.0.1:8000/media/' . $file->getClientOriginalName();
     }
 
     /**
