@@ -7,6 +7,8 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
 @extends('news::layouts.default')
 
+@section('title', $title)
+
 @section('content')
 <div class="row mt-4 justify-content-center ml-0 mr-0">
     <!-- Slideshow -->
@@ -128,55 +130,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
   <div class="row justify-content-center ml-0 mr-0">
     <!-- Page intro text -->
     <div class="col-lg-5 bg-white mb-4 rounded ml-2 mt-sm-4 mt-lg-1 mr-sm-3 ml-sm-3" style="border-radius: 5px;">
-        Welkom bij All Day Tech & Gaming! Tech & Gaming for everyone!
-        All Day Tech & Gaming is de community voor en door Pc-gebruikers, enthousiaste techfreaks, gamers en noem het maar op. 
-        Opgericht door Sander den Breejen.
-            
-        Onze website is voornamelijk bedoeld voor het delen van het laatste tech-nieuws en tips & tricks dat voornamelijk gedeeld word door de oprichter. 
-        Alle tech-nieuws, tips & tricks en updates over onze community kan je ook vinden op onze Facebook Pagina! 
-        We hopen onze website & community steeds verder uit te breiden,
-            
-        Onze community bestaat uit een Discord server & 2 Facebook groepen namelijk: 
-        All Day Tech & Gaming (voormalig ICT Hobbyisten) & Computer Problemen & Vragen. 
-        Met in totaal meer dan 6000 leden verspreidt over de verschillende groepen beginnen we een begrip op sociale media te worden, en daar zijn we trots op.
-            
-        De All Day Tech & Gaming Discord server is vooral bedoeld om het contact tussen de leden persoonlijker te maken dan Facebook.
-        De bedoeling is dat je gezellig kan chatten, niet alleen over technische onderwerpen!
-        En natuurlijk ook met elkaar kan gamen! 
-        Bijna iedere avond zijn er wel leden in de Lounge te vinden.
-        De sfeer is toegankelijk & sociaal, dat is ook één van de doelstellingen.
-        Voel je daarom van harte welkom om lid te worden van onze community!
-            
-        Wil je chatten over tech-gerelateerde onderwerpen?
-        Ben je opzoek naar game-sessies?
-        Heb je een vraag over het bouwen van een nieuwe computer of wil je de verkoopwaarde van je hand build computer weten?
-        Wil je een homeserver of NAS bouwen?
-        Heb je informatie nodig met betrekking tot het overclocken van je processor of grafische kaart?
-        Laatste video van Linus Tech Tips of Der8auer bespreken? 
-        Hulp nodig bij het configureren van je smarthome?
-        Of weet je niet waar de errors zitten in een stukje code dat je geschreven hebt?
-          
-        Tech is breed begrip. 
-        Daarom kan alles met betrekking tot tech, streaming & gaming, hard- of soft- ware matig gerelateerd binnen onze community besproken worden.
-        Er zijn beginners, hobbyisten & professionals in onze community aanwezig dat graag hun kennis, expertises & ervaringen met je deelt.
-        Geen vraag is te gek.
-            
-        Onze community is the place to be!
-        Voel je welkom, en nodig vooral eventjes je vrienden uit!😉
-
-        <img src="https://alldaytechandgaming.nl/wp-content/uploads/2023/01/COMPUTER-PROBLEMEN-VRAGEN.jpg" class="img-fluid">
-              
-        Computer Problemen & Vragen is voornamelijk gericht op het ondersteunen van de eindgebruiker, we willen een vaste groep bieden waar PC-gebruikers terecht kunnen met al hun computer problemen & vragen!
-        Heb je veel kennis van ICT gerelateerde zaken? Dan kunnen wij jouw hulp ook goed gebruiken!
-        All Day Tech & Gaming is een groep voor en door tech-liefhebbers die een steuntje bij willen dragen bij tech-gerelateerde vragen.
-        Naast dat er veel over gepraat wordt over tech, zijn er ook andere topic o.a gaming, algemene chat, actualiteiten.
-        Kortom; de groep is voor iedereen! Wat de groep uniek maakt is het community gevoel door de mensen die deelnemen aan discussies en vragen.
-        Of je nou beginnende gamer/techneut bent of een ervaren, dat maakt niet uit! Iedereen wordt verwelkomt en niemand is buitengesloten.
-        Mijn bijdrage aan deze groep is dat ik als professionele IT’er graag mensen wil helpen die nieuw zijn op dit gebied.
-        We kunnen het begin nog allemaal herinneren.
-        Ik geef hierbij graag de kennis door en los graag problemen op.
-            
-        Door: vast lid van de Discord Server Wesley.
+        {!! $homeText !!}
     </div>
     <!-- End page intro text -->
 

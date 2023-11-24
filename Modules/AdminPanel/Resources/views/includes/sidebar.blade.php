@@ -100,8 +100,8 @@
       <div id="collapseView" class="collapse" aria-labelledby="collapseView"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="/admin/weergave/tekst">Tekst aanpassen</a>
-              <a class="collapse-item" href="/admin/weergave/afbeeldingen">Afbeeldingen wijzigen</a>
+              <a class="collapse-item" href="{{ route('weergave-tekst.index') }}">Tekst aanpassen</a>
+              <a class="collapse-item" href="{{ route('weergave-afbeeldingen.index') }}">Afbeeldingen wijzigen</a>
           </div>
       </div>
     </li>      
