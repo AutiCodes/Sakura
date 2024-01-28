@@ -3,10 +3,10 @@
 if (!function_exists('convertFileSize')) {
 
     /**
-     * description
+     * Converts the given file size to a human readable format
      *
-     * @param
-     * @return
+     * @param int $fileSize
+     * @return string
      */
     function convertFileSize($fileSize)
     {

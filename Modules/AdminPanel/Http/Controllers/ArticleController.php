@@ -83,9 +83,8 @@ class ArticleController extends Controller
      */
     public function articleSaveMedia(Request $request)
     {
-        // Validation
         $validated = $request->validate([
-            'file' => ['mimes:jpg,png,jpeg,ico,mp4,mp3', 'required']
+            'file' => ['required']
         ]);
         
         // Put media in /public/media 
