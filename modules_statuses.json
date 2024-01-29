@@ -1,5 +1,6 @@
 {
     "Testing": true,
     "News": true,
-    "AdminPanel": true
+    "AdminPanel": true,
+    "Users": true
 }
