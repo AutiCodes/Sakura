@@ -5,6 +5,7 @@ namespace Modules\News\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\News\Entities\Article;
+use Modules\AdminPanel\Entities\SiteText;
 
 class ArticleController extends Controller
 {
@@ -27,6 +28,12 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('news::pages.article', ['article' => $article]);
+        // Getting site text
+        $siteText = SiteText::all();
+
+        return view('news::pages.article', [
+            'article' => $article,
+            'footer' => $siteText->where('type', 2)->first()->content
+        ]);
     }
 }

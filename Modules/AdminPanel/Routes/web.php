@@ -4,6 +4,8 @@ use Modules\AdminPanel\Http\Controllers\ArticleController;
 use Modules\AdminPanel\Http\Controllers\CategoryController;
 use Modules\AdminPanel\Http\Controllers\MediaController;
 use Modules\AdminPanel\Http\Controllers\PageController;
+use Modules\AdminPanel\Http\Controllers\SiteImagesController;
+use Modules\AdminPanel\Http\Controllers\SiteTextController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,8 @@ Route::resource('uploads', MediaController::class);
  * Pages
  */
 Route::resource('paginas', PageController::class);
+
+// Save page media
 Route::post('paginas/media-opslaan', [PageController::class, 'saveMedia']);
 
 /**
@@ -58,8 +62,9 @@ Route::get('/admin/comments', [AdminPanelController::class, 'comments']);
 /**
  * Display
  */
-Route::get('/admin/weergave/tekst', [AdminPanelController::class, 'editText']);
-Route::get('/admin/weergave/afbeeldingen', [AdminPanelController::class, 'editImages']);
+Route::resource('weergave-tekst', SiteTextController::class);
+Route::post('/weergave-tekst/media-opslaan', [SiteTextController::class, 'saveMedia']);
+Route::resource('weergave-afbeeldingen', SiteImagesController::class);
 
 /**
  * Users
