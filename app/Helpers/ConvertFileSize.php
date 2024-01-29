@@ -8,7 +8,7 @@ if (!function_exists('convertFileSize')) {
      * @param int $fileSize
      * @return string
      */
-    function convertFileSize($fileSize)
+    function convertFileSize(int $fileSize): string
     {
         $units = array(
             'B',

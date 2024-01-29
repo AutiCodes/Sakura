@@ -59,7 +59,7 @@ class ArticleController extends Controller
             'publish_date' => now(),
             'title' => $validated['title'],
             'content' => $validated['editorData'],
-            'image' => FirstImgFinder($validated['editorData']),
+            'image' => findFirstImageInHtml($validated['editorData']),
             'slug' => Str::slug($validated['title']),
             'status' => ArticleStatusEnum::PUBLISHED
         ]);
@@ -73,7 +73,7 @@ class ArticleController extends Controller
         
         // Return to all articles with succes message
         return redirect(route('artikelen.index'))
-            ->with('success', 'Je artikel is geplaats!');
+            ->with('success', 'Je artikel is geplaatst!');
     }
 
     /**

@@ -22,5 +22,5 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
 
 <!-- Site favicon icon -->
-<link rel="icon" href="{{ asset('assets/img/All_Day_Tech__Gaming_Logo_with_Purple_Effect.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url('/system/site-media/icon.png') }}" type="image/x-icon">
 

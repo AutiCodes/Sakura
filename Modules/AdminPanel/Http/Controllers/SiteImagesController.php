@@ -5,26 +5,21 @@ namespace Modules\AdminPanel\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\AdminPanel\Enums\SiteImageTypeEnum;
 use Modules\AdminPanel\Entities\SiteImage;
+use File;
 
 class SiteImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
      * @return Renderable
-     * @return string Absulute image paths
+     * @return string Absolute image path
      */
     public function index()
     {
-        $imageLocations = SiteImage::all();
-
+        
         return view('adminpanel::pages.display_edit_images', [
-            'faticon' => $imageLocations->where('type', SiteImageTypeEnum::FATICON)->first(),
-            'main' => $imageLocations->where('type', SiteImageTypeEnum::MAINICON)->first(),
-            'signin' => $imageLocations->where('type', SiteImageTypeEnum::SIGNIN)->first(),
-            'header' => $imageLocations->where('type', SiteImageTypeEnum::HEADER)->first(),
-            'footer' => $imageLocations->where('type', SiteImageTypeEnum::FOOTER)->first()
+            'icon' => url('/system/site-media/icon.png')
          ]);
     }
 
@@ -73,46 +68,19 @@ class SiteImagesController extends Controller
      * @param string $type
      * @return \Redirect
      */
-    public function update(Request $request, $type)
+    public function update(Request $request)
     {
-        switch ($type) {
-            case 'faticon':
-                $currentIcon = SiteImage::where('type', SiteImageTypeEnum::FATICON)->first();
-                break;
-            case 'main':
-                $currentIcon = SiteImage::where('type', SiteImageTypeEnum::MAINICON)->first();
-                break;
-            case 'signin':
-                $currentIcon = SiteImage::where('type', SiteImageTypeEnum::SIGNIN)->first();
-                break;
-            case 'header':
-                $currentIcon = SiteImage::where('type', SiteImageTypeEnum::HEADER)->first();
-                break;
-            default:
-                $currentIcon = SiteImage::where('type', SiteImageTypeEnum::FOOTER)->first();
-                break;
-        }
-
         $validated = $request->validate([
-            $type => ['required', 'mimes:jpg,png,jpeg,ico']
-        ]);
+            'icon' => ['required', 'image']
+        ]);        
+        
+        if (File::exists(public_path('/system/site-media/icon.png'))) { 
+            File::delete(public_path('/system/site-media/icon.png'));
+        };
 
-        $fileName = time().'.'. $validated[$type]->getClientOriginalExtension();
-        $validated[$type]->move(public_path('/site_icons'), $fileName);
+        $validated['icon']->move(public_path('/system/site-media/'), 'icon.png');
 
-        if ($currentIcon === null) {
-            SiteImage::create([
-                'author_id' => 1,
-                'type' => $typeEnum,
-                'image_location' => public_path('/site_icons/' . $fileName)
-            ]);
-        } else {
-            $currentIcon->update([
-                'author_id' => 1,
-                'image_location' => public_path('/site_icons/' . $fileName)
-            ]);
-        }
-
+        return redirect()->route('weergave-afbeeldingen.index');
     }
 
     /**
