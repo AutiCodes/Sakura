@@ -11,6 +11,4 @@
 |
 */
 
-Route::prefix('users')->group(function() {
-    Route::get('/', 'UsersController@index');
-});
+Route::resource('gebruikers', UsersController::class);

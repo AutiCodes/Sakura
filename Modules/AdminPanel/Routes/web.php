@@ -67,13 +67,6 @@ Route::post('/weergave-tekst/media-opslaan', [SiteTextController::class, 'saveMe
 Route::resource('weergave-afbeeldingen', SiteImagesController::class);
 
 /**
- * Users
- */
-Route::get('/admin/gebruikers/allemaal', [AdminPanelController::class, 'usersAll']);
-Route::get('/admin/gebruikers/profiel/{uid}', [AdminPanelController::class, 'usersProfile']);
-Route::get('/admin/gebruikers/toevoegen', [AdminPanelController::class, 'usersAdd']);
-
-/**
  * Statistics
  */
 Route::get('/admin/statistieken/website', [AdminPanelController::class, 'websiteStatistics']);

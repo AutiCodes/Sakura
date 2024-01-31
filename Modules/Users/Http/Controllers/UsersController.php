@@ -14,7 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('users::index');
+        return view('users::pages.users_all');
     }
 
     /**
@@ -23,7 +23,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users::create');
+        return view('users::pages.users_add');
     }
 
     /**
@@ -43,17 +43,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return view('users::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('users::edit');
+        return view('users::pages.users_profile');
     }
 
     /**
