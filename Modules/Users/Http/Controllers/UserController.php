@@ -19,6 +19,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('roles')->get();
+
         return view('users::pages.users_all', compact('users'));
     }
 
