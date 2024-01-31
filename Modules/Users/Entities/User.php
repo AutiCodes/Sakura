@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\permission;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Model
 {
-    use HasFactory;
+
+    use HasFactory, HasRoles;
+    
+    protected $guard_name = 'web';
 
     protected $fillable = [
         'name',

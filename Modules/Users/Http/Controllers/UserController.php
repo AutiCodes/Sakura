@@ -5,6 +5,10 @@ namespace Modules\Users\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Users\Entities\User;
+use Modules\Users\Entities\Role;
+use Spatie\Permission\Traits\HasRoles;
+use Hash;
 
 class UserController extends Controller
 {
@@ -14,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users::index');
+        $users = User::with('roles')->get();
+        return view('users::pages.users_all', compact('users'));
     }
 
     /**
@@ -23,7 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users::create');
+        $roles = Role::all();
+        return view('users::pages.users_add', compact('roles'));
     }
 
     /**
@@ -33,7 +39,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'unique:users,name', 'max:20'],
+            'email' => ['required', 'unique:users,email', 'max:30'],
+            'password' => ['required', 'min:6'],
+            'role' => ['required', 'string', 'max:12']
+        ]);
+
+        // Check if current user is heigher then the user he wanna make
+
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
+        ]);
+        
+        $user->assignRole($validated['role']);
+
+        return redirect(route('gebruikers.index'))->with('success', 'Gebruiker ' . $validated['name'] . ' is aangemaakt!');
     }
 
     /**

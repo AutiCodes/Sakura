@@ -13,7 +13,25 @@ Admin page theme: SB Admin 2
 
 @section('content')
   <!-- Begin Page Content -->
-  <div class="container-fluid">            
+  <div class="container-fluid">       
+  
+    @if (session()->has('success'))
+      <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+      </div>
+    @endif
+
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <h1>WhoopsieDoopsie!</h1>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif     
+
     <!-- Page header -->
     <h1 class="h3 mb-0 text-gray-800 ml-2">Gebruikers</h1>
     <button type="button" class="btn btn-primary btn-sm ml-2 mt-1">Nieuwe gebruiker</button>
