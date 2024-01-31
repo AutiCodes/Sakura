@@ -1,5 +1,7 @@
 <?php
 
+use Modules\Users\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,4 +13,4 @@
 |
 */
 
-Route::resource('gebruikers', UsersController::class);
+Route::resource('gebruikers', UserController::class);

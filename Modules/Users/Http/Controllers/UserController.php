@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class UsersController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('users::pages.users_all');
+        return view('users::index');
     }
 
     /**
@@ -23,7 +23,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users::pages.users_add');
+        return view('users::create');
     }
 
     /**
@@ -43,7 +43,17 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return view('users::pages.users_profile');
+        return view('users::show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $id
+     * @return Renderable
+     */
+    public function edit($id)
+    {
+        return view('users::edit');
     }
 
     /**
