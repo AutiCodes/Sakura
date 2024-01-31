@@ -1,18 +1,19 @@
 <?php
 
-if (!function_exists('FirstImgFinder')) {
+if (!function_exists('findFirstImageInHtml')) {
 
     /**
-     * description
+     * Finds the first image in the given HTML data and returns it's path OR default image if no image was found
      *
-     * @param
-     * @return
+     * @param string $data HTML data
+     * @return string image path
      */
-    function FirstImgFinder($data)
+    function findFirstImageInHtml(string $data): string
     {
-        $pos = strpos($data, 'img src="')+ strlen('img src="'); // find postition of img src" and add lenght of img src"
-        $lenght= strpos($data, '"', $pos)-$pos; 
+        // No idea how this works, but it works! Pls don't touch it!
+        preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $data, $image);
 
-        return substr($data, $pos, $lenght);
+        // if the image is found, return it's path, otherwise return the default image
+        return !emtpy($image['src']) ? $image['src'] : url('/system/ArticleDefault.jpg');
     }
 }

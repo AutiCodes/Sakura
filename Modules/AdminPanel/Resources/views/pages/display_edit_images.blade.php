@@ -11,105 +11,41 @@ Admin page theme: SB Admin 2
 <!-- Settings page title -->
 @section('title', 'Bewerk afbeeldingen')
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
+
 @section('content')
   <!-- Begin Page Content -->
-  <div class="container-fluid">            
+  <div class="container-fluid mb-6">            
     <!-- Page header -->
     <h1 class="h3 mb-2 text-gray-800 ml-0">Site iconen</h1>
 
     <div class="row">
-      <!-- Change favicon -->
-      <div class="col">
-        <div class="card" style="width: 25rem;">
-          <div class="card-body">
-            <h5 class="card-title border-bottom pb-3">Favicon</h5>
-            <div class="row">
-              <div class="col-2">
-                <img src="//placehold.it//50">
-              </div>
-              <div class="col">
-                <input class="form-control mr-3" type="file" id="formFile">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- Change main icon -->
       <div class="col">
         <div class="card" style="width: 25rem;">
           <div class="card-body">
-            <h5 class="card-title border-bottom pb-3">Hoofd icoon</h5>
+            <h5 class="card-title border-bottom pb-3">Icoon</h5>
+            <form action="{{ route('weergave-afbeeldingen.update', 'main') }}" method="POST" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf                
             <div class="row">
               <div class="col-2">
-                <img src="//placehold.it//50">
+                @if ($icon === null)
+                  <img src="//placehold.it//60" style="width: 60px">
+                @else 
+                  <img src="{{ $icon }}" style="width: 60px">
+                @endif
               </div>
               <div class="col">
-                <input class="form-control mr-3" type="file" id="formFile">
+                <input class="form-control mr-3 ml-1" type="file" name="icon" id="formFile">
               </div>
             </div>
+            <button type="submit" class="btn btn-primary btn-md  mt-4">Update</button>
+            </form>
           </div>
         </div>
       </div>
-      <!-- Change login icon -->
-      <div class="col">
-        <div class="card" style="width: 25rem;">
-          <div class="card-body">
-            <h5 class="card-title border-bottom pb-3">Login icoon</h5>
-            <div class="row">
-              <div class="col-2">
-                <img src="//placehold.it//50">
-              </div>
-              <div class="col">
-                <input class="form-control mr-3" type="file" id="formFile">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Page header -->
-    <h1 class="h3 mb-2 text-gray-800 ml-0 mt-4">Site header afbeeldingen</h1>
-    
-    <!-- Site headers -->
-    <div class="row">
-        <!-- Change header -->
-        <div class="col">
-          <div class="card" style="width: 50rem;">
-            <div class="card-body">
-              <h5 class="card-title border-bottom pb-3">Header</h5>
-              <div class="row">
-                <div class="col-7">
-                  <img src="//placehold.it//400">
-                </div>
-                <div class="col">
-                  <input class="form-control mr-3" type="file" id="formFile">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Change footer-->
-        <div class="col">
-          <div class="card" style="width: 50rem;">
-            <div class="card-body">
-              <h5 class="card-title border-bottom pb-3">Footer</h5>
-              <div class="row">
-                <div class="col-7">
-                  <img src="//placehold.it//400">
-                </div>
-                <div class="col">
-                  <input class="form-control mr-3" type="file" id="formFile">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <button type="button" class="btn btn-primary btn-lg mb-4 mt-5">Sla de wijzigingen op</button>
-
   </div>
   <!-- /.container-fluid -->
 @stop                
