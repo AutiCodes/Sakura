@@ -62,24 +62,6 @@ class AdminPanelController extends Controller
     }
 
     /*
-    * Users
-    */
-    public function usersAll()
-    {
-      return view('adminpanel::pages.users_all');
-    }
-
-    public function usersProfile()
-    {
-      return view('adminpanel::pages.users_profile');
-    }
-
-    public function usersAdd()
-    { 
-      return view('adminpanel::pages.users_add');
-    }
-
-    /*
     * Statistics
     */
     public function websiteStatistics()

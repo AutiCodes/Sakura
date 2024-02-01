@@ -19,11 +19,16 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 */
 
 // Admin dashboard
+// Route::group(['middleware' => ['role:Super Admin', 'role:Admin', ]], function () { //'role:Redacteur'
+//     Route::get('/admin', [AdminPanelController::class, 'index']);
+// });
 Route::get('/admin', [AdminPanelController::class, 'index']);
+
 
 /**
  * Articles 
  */
+
 Route::resource('artikelen', ArticleController::class)->only([
         'index',
         'create',
@@ -65,13 +70,6 @@ Route::get('/admin/comments', [AdminPanelController::class, 'comments']);
 Route::resource('weergave-tekst', SiteTextController::class);
 Route::post('/weergave-tekst/media-opslaan', [SiteTextController::class, 'saveMedia']);
 Route::resource('weergave-afbeeldingen', SiteImagesController::class);
-
-/**
- * Users
- */
-Route::get('/admin/gebruikers/allemaal', [AdminPanelController::class, 'usersAll']);
-Route::get('/admin/gebruikers/profiel/{uid}', [AdminPanelController::class, 'usersProfile']);
-Route::get('/admin/gebruikers/toevoegen', [AdminPanelController::class, 'usersAdd']);
 
 /**
  * Statistics

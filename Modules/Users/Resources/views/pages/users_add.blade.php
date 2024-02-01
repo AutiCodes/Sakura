@@ -13,46 +13,53 @@ Admin page theme: SB Admin 2
 
 @section('content')
   <!-- Begin Page Content -->
-  <div class="container">            
+  <div class="container">       
+    
+    @if (session()->has('success'))
+      <div class="alert alert-success" role="alert">
+          {{ session('success') }}
+      </div>
+    @endif
+
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <h1>WhoopsieDoopsie!</h1>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif    
+
     <!-- Page header -->
     <h1 class="h3 mb-3 text-gray-800 ml-0">Profiel aanmaken</h1>
 
-    <form>
-      <!-- Username -->
+    <form action="{{ route('gebruikers.store') }}" method="POST">
+      @csrf
+      <!-- Name -->
       <div class="form-group">
-        <label for="username">Gebruikersnaam</label><i class="fa-solid fa-star-of-life small ml-1"></i>
-        <input type="text" class="form-control" id="username" placeholder="Gebruikersnaam" required>
-      </div>
-
-      <!-- First name -->
-      <div class="form-group">
-        <label for="firstname">Voornaam</label><i class="fa-solid fa-star-of-life small ml-1"></i>
-        <input type="text" class="form-control" id="firstname" placeholder="Voornaam" required>
+        <label for="firstname">Naam</label><i class="fa-solid fa-star-of-life small ml-1"></i>
+        <input type="text" class="form-control" name="name" placeholder="Voornaam achternaam (of gebruikersnaam)" required>
       </div>
       
-      <!-- Last name -->
-      <div class="form-group">
-        <label for="lastname">Achternaam</label><i class="fa-solid fa-star-of-life small ml-1"></i>
-        <input type="text" class="form-control" id="lastname" placeholder="Achternaam" required>
-      </div>
-
       <!-- Email -->
       <div class="form-group">
         <label for="email">Email adres</label><i class="fa-solid fa-star-of-life small ml-1"></i>
-        <input type="email" class="form-control" id="email" placeholder="email@provider.nl" required>
+        <input type="email" class="form-control" name="email" placeholder="email@provider.nl" required>
       </div>
       
       <!-- Role -->
       <div class="form-group">
         <label for="role">Rol</label><i class="fa-solid fa-star-of-life small ml-1"></i>
-        <select class="form-control" id="role" required>
-          <option>Super-admin</option>
-          <option>Admin</option>
-          <option selected>Redacteur</option>
+        <select class="form-control" name="role" required>
+          @foreach ($roles as $role)
+            <option value="{{ $role->name }}">{{ $role->name }}</option>
+          @endforeach
         </select>
       </div>
 
-      <!-- Profile picture -->
+      <!-- Profile picture 
       <div class="form-group">
         <label for="profile-picture">Profiel foto</label>
           <div class="col w-25 ml-0 pl-0">
@@ -63,16 +70,17 @@ Admin page theme: SB Admin 2
             </div>
           </div>
         </div>
+      -->
 
       <!-- Password -->
       <div class="form-group">
         <label for="password">Wachtwoord</label><i class="fa-solid fa-star-of-life small ml-1"></i>
-        <input type="password" class="form-control" id="password" placeholder="Wachtwoord" required>
+        <input type="password" class="form-control" name="password" placeholder="Wachtwoord" required>
         <i class="fa fa-eye" onclick="showHidePassword()"></i><span> Toon/verberg wachtwoord</span>
       </div>
 
 
-      <button type="button" class="btn btn-primary btn-lg mb-4">Update</button>
+      <button type="submit" class="btn btn-primary btn-lg mb-4">Gebruiker toevoegen</button>
 
     </form>
   </div>
