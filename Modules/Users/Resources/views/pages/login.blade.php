@@ -56,7 +56,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
-    <a href="/wachtwoord-vergeten" type="submit" id="password_forgot">Wachtwoord vergeten</a>
+    <!--<a href="/wachtwoord-vergeten" type="submit" id="password_forgot">Wachtwoord vergeten</a>-->
 
     <p class="mt-5 mb-3 text-white">&copy; <?php echo date("Y"); ?> - Een site van AllDayTechAndGaming - In development door KelvinCodes</p>
     

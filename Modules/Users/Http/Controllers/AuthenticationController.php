@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class AuthenticationController extends Controller
 {
@@ -38,4 +39,12 @@ class AuthenticationController extends Controller
 
         return redirect('/admin');
     }   
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+
+        return redirect ('/admin-login');
+    }
 }

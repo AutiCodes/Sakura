@@ -18,3 +18,4 @@ Route::resource('gebruikers', UserController::class);
 
 Route::get('/admin-login', [AuthenticationController::class, 'login']);
 Route::post('/admin-post-login', [AuthenticationController::class, 'postLogin']);
+Route::get('/uitloggen', [AuthenticationController::class, 'logout']);
