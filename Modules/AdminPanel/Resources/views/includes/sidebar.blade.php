@@ -77,7 +77,7 @@
 
     <!-- Nav item - Comments -->
     <li class="nav-item">
-      <a class="nav-link" href="/admin/comments">
+    <a class="nav-link" href="{{ route('comments.index') }}">
           <i class="fas fa-fw fa-comments"></i>
           <span>Comments</span></a>
     </li>              
