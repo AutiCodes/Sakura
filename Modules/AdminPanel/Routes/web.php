@@ -23,18 +23,6 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 Route::get('/admin', [AdminPanelController::class, 'index']);
 
 /**
- * Comments
- */
-Route::get('/admin/comments', [AdminPanelController::class, 'comments']);
-
-/**
- * Display
- */
-Route::resource('weergave-tekst', SiteTextController::class);
-Route::post('/weergave-tekst/media-opslaan', [SiteTextController::class, 'saveMedia']);
-Route::resource('weergave-afbeeldingen', SiteImagesController::class);
-
-/**
  * Statistics
  */
 Route::get('/admin/statistieken/website', [AdminPanelController::class, 'websiteStatistics']);

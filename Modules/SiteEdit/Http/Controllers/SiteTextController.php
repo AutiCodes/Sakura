@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\AdminPanel\Http\Controllers;
+namespace Modules\SiteEdit\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\AdminPanel\Entities\SiteText;
+use Modules\SiteEdit\Entities\SiteText;
 use Modules\AdminPanel\Enums\SiteTextTypeEnum;
-use Modules\AdminPanel\Entities\Media;
+use Modules\Media\Entities\Media;
 use File;
 
 class SiteTextController extends Controller
@@ -21,7 +21,7 @@ class SiteTextController extends Controller
         $siteText = SiteText::all();
         
         // Fix enum bug
-        return view('adminpanel::pages.display_edit_text', [
+        return view('siteedit::pages.display_edit_text', [
             'title' => $siteText->where('type', 0)->first()->content,
             'name' => $siteText->where('type', 1)->first()->content,
             'footer' => $siteText->where('type', 2)->first()->content,
@@ -46,7 +46,7 @@ class SiteTextController extends Controller
      */
     public function show($id)
     {
-        return view('adminpanel::show');
+        return view('siteedit::show');
     }
 
     /**
@@ -56,7 +56,7 @@ class SiteTextController extends Controller
      */
     public function edit($id)
     {
-        return view('adminpanel::edit');
+        return view('siteedit::edit');
     }
 
     /**

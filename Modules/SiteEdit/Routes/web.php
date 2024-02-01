@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Comments\Http\Controllers\CommentController;
+use Modules\SiteEdit\Http\Controllers\SiteImageController;
+use Modules\SiteEdit\Http\Controllers\SiteTextController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,9 @@ use Modules\Comments\Http\Controllers\CommentController;
 */
 
 Route::group(['middleware' => ['role:Super Admin|Admin|Redacteur']], function () {
-    Route::resource('comments', CommentController::class)->names('comments');
+    Route::resource('weergave-tekst', SiteTextController::class);
+    Route::post('/weergave-tekst/media-opslaan', [SiteTextController::class, 'saveMedia']);
+    Route::resource('weergave-afbeeldingen', SiteImageController::class);
 });
+
+

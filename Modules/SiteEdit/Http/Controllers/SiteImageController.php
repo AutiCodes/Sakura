@@ -1,14 +1,14 @@
 <?php
 
-namespace Modules\AdminPanel\Http\Controllers;
+namespace Modules\SiteEdit\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\AdminPanel\Entities\SiteImage;
+use Modules\SiteEdit\Entities\SiteImage;
 use File;
 
-class SiteImagesController extends Controller
+class SiteImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class SiteImagesController extends Controller
     public function index()
     {
         
-        return view('adminpanel::pages.display_edit_images', [
+        return view('siteedit::pages.display_edit_images', [
             'icon' => url('/system/site-media/icon.png')
          ]);
     }
@@ -29,7 +29,7 @@ class SiteImagesController extends Controller
      */
     public function create()
     {
-        return view('adminpanel::create');
+        return view('siteedit::create');
     }
 
     /**
@@ -49,7 +49,7 @@ class SiteImagesController extends Controller
      */
     public function show($id)
     {
-        return view('adminpanel::show');
+        return view('siteedit::show');
     }
 
     /**
@@ -59,7 +59,7 @@ class SiteImagesController extends Controller
      */
     public function edit($id)
     {
-        return view('adminpanel::edit');
+        return view('siteedit::edit');
     }
 
     /**

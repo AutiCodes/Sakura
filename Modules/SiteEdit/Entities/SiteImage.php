@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\AdminPanel\Entities;
+namespace Modules\SiteEdit\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class SiteImage extends Model
 {
     use HasFactory;
+
     protected $table = 'sk_site_images';
+    
     protected $fillable = [
         'author_id',
         'type',

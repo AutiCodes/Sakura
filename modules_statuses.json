@@ -6,5 +6,6 @@
     "Articles": true,
     "Media": true,
     "Pages": true,
-    "Comments": true
+    "Comments": true,
+    "SiteEdit": true
 }
