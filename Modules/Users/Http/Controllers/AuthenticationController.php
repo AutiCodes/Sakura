@@ -5,75 +5,37 @@ namespace Modules\Users\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AuthenticationController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     * @return Renderable
+     * Displays the admin login page
+     * @return rendable
      */
-    public function index()
+    public function login()
     {
-        return view('users::index');
+        return view('users::pages.login');
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('users::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Handles the post from the login
+     * Redirects to dashboard is succesfull, else back to /login
      * @param Request $request
-     * @return Renderable
+     * @return \redirect
      */
-    public function store(Request $request)
+    public function postLogin(Request $request)
     {
-        //
-    }
+        $validated = $request->validate([
+            'email' => ['required', 'email', 'string', 'max:30'],
+            'password' => ['string', 'max:20']
+        ]);
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('users::show');
-    }
+        // If authentication fails redirect to login page
+        if (!Auth::attempt($validated)) {
+            return redirect('/admin-login');
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('users::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
-    }
+        return redirect('/admin');
+    }   
 }

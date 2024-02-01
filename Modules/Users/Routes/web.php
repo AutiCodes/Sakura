@@ -1,6 +1,7 @@
 <?php
 
 use Modules\Users\Http\Controllers\UserController;
+use Modules\Users\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,6 @@ use Modules\Users\Http\Controllers\UserController;
 */
 
 Route::resource('gebruikers', UserController::class);
+
+Route::get('/admin-login', [AuthenticationController::class, 'login']);
+Route::post('/admin-post-login', [AuthenticationController::class, 'postLogin']);
