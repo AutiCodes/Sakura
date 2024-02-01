@@ -159,10 +159,11 @@ Admin page theme: SB Admin 2
                 <h1>Auteur</h1>
                 <hr>
                 
-                <select class="form-select" aria-label="Default select" name="author">
+                <select class="form-select" aria-label="Default select" name="author" disabled>
                   <option selected>Open this select menu</option>
+                  <!--
                   <option value=1 selected>KelvinCodes</option>
-                  <option value=2 >Sander den Breejen</option>
+                  <option value=2 >Sander den Breejen</option>-->
                 </select>
                 <br>
               </div>                                    

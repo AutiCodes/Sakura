@@ -1,18 +1,20 @@
 <?php
 
-namespace Modules\AdminPanel\Http\Controllers;
+namespace Modules\Articles\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\News\Entities\Article;
-use Modules\News\Entities\Category;
+use Modules\Articles\Entities\Article;
+use Modules\Articles\Entities\Category;
 use Illuminate\Support\Str;
 use Modules\News\Enums\ArticleStatusEnum;
 use Modules\AdminPanel\Entities\Media;
 use File;
+use Modules\Users\Entities\User;
+use Auth;
 
-class ArticleController extends Controller
+class ArticleAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +26,7 @@ class ArticleController extends Controller
         ->with('categories')
         ->paginate(10);
 
-        return view('adminpanel::pages.articles_all', ['articles' => $articles]);
+        return view('articles::pages.articles_all', ['articles' => $articles]);
     }
 
     /**
@@ -35,7 +37,7 @@ class ArticleController extends Controller
     {
         $categories = Category::orderBy('name')->get();
 
-        return view('adminpanel::pages.articles_new', ['categories'=> $categories]);
+        return view('articles::pages.articles_new', ['categories'=> $categories]);
     }
 
     /**
@@ -47,7 +49,6 @@ class ArticleController extends Controller
     {
         // validation
         $validated = $request->validate([ 
-            'author' => ['required', 'int'],
             'title' => ['required', 'max:255', 'unique:sk_articles,title', 'string'],
             'editorData' => ['required'],
             'categories' => ['required']
@@ -55,7 +56,7 @@ class ArticleController extends Controller
 
         // Creating article
         $article = Article::create([
-            'author_id' => $validated['author'],
+            'author_id' => Auth::id(),
             'publish_date' => now(),
             'title' => $validated['title'],
             'content' => $validated['editorData'],

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\AdminPanel\Http\Controllers;
+namespace Modules\Articles\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Modules\News\Entities\Category;
 use Illuminate\Support\Facades\DB;
 
-class CategoryController extends Controller
+class CategoryAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class CategoryController extends Controller
         // Get all categories
         $categories = Category::orderBy('name')->get();
 
-        return view('adminpanel::pages.articles_categories', ['categories' => $categories]);
+        return view('articles::pages.articles_categories', ['categories' => $categories]);
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('adminpanel::create');
+        return view('articles::create');
     }
 
     /**
@@ -66,7 +66,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return view('adminpanel::show');
+        return view('articles::show');
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
     public function edit($slug)
     {
         $category = Category::where('slug', $slug)->first();
-        return view('adminpanel::pages.articles_categories_edit', ['category' => $category]);
+        return view('articles::pages.articles_categories_edit', ['category' => $category]);
     }
 
     /**

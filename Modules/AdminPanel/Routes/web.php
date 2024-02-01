@@ -1,7 +1,5 @@
 <?php
 use Modules\AdminPanel\Http\Controllers\AdminPanelController;
-use Modules\AdminPanel\Http\Controllers\ArticleController;
-use Modules\AdminPanel\Http\Controllers\CategoryController;
 use Modules\AdminPanel\Http\Controllers\MediaController;
 use Modules\AdminPanel\Http\Controllers\PageController;
 use Modules\AdminPanel\Http\Controllers\SiteImagesController;
@@ -24,27 +22,6 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 // });
 Route::get('/admin', [AdminPanelController::class, 'index']);
 
-
-/**
- * Articles 
- */
-
-Route::resource('artikelen', ArticleController::class)->only([
-        'index',
-        'create',
-        'store',
-        'edit',
-        'update',
-        'destroy'
-    ]);
-
-// Save article media
-Route::post('artikelen/media-opslaan', [ArticleController::class, 'articleSaveMedia']);
-
-/**
- * Categories
- */
-Route::resource('categorieen', CategoryController::class);
 
 /**
  * Media

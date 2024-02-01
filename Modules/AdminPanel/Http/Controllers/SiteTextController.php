@@ -76,7 +76,7 @@ class SiteTextController extends Controller
             $title = SiteText::where('type', SiteTextTypeEnum::TITLE);
 
             $title->update([
-                'author_id' => 1, // Change to user
+                'author_id' => 7, // Change to user
                 'content' => $validated['title']
             ]);
 
@@ -92,7 +92,7 @@ class SiteTextController extends Controller
             $name = SiteText::where('type', SiteTextTypeEnum::NAME);
 
             $name->update([
-                'author_id' => 1, // Change to user
+                'author_id' => 7, // Change to user
                 'content' => $validated['name']
             ]);
 
@@ -108,7 +108,7 @@ class SiteTextController extends Controller
             $footer = SiteText::where('type', SiteTextTypeEnum::FOOTER);
 
             $footer->update([
-                'author_id' => 1, // Change to user
+                'author_id' => 7, // Change to user
                 'content' => $validated['footer']
             ]);
 
@@ -123,7 +123,7 @@ class SiteTextController extends Controller
         $homeText = SiteText::where('type', SiteTextTypeEnum::HOMETEXT);
 
         $homeText->update([
-            'author_id' => 1,
+            'author_id' => 7,
             'content' => $validated['editorData']
         ]);
 
@@ -154,7 +154,7 @@ class SiteTextController extends Controller
         Media::create([
             'name' => $validated['file']->getClientOriginalName(),
             'size' => File::size(public_path('/media/'. $validated['file']->getClientOriginalName())),
-            'uploaded_by' => 1, // Change to session author when having that module ready
+            'uploaded_by' => 7, // Change to session author when having that module ready
             'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
         ]);
 

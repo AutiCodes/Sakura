@@ -2,5 +2,6 @@
     "Testing": true,
     "News": true,
     "AdminPanel": true,
-    "Users": true
+    "Users": true,
+    "Articles": true
 }
