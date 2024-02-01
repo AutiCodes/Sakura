@@ -139,6 +139,7 @@ class UserController extends Controller
         }
 
         $user->syncRoles([]);
+        $user->articles()->detach();
         $user->delete();
 
         return redirect(route('gebruikers.index'))->with('success', 'Gebruiker '. $user->name.' is verwijderd');

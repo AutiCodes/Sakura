@@ -184,8 +184,11 @@ class ArticleAdminController extends Controller
         if($article === null) {
             return redirect()->back()->with('error','Artikel niet gevonden!');
         }
+
         $article->categories()->detach();
+        $article->users()->detach();
         $article->delete();
+
         return redirect(route('artikelen.index'))->with('success','Artikel is verwijderd!');
     }
 }
