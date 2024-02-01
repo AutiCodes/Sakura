@@ -14,45 +14,57 @@ Admin page theme: SB Admin 2
 @section('content')
 <!-- Begin Page Content -->
 <div class="container">            
-  <!-- Page header -->
-  <h1 class="h3 mb-3 text-gray-800 ml-0">Profiel van KelvinCodes</h1>
 
-  <form>
-    <!-- Username -->
-    <div class="form-group">
-      <label for="username">Gebruikersnaam</label>
-      <input type="text" class="form-control" id="username" placeholder="KelvinCodes" disabled>
+  @if (session()->has('success'))
+    <div class="alert alert-success" role="alert">
+      {{ session('success') }}
     </div>
+  @endif
 
-    <!-- First name -->
+  @if ($errors->any())
+      <div class="alert alert-danger">
+        <h1>WhoopsieDoopsie!</h1>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif    
+
+  <!-- Page header -->
+  <h1 class="h3 mb-3 text-gray-800 ml-0">Profiel van {{ $user->name }}</h1>
+
+  <form action="{{ route('gebruikers.update', $user->id) }}" method="POST">
+    @method('PATCH')
+    @csrf
+    <!-- Name -->
     <div class="form-group">
       <label for="firstname">Voornaam</label>
-      <input type="text" class="form-control" id="firstname" placeholder="Kelvin">
+      <input type="text" class="form-control" name="name" placeholder="{{ $user->name }}">
     </div>
-    
-    <!-- Last name -->
-    <div class="form-group">
-      <label for="lastname">Achternaam</label>
-      <input type="text" class="form-control" id="lastname" placeholder="de Reus">
-    </div>
-
+  
     <!-- Email -->
     <div class="form-group">
       <label for="email">Email adres</label>
-      <input type="email" class="form-control" id="email" placeholder="prive@kelvincodes.nl">
+      <input type="email" class="form-control" name="email" placeholder="{{ $user->email }}">
     </div>
     
     <!-- Role -->
     <div class="form-group">
       <label for="role">Rol</label>
-      <select class="form-control" id="role">
-        <option selected>Super-admin</option>
-        <option>Admin</option>
-        <option>Redacteur</option>
+      <select class="form-control" name="role">
+        @foreach ($roles as $role)
+          @if ($role->name == $user->roles[0]->name)
+            <option selected>{{ $role->name }}</option>
+          @else
+            <option>{{ $role->name }}</option>
+          @endif
+        @endforeach
       </select>
     </div>
 
-    <!-- Profile picture -->
+    <!-- Profile picture 
     <div class="form-group">
       <label for="profile-picture">Profiel foto</label>
         <div class="col w-25 ml-0 pl-0">
@@ -63,16 +75,19 @@ Admin page theme: SB Admin 2
           </div>
         </div>
       </div>
+    -->
+    <script>
+
+    </script>
 
     <!-- Password -->
     <div class="form-group">
       <label for="password">Wachtwoord</label>
-      <input type="password" class="form-control" id="password" placeholder="Wachtwoord">
+      <input type="password" class="form-control" name="password" placeholder="Wachtwoord">
       <i class="fa fa-eye" onclick="showHidePassword()"></i><span> Toon/verberg wachtwoord</span>
     </div>
 
-
-    <button type="button" class="btn btn-primary btn-lg mb-4">Update</button>
+    <button type="submit" class="btn btn-primary btn-lg mb-4">Updaten</button>
 
   </form>
 </div>

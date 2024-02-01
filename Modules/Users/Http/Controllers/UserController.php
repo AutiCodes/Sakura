@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Modules\Users\Entities\User;
 use Modules\Users\Entities\Role;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Facades\Auth;
 use Hash;
 
 class UserController extends Controller
@@ -49,6 +50,7 @@ class UserController extends Controller
 
         // Check if current user is heigher then the user he wanna make
 
+        
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
@@ -61,23 +63,19 @@ class UserController extends Controller
     }
 
     /**
-     * Show the specified resource.
+     * Shows the specified resource to edit
      * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('users::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
      */
     public function edit($id)
     {
-        return view('users::edit');
+        $user = User::with('roles')->where('id', $id)->first();;
+        $roles = Role::all();
+
+        if (!$user) {
+            return redirect(route('gebruikers.index'))->with('error', 'Gebruiker niet gevonden!');
+        }
+        
+        return view('users::pages.users_profile', compact('user', 'roles'));
     }
 
     /**
@@ -88,7 +86,32 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $currentUser = User::find(Auth::id());
+
+        if (!$user) {
+            return back()->with('error', 'Gebruiker niet gevonden!');
+        }
+
+        $validated = $request->validate([
+            'name' => ['unique:users,name', 'max:20'],
+            'email' => ['unique:users,email', 'max:30'],
+            'password' => ['max:30'],
+            'role' => ['required', 'string', 'max:12']
+        ]);
+
+        if ($validated['role'] != $user->roles[0]->name && $currentUser->HasRole('Super Admin')) {
+            $user->removeRole($user->roles[0]->name);
+            $user->assignRole($validated['role']);
+        }
+
+        if ($validated['password'] != null) {
+            $user->update([
+                'password' => Hash::make($validated['password'])
+            ]);
+        }
+
+        return back()->with('success', 'Gebruiker '. $user->name.' is aangepast!');
     }
 
     /**
@@ -98,6 +121,24 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::with('roles')->where('id', $id)->first();
+        $currentUser = User::find(Auth::id());
+
+        if (!$user) {
+            return redirect(route('gebruikers.index'))->with('error', 'Gebruiker niet gevonden!');
+        }
+
+        if (!$currentUser->hasRole('Super Admin') && !$currentUser->hasRole('Admin')) {
+            return redirect(route('gebruikers.index'))->with('error', 'Je hebt geen permissie om gebruikers te verwijderen!');
+        }
+
+        if ($user->roles[0]->name == 'Super Admin' && $currentUser->hasRole('Admin')) {
+            return redirect(route('gebruikers.index'))->with('error', 'Je hebt geen permissie om een super gebruiker te verwijderen!');
+        }
+
+        $user->syncRoles([]);
+        $user->delete();
+
+        return redirect(route('gebruikers.index'))->with('success', 'Gebruiker '. $user->name.' is verwijderd');
     }
 }

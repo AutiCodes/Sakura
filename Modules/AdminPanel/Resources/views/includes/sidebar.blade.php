@@ -116,9 +116,9 @@
       <div id="collapseUsers" class="collapse" aria-labelledby="collapseUsers"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="/admin/gebruikers/allemaal">Alle gebruikers</a>
-              <a class="collapse-item" href="/admin/gebruikers/profiel/2891223">Jouw profiel</a>
-              <a class="collapse-item" href="/admin/gebruikers/toevoegen">Gebruikers toevoegen</a>
+              <a class="collapse-item" href="{{ route('gebruikers.index') }}">Alle gebruikers</a>
+              <a class="collapse-item" href="{{ route('gebruikers.edit', Auth::id()) }}">Jouw profiel</a>
+              <a class="collapse-item" href="{{ route('gebruikers.create') }}">Gebruikers toevoegen</a>
           </div>
       </div>
     </li>

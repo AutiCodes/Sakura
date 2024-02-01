@@ -21,20 +21,15 @@ Admin page theme: SB Admin 2
       </div>
     @endif
 
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <h1>WhoopsieDoopsie!</h1>
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
+    @if (session()->has('error'))
+      <div class="alert alert-danger" role="alert">
+        {{ session('error') }}
       </div>
-    @endif     
-
+    @endif    
+ 
     <!-- Page header -->
     <h1 class="h3 mb-0 text-gray-800 ml-2">Gebruikers</h1>
-    <button type="button" class="btn btn-primary btn-sm ml-2 mt-1">Nieuwe gebruiker</button>
+    <a href="{{ route('gebruikers.create') }}"> <button type="button" class="btn btn-primary btn-sm ml-2 mt-1">Nieuwe gebruiker</button></a>
 
     <!-- Table pages -->
     <table class="table mt-4">
@@ -52,16 +47,23 @@ Admin page theme: SB Admin 2
           <!-- Users rows -->
           <tr>
             <td>
-            <form action="{{ route('gebruikers.destroy', $user->id) }}" method="POST">
+              <form action="{{ route('gebruikers.destroy', $user->id) }}" method="POST">
                 @method('delete')
                 @csrf
                 <button type="submit" id="completed-task" class="fabutton">
                     <i class="fa fa-trash" style="border: none; color: red; padding: 0px"></i>
                 </button>
               </form>
+    
+              <form action="{{ route('gebruikers.edit', $user->id) }}" method="GET">
+                @csrf
+                <button type="submit" id="completed-task" class="fabutton">
+                    <i class="fa fa-edit" style="border: none; color: red; padding: 0px"></i>
+                </button>
+              </form> 
             </td>
             <td>{{ $user->name }}</td>
-            <td>{{ $user->email }}l</td>
+            <td>{{ $user->email }}</td>
             <td>{{ $user->roles[0]->name }}</td>
             <td class="w-25">69</td>
           </tr>  

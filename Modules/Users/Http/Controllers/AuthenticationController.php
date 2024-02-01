@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Modules\Users\Entities\User;
 use Session;
 
 class AuthenticationController extends Controller
@@ -35,6 +36,11 @@ class AuthenticationController extends Controller
         // If authentication fails redirect to login page
         if (!Auth::attempt($validated)) {
             return redirect('/admin-login');
+        }
+
+        // If user is visitor, redirect back to homepage
+        if (User::find((Auth::id()))->hasRole('Bezoeker')) {
+            return redirect('/');
         }
 
         return redirect('/admin');
