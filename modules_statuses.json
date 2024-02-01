@@ -3,5 +3,6 @@
     "News": true,
     "AdminPanel": true,
     "Users": true,
-    "Articles": true
+    "Articles": true,
+    "Media": true
 }

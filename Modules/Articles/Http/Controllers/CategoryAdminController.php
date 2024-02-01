@@ -5,7 +5,7 @@ namespace Modules\Articles\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\News\Entities\Category;
+use Modules\Articles\Entities\Category;
 use Illuminate\Support\Facades\DB;
 
 class CategoryAdminController extends Controller

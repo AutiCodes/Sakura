@@ -23,10 +23,6 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 Route::get('/admin', [AdminPanelController::class, 'index']);
 
 
-/**
- * Media
- */
-Route::resource('uploads', MediaController::class);
 
 /** 
  * Pages

@@ -9,7 +9,7 @@ use Modules\Articles\Entities\Article;
 use Modules\Articles\Entities\Category;
 use Illuminate\Support\Str;
 use Modules\News\Enums\ArticleStatusEnum;
-use Modules\AdminPanel\Entities\Media;
+use Modules\Media\Entities\Media;
 use File;
 use Modules\Users\Entities\User;
 use Auth;
