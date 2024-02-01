@@ -22,16 +22,6 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 // });
 Route::get('/admin', [AdminPanelController::class, 'index']);
 
-
-
-/** 
- * Pages
- */
-Route::resource('paginas', PageController::class);
-
-// Save page media
-Route::post('paginas/media-opslaan', [PageController::class, 'saveMedia']);
-
 /**
  * Comments
  */

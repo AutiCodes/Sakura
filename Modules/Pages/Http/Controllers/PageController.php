@@ -1,16 +1,17 @@
 <?php
 
-namespace Modules\AdminPanel\Http\Controllers;
+namespace Modules\Pages\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\AdminPanel\Entities\Media;
-use Modules\AdminPanel\Entities\Page;
+use Modules\Media\Entities\Media;
+use Modules\Pages\Entities\Page;
 use File;
 use Str;
 use Modules\AdminPanel\Enums\PageStatusEnum;
-use Modules\News\Entities\Category;
+use Modules\Articles\Entities\Category;
+use Auth;
 
 class PageController extends Controller
 {
@@ -21,7 +22,7 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::all();
-        return view('adminpanel::pages.pages_all', ['pages' => $pages]);
+        return view('pages::pages.pages_all', ['pages' => $pages]);
     }
 
     /**
@@ -31,7 +32,7 @@ class PageController extends Controller
     public function create()
     {
         $categories = Category::orderBy('name')->get();
-        return view('adminpanel::pages.pages_add', ['categories' => $categories]);
+        return view('pages::pages.pages_add', ['categories' => $categories]);
     }
 
     /**
@@ -43,7 +44,6 @@ class PageController extends Controller
     {
         // validation
         $validated = $request->validate([ 
-            'author' => ['required', 'int'],
             'title' => ['required', 'unique:sk_pages,title'],
             'editorData' => ['required'],
             'categories' => ['required']
@@ -51,7 +51,7 @@ class PageController extends Controller
 
         // Creating page
         $page = Page::create([
-            'author_id' => $validated['author'],
+            'author_id' => Auth::id(),
             'title' => $validated['title'],
             'content' => $validated['editorData'],
             'slug' => Str::slug($validated['title']),
@@ -94,7 +94,7 @@ class PageController extends Controller
         Media::create([
             'name' => $validated['file']->getClientOriginalName(),
             'size' => File::size(public_path('/media/'. $validated['file']->getClientOriginalName())),
-            'uploaded_by' => 1, // Change to session author when having that module ready
+            'uploaded_by' => Auth::id(),
             'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
         ]);
 
@@ -116,7 +116,7 @@ class PageController extends Controller
         }
         $allCategories = Category::all();
 
-        return view('adminpanel::pages.pages_edit', [
+        return view('pages::pages.pages_edit', [
             'page' => $page,
             'categoriesIds' => $articleCategoryIds,
             'allCategories' => $allCategories
@@ -140,14 +140,13 @@ class PageController extends Controller
         $validated = $request->validate([
             'title' => ['string', 'required'],
             'editorData' => ['required'],
-            'author' => ['int', 'required'],
             'categories' => ['required']
         ]);
 
         $page->update([
             'title' => $validated['title'],
             'content' => $validated['editorData'],
-            'author' => $validated['author']
+            'author' => Auth::id()
         ]);
 
         $page->categories()->sync(array_map('intval', $validated['categories']));

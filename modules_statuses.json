@@ -4,5 +4,7 @@
     "AdminPanel": true,
     "Users": true,
     "Articles": true,
-    "Media": true
+    "Media": true,
+    "Pages": true,
+    "Comments": true
 }
