@@ -2,6 +2,7 @@
 
 use Modules\Users\Http\Controllers\UserController;
 use Modules\Users\Http\Controllers\AuthenticationController;
+use Spatie\Permission\Traits\HasRoles;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,9 @@ use Modules\Users\Http\Controllers\AuthenticationController;
 |
 */
 
-Route::resource('gebruikers', UserController::class);
+Route::group(['middleware' => ['role:Super Admin|Admin']], function () {
+    Route::resource('gebruikers', UserController::class); 
+});
 
 Route::get('/admin-login', [AuthenticationController::class, 'login']);
 Route::post('/admin-post-login', [AuthenticationController::class, 'postLogin']);

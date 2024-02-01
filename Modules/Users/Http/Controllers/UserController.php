@@ -50,7 +50,6 @@ class UserController extends Controller
 
         // Check if current user is heigher then the user he wanna make
 
-        
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],

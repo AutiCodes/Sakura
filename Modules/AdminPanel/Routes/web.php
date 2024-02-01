@@ -19,11 +19,16 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 */
 
 // Admin dashboard
+// Route::group(['middleware' => ['role:Super Admin', 'role:Admin', ]], function () { //'role:Redacteur'
+//     Route::get('/admin', [AdminPanelController::class, 'index']);
+// });
 Route::get('/admin', [AdminPanelController::class, 'index']);
+
 
 /**
  * Articles 
  */
+
 Route::resource('artikelen', ArticleController::class)->only([
         'index',
         'create',
