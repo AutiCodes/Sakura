@@ -24,8 +24,9 @@ class ArticleAdminController extends Controller
     {
         $articles = Article::orderBy("created_at","desc")
         ->with('categories')
+        ->with('users')
         ->paginate(10);
-
+        
         return view('articles::pages.articles_all', ['articles' => $articles]);
     }
 
@@ -72,6 +73,9 @@ class ArticleAdminController extends Controller
                 ->attach(intval($category));
         } 
         
+        // Attach author to article
+        $article->users()->attach(Auth::id());
+
         // Return to all articles with succes message
         return redirect(route('artikelen.index'))
             ->with('success', 'Je artikel is geplaatst!');

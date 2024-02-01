@@ -19,7 +19,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('roles')->get();
+        $users = User::
+            with('roles')
+            ->withCount('articles')
+            ->get();
 
         return view('users::pages.users_all', compact('users'));
     }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Articles\Entities\Category;
 use Modules\News\Enums\ArticleStatusEnum;
+use Modules\Users\Entities\User;
 
 class Article extends Model
 {
@@ -26,9 +27,14 @@ class Article extends Model
       'status'
     ];
 
-    public function categories(): BelongsToMany
+    public function categories()
     {
       return $this->belongsToMany(Category::class, 'sk_article_categorys');
+    }
+
+    public function users(): BelongsToMany
+    {
+      return $this->BelongsToMany(User::class,'sk_article_user');
     }
 
     /**

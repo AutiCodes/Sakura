@@ -88,7 +88,11 @@ Admin page theme: SB Admin 2
                 </button>
               </form>
             </td>
-            <td><a href="#">{{ $article->author_id }}</a></td>
+            <td><a href="#">
+              @foreach ($article->users as $user)
+                <a href="#">{{ $user->name }}</a>
+              @endforeach
+            </a></td>
             <td>
                 @foreach($article->categories as $category)
                   <a href="#">{{ $category->name }}</a>

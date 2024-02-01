@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 use Modules\news\Entities\Article;
 use Modules\News\Entities\Category;
 use Modules\AdminPanel\Enums\SiteTextTypeEnum;
-use Modules\AdminPanel\Entities\SiteText;
+use Modules\SiteEdit\Entities\SiteText;
 
 class NewsController extends Controller
 {
