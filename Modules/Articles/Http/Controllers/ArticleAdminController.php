@@ -134,7 +134,7 @@ class ArticleAdminController extends Controller
 
         $categories = Category::all();
 
-        return view('adminpanel::pages.articles_edit', [
+        return view('articles::pages.articles_edit', [
             'article' => $article,
             'categories' => $categories,
             'categoriesIds' => $articleCategoryIds
