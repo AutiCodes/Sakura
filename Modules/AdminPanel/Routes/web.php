@@ -1,7 +1,5 @@
 <?php
 use Modules\AdminPanel\Http\Controllers\AdminPanelController;
-use Modules\AdminPanel\Http\Controllers\ArticleController;
-use Modules\AdminPanel\Http\Controllers\CategoryController;
 use Modules\AdminPanel\Http\Controllers\MediaController;
 use Modules\AdminPanel\Http\Controllers\PageController;
 use Modules\AdminPanel\Http\Controllers\SiteImagesController;
@@ -22,54 +20,9 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 // Route::group(['middleware' => ['role:Super Admin', 'role:Admin', ]], function () { //'role:Redacteur'
 //     Route::get('/admin', [AdminPanelController::class, 'index']);
 // });
-Route::get('/admin', [AdminPanelController::class, 'index']);
-
-
-/**
- * Articles 
- */
-
-Route::resource('artikelen', ArticleController::class)->only([
-        'index',
-        'create',
-        'store',
-        'edit',
-        'update',
-        'destroy'
-    ]);
-
-// Save article media
-Route::post('artikelen/media-opslaan', [ArticleController::class, 'articleSaveMedia']);
-
-/**
- * Categories
- */
-Route::resource('categorieen', CategoryController::class);
-
-/**
- * Media
- */
-Route::resource('uploads', MediaController::class);
-
-/** 
- * Pages
- */
-Route::resource('paginas', PageController::class);
-
-// Save page media
-Route::post('paginas/media-opslaan', [PageController::class, 'saveMedia']);
-
-/**
- * Comments
- */
-Route::get('/admin/comments', [AdminPanelController::class, 'comments']);
-
-/**
- * Display
- */
-Route::resource('weergave-tekst', SiteTextController::class);
-Route::post('/weergave-tekst/media-opslaan', [SiteTextController::class, 'saveMedia']);
-Route::resource('weergave-afbeeldingen', SiteImagesController::class);
+Route::group(['middleware' => ['role:Super Admin|Admin|Redacteur']], function () {
+    Route::get('/admin', [AdminPanelController::class, 'index']);
+});
 
 /**
  * Statistics

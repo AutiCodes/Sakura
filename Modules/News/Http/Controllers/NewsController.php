@@ -6,10 +6,10 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\news\Entities\Article;
-use Modules\News\Entities\Category;
+use Modules\Articles\Entities\Article;
+use Modules\Articles\Entities\Category;
 use Modules\AdminPanel\Enums\SiteTextTypeEnum;
-use Modules\AdminPanel\Entities\SiteText;
+use Modules\SiteEdit\Entities\SiteText;
 
 class NewsController extends Controller
 {
@@ -23,6 +23,7 @@ class NewsController extends Controller
         $articles = Article::orderBy('publish_date', 'desc')
             ->published()
             ->with('categories')
+            ->with('users')
             ->get();
         
         $articlesHardware = $articles->filter(function (Article $article) {

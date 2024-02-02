@@ -19,7 +19,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('roles')->get();
+        $users = User::
+            with('roles')
+            ->withCount('articles')
+            ->get();
 
         return view('users::pages.users_all', compact('users'));
     }
@@ -136,6 +139,7 @@ class UserController extends Controller
         }
 
         $user->syncRoles([]);
+        $user->articles()->detach();
         $user->delete();
 
         return redirect(route('gebruikers.index'))->with('success', 'Gebruiker '. $user->name.' is verwijderd');

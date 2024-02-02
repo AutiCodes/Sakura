@@ -33,7 +33,13 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
           </div>
           <div class="col my-auto">
             <div class="row border-bottom mb-1">
-              <h6><i class="fa fa-circle-user lp-c"></i> <a href="#" class="text-dark">{{ $article->author_id }}</a></h6>
+              <h6><i class="fa fa-circle-user lp-c"></i> 
+                @foreach($article->authors as $author)
+                  <a class="text-dark" href="{{ $author->name }}">
+                    {{ $author->name }}
+                  </a>
+                 @endforeach
+                </a></h6>
             </div>
             <div class="row my-auto">
               <h6><i class="fa fa-clock lp-c"></i> {{ $article->publish_date }}</h6>

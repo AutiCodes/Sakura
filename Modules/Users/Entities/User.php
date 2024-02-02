@@ -8,6 +8,10 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\permission;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Modules\Articles\Entities\Article;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Modules\Media\Entities\Media;
 
 class User extends Authenticatable
 {
@@ -40,6 +44,16 @@ class User extends Authenticatable
         return $this->belongsToMany(Permission::class);
     }
     
+    public function articles(): belongsToMany
+    {
+      return $this->belongsToMany(Article::class, 'sk_article_user');
+    }
+
+    public function media(): belongsToMany
+    {
+        return $this->belongsToMany(Media::class,'sk_media_user');
+    }
+
     protected static function newFactory()
     {
         return \Modules\Users\Database\factories\UserFactory::new();

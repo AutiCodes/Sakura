@@ -4,8 +4,8 @@ namespace Modules\News\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\News\Entities\Article;
-use Modules\AdminPanel\Entities\SiteText;
+use Modules\Articles\Entities\Article;
+use Modules\SiteEdit\Entities\SiteText;
 
 class ArticleController extends Controller
 {

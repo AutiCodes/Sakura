@@ -2,5 +2,10 @@
     "Testing": true,
     "News": true,
     "AdminPanel": true,
-    "Users": true
+    "Users": true,
+    "Articles": true,
+    "Media": true,
+    "Pages": true,
+    "Comments": true,
+    "SiteEdit": true
 }

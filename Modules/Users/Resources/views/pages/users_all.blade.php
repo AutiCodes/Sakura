@@ -65,7 +65,7 @@ Admin page theme: SB Admin 2
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->roles[0]->name }}</td>
-            <td class="w-25">69</td>
+            <td class="w-25">{{ $user->articles_count }}</td>
           </tr>  
         @endforeach
       </tbody>

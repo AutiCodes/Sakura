@@ -14,6 +14,6 @@ if (!function_exists('findFirstImageInHtml')) {
         preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $data, $image);
 
         // if the image is found, return it's path, otherwise return the default image
-        return !emtpy($image['src']) ? $image['src'] : url('/system/ArticleDefault.jpg');
+        return !empty($image['src']) ? $image['src'] : url('/system/ArticleDefault.jpg');
     }
 }

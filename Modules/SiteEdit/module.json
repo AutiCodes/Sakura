@@ -1,0 +1,11 @@
+{
+    "name": "SiteEdit",
+    "alias": "siteedit",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SiteEdit\\Providers\\SiteEditServiceProvider"
+    ],
+    "files": []
+}

@@ -37,7 +37,13 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
               <div class="d-flex justify-content-start mt-3">
                 <!-- info -->
                 <p><i class="fa fa-clock"></i><a class="text-white pl-2" href="#">{{ $article->publish_date }}</a></p> 
-                <p><i class="fa fa-circle-user ml-2"></i><a class="text-white pl-2" href="#">{{ $article->author_id }}</a></p>
+                <p><i class="fa fa-circle-user ml-2"></i>
+                @foreach($article->users as $author)
+                  <a class="text-white pl-2" href="#">
+                    {{ $author->name }}
+                  </a>
+                @endforeach
+                </p>
               </div>
             </div>
           </div>
