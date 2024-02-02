@@ -33,7 +33,13 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
             <div class="d-flex justify-content-start mt-3 ml-2">
               <!-- Poster info -->
               <p><i class="fa fa-clock lp-c"></i><a class="text-dark mr-2" href="#"> {{ $article->publish_date }}</a></p> 
-              <p><i class="fa fa-circle-user lp-c""></i><a class="text-dark" href="#"> {{ $article->author_id }}</a></p>
+              <p><i class="fa fa-circle-user lp-c""></i>
+                 @foreach($article->authors as $author)
+                  <a class="text-dark" href="{{ $author->name }}">
+                    {{ $author->name }}
+                  </a>
+                 @endforeach
+               </p>
             </div>
             <!-- Card text -->
             <p class="pl-2"> 

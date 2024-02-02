@@ -23,6 +23,7 @@ class NewsController extends Controller
         $articles = Article::orderBy('publish_date', 'desc')
             ->published()
             ->with('categories')
+            ->with('users')
             ->get();
         
         $articlesHardware = $articles->filter(function (Article $article) {

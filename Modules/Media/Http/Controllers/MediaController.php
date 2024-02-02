@@ -46,14 +46,14 @@ class MediaController extends Controller
             'file' => ['required', 'max:4096']
         ]);
 
-        $media = Media::create([
-            'name' => 'boobs',
-            'size' => 80085,
-            'uploaded_by' => Auth::id(),
-            'dimensions' => 'boo' . 'x' . 'bies'
-        ]);
+        // $media = Media::create([
+        //     'name' => 'boobs',
+        //     'size' => 80085,
+        //     'uploaded_by' => Auth::id(),
+        //     'dimensions' => 'boo' . 'x' . 'bies'
+        // ]);
 
-        $media->users()->attach(Auth::id());
+        // $media->users()->attach(Auth::id());
 
         $fileName = time().'.'.$request->file->getClientOriginalExtension();
         
@@ -63,15 +63,13 @@ class MediaController extends Controller
         // Gets file dimentions
         $fileDimentions = getimagesize(public_path('media/'.$fileName));
 
-        // // Add media info to DB
-        // $media = Media::create([
-        //     'name' => $fileName,
-        //     'size' => File::size(public_path('/media/'. $fileName)),
-        //     'uploaded_by' => Auth::id(),
-        //     'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
-        // ]);
-
-        // $media->users()->attach(Auth::id());
+        // Add media info to DB
+        $media = Media::create([
+            'name' => $fileName,
+            'size' => File::size(public_path('/media/'. $fileName)),
+            'uploaded_by' => Auth::id(),
+            'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
+        ]);
 
         return redirect(route('uploads.index'))
             ->with('success','Media is toegevoegd!');
