@@ -4,8 +4,9 @@ namespace Modules\Media\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Articles\Entities\Article;
+use Modules\Users\Entities\User;
 
 class Media extends Model
 {
@@ -20,4 +21,9 @@ class Media extends Model
         'uploaded_by',
         'dimensions'
     ];
+
+    public function users(): BelongsToMany
+    {
+        $this->belongsToMany(User::class,'sk_media_user');
+    }
 }
