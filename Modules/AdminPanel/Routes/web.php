@@ -20,7 +20,9 @@ use Modules\AdminPanel\Http\Controllers\SiteTextController;
 // Route::group(['middleware' => ['role:Super Admin', 'role:Admin', ]], function () { //'role:Redacteur'
 //     Route::get('/admin', [AdminPanelController::class, 'index']);
 // });
-Route::get('/admin', [AdminPanelController::class, 'index']);
+Route::group(['middleware' => ['role:Super Admin|Admin|Redacteur']], function () {
+    Route::get('/admin', [AdminPanelController::class, 'index']);
+});
 
 /**
  * Statistics
