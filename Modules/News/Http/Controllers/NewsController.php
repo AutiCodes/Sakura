@@ -6,8 +6,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\news\Entities\Article;
-use Modules\News\Entities\Category;
+use Modules\Articles\Entities\Article;
+use Modules\Articles\Entities\Category;
 use Modules\AdminPanel\Enums\SiteTextTypeEnum;
 use Modules\SiteEdit\Entities\SiteText;
 

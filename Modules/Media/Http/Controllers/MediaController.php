@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Media\Entities\Media;
 use File;
+use Auth;
 
 class MediaController extends Controller
 {
@@ -45,6 +46,15 @@ class MediaController extends Controller
             'file' => ['required', 'max:4096']
         ]);
 
+        $media = Media::create([
+            'name' => 'boobs',
+            'size' => 80085,
+            'uploaded_by' => Auth::id(),
+            'dimensions' => 'boo' . 'x' . 'bies'
+        ]);
+
+        $media->users()->attach(Auth::id());
+
         $fileName = time().'.'.$request->file->getClientOriginalExtension();
         
         // Put media in /public/media 
@@ -53,13 +63,15 @@ class MediaController extends Controller
         // Gets file dimentions
         $fileDimentions = getimagesize(public_path('media/'.$fileName));
 
-        // Add media info to DB
-        Media::create([
-            'name' => $fileName,
-            'size' => File::size(public_path('/media/'. $fileName)),
-            'uploaded_by' => 1,
-            'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
-        ]);
+        // // Add media info to DB
+        // $media = Media::create([
+        //     'name' => $fileName,
+        //     'size' => File::size(public_path('/media/'. $fileName)),
+        //     'uploaded_by' => Auth::id(),
+        //     'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
+        // ]);
+
+        // $media->users()->attach(Auth::id());
 
         return redirect(route('uploads.index'))
             ->with('success','Media is toegevoegd!');

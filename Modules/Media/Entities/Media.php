@@ -27,8 +27,4 @@ class Media extends Model
         $this->belongsToMany(User::class,'sk_media_user');
     }
 
-    public function articles(): BelongsToMany
-    {
-        $this->belongsToMany(Article::class,'sk_media_article');
-    }
 }

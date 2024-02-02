@@ -27,7 +27,7 @@ class Article extends Model
       'status'
     ];
 
-    public function categories()
+    public function categories(): BelongsToMany
     {
       return $this->belongsToMany(Category::class, 'sk_article_categorys');
     }
