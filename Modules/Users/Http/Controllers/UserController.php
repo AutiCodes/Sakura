@@ -48,10 +48,14 @@ class UserController extends Controller
             'name' => ['required', 'string', 'unique:users,name', 'max:20'],
             'email' => ['required', 'unique:users,email', 'max:30'],
             'password' => ['required', 'min:6'],
-            'role' => ['required', 'string', 'max:12']
+            'role' => ['required', 'string', 'max:12'],
+            // TODO add profile picture validation
         ]);
+        
+        // Put profile picture in /public/system/profile-pictures
+        $request->profile_picture->move(public_path('/system/profile-pictures'), $validated['name']. '.png');
 
-        // Check if current user is heigher then the user he wanna make
+        //TODO Check if current user is heigher then the user he wanna make
 
         $user = User::create([
             'name' => $validated['name'],

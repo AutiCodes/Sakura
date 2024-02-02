@@ -35,7 +35,7 @@ Admin page theme: SB Admin 2
     <!-- Page header -->
     <h1 class="h3 mb-3 text-gray-800 ml-0">Profiel aanmaken</h1>
 
-    <form action="{{ route('gebruikers.store') }}" method="POST">
+    <form action="{{ route('gebruikers.store') }}" method="POST" enctype="multipart/form-data">
       @csrf
       <!-- Name -->
       <div class="form-group">
@@ -59,18 +59,16 @@ Admin page theme: SB Admin 2
         </select>
       </div>
 
-      <!-- Profile picture 
+      <!-- Profile picture -->
       <div class="form-group">
-        <label for="profile-picture">Profiel foto</label>
+        <label for="profile-picture">Profiel foto (PNG)</label><i class="fa-solid fa-star-of-life small ml-1"></i>
           <div class="col w-25 ml-0 pl-0">
             <img src="//placehold.it/80" class="mb-3">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile">
-              <label class="custom-file-label" for="customFile">Choose file</label>
+            <input type="file" id="myFile" name="profile_picture">
             </div>
           </div>
         </div>
-      -->
 
       <!-- Password -->
       <div class="form-group">
