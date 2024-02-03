@@ -29,7 +29,9 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         <!-- Article poster info -->
         <div class="row mb-4 pt-3 pb-3">
           <div class="col" style="max-width: 15%;">
-            <img src="//placehold.it/75" class="rounded-circle">
+            @foreach ($article->users as $author)
+              <img src="{{ URL::asset('system/profile-pictures/'. $author->id. '.png') }}" class="rounded-circle" style="max-width: 75px; max-height: 75px;">
+            @endforeach
           </div>
           <div class="col my-auto">
             <div class="row border-bottom mb-1">

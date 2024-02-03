@@ -52,8 +52,6 @@ class UserController extends Controller
             // TODO add profile picture validation
         ]);
         
-        // Put profile picture in /public/system/profile-pictures
-        $request->profile_picture->move(public_path('/system/profile-pictures'), $validated['name']. '.png');
 
         //TODO Check if current user is heigher then the user he wanna make
 
@@ -63,6 +61,9 @@ class UserController extends Controller
             'password' => Hash::make($validated['password']),
         ]);
         
+        // Put profile picture in /public/system/profile-pictures
+        $request->profile_picture->move(public_path('/system/profile-pictures'), $user->id. '.png');
+
         $user->assignRole($validated['role']);
 
         return redirect(route('gebruikers.index'))->with('success', 'Gebruiker ' . $validated['name'] . ' is aangemaakt!');

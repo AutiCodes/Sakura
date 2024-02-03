@@ -64,15 +64,12 @@ Admin page theme: SB Admin 2
       </select>
     </div>
 
-    <!-- Profile picture 
+    <!-- Profile picture
     <div class="form-group">
       <label for="profile-picture">Profiel foto</label>
         <div class="col w-25 ml-0 pl-0">
-          <img src="//placehold.it/80" class="mb-3">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
-          </div>
+          <img src="{{ URL::asset('system/profile-pictures/'. Auth::user()->name. '.png') }}" class="mb-3" style="max-width: 75px; max-height: 75px;">
+            <input type="file" name="profile_picture">
         </div>
       </div>
     -->
