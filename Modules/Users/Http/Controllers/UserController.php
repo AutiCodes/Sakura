@@ -50,12 +50,13 @@ class UserController extends Controller
             'email' => ['required', 'unique:users,email', 'max:30'],
             'password' => ['required', 'min:6'],
             'role' => ['required', 'string', 'max:12'],
-            // TODO add profile picture validation
+            'profile_picture' => ['required', 'image','mimes:png','max:2048'],
         ]);
         
-
-        //TODO Check if current user is heigher then the user he wanna make
-
+        if (Auth::user()->hasRole('Admin') && $validated['role'] == 'Super Admin') {
+            return redirect(route('gebruikers.index'))->with('error', 'Je kunt geen Super Admin aanmaken!');
+        }
+        
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
