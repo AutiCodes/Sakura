@@ -6,7 +6,7 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
 -->
 
 <!-- Banner -->
-  <img src="{{ URL::asset('assets/img/banner_adtg_1920_380.png') }}" style="width: 2500px;" class="img-fluid" alt="Banner">
+  <img src="{{ URL::asset('assets/img/banner_adtg_1920_380.png') }}" style="width: 2500px; background: cover;" class="img-fluid" alt="Banner">
 
   <a href="#" class="fa fa-facebook social_icons_banner_fb"></a> <!-- Fix Bootstrap! -->
   <a href="#" class="fa fa-instagram social_icons_banner_insta"></a> <!-- Fix Bootstrap! -->
