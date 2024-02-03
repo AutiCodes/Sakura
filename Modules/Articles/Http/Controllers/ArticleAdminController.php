@@ -108,7 +108,7 @@ class ArticleAdminController extends Controller
             'dimensions' => $fileDimentions[0] . 'x' . $fileDimentions[1]
         ]);
 
-        return 'http://127.0.0.1:8000/media/' . $validated['file']->getClientOriginalName();
+        return url('/media/' . $validated['file']->getClientOriginalName());
     }
 
     /**
