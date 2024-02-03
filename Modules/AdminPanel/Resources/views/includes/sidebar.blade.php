@@ -220,7 +220,7 @@
     </li>    
     @endhasanyrole
 
-    @hasanyrole('Super Admin|Admin')
+    @hasanyrole('Super Admin')
     <!-- Nav Item - Technical config Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTechConfig"
