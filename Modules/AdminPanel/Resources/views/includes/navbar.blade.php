@@ -44,13 +44,14 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-plus fa-fw"></i>
           </a>
-          <!-- Dropdown - New actions -->
-          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-            aria-labelledby="newDropdown">
-            <a class="dropdown-item" href="{{ route('artikelen.create') }}">
-                <i class="fas fa-newspaper fa-sm fa-fw mr-2 text-gray-400"></i>
-                Artikel
-            </a>
+          @hasanyrole('Super Admin|Admin|Redacteur')
+            <!-- Dropdown - New actions -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="newDropdown">
+                <a class="dropdown-item" href="{{ route('artikelen.create') }}">
+                    <i class="fas fa-newspaper fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Artikel
+                </a>          
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('uploads.create') }}">
                 <i class="fas fa-image fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -60,13 +61,17 @@
             <a class="dropdown-item" href="{{ route('paginas.create') }}">
                 <i class="fa-regular fa-file-lines fa-sm fa-fw mr-2 text-gray-400"></i>
                 Pagina
-            </a>                          
+            </a>      
+          @endhasanyrole
+
+          @hasanyrole('Super Admin|Admin')                                
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('gebruikers.create') }}">
                 <i class="fa fa-person fa-sm fa-fw mr-2 text-gray-400"></i>
                 Gebruiker
             </a>                                
           </div>
+          @endhasanyrole
         </li>
   
         <!-- Nav Item - Site -->
