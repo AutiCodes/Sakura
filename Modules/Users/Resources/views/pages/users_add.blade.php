@@ -63,7 +63,6 @@ Admin page theme: SB Admin 2
       <div class="form-group">
         <label for="profile-picture">Profiel foto (PNG)</label><i class="fa-solid fa-star-of-life small ml-1"></i>
           <div class="col w-25 ml-0 pl-0">
-            <img src="//placehold.it/80" class="mb-3">
             <div class="custom-file">
             <input type="file" id="myFile" name="profile_picture">
             </div>

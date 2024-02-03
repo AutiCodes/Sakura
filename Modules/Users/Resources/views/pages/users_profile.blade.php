@@ -35,9 +35,9 @@ Admin page theme: SB Admin 2
   <!-- Page header -->
   <h1 class="h3 mb-3 text-gray-800 ml-0">Profiel van {{ $user->name }}</h1>
 
-  <form action="{{ route('gebruikers.update', $user->id) }}" method="POST">
-    @method('PATCH')
+  <form action="{{ route('gebruikers.update', $user->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <!-- Name -->
     <div class="form-group">
       <label for="firstname">Voornaam</label>
@@ -64,15 +64,15 @@ Admin page theme: SB Admin 2
       </select>
     </div>
 
-    <!-- Profile picture
+    <!-- Profile picture -->
     <div class="form-group">
       <label for="profile-picture">Profiel foto</label>
         <div class="col w-25 ml-0 pl-0">
-          <img src="{{ URL::asset('system/profile-pictures/'. Auth::user()->name. '.png') }}" class="mb-3" style="max-width: 75px; max-height: 75px;">
+          <img src="{{ URL::asset('system/profile-pictures/'. Auth::user()->id. '.png') }}" class="mb-3" style="max-width: 75px; max-height: 75px;">
             <input type="file" name="profile_picture">
         </div>
       </div>
-    -->
+    
     <script>
 
     </script>

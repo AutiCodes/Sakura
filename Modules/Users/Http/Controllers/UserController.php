@@ -10,6 +10,7 @@ use Modules\Users\Entities\Role;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\Auth;
 use Hash;
+use File;
 
 class UserController extends Controller
 {
@@ -104,7 +105,8 @@ class UserController extends Controller
             'name' => ['unique:users,name', 'max:20'],
             'email' => ['unique:users,email', 'max:30'],
             'password' => ['max:30'],
-            'role' => ['required', 'string', 'max:12']
+            'role' => ['string', 'max:12'],
+            'profile_picture' => ['image','mimes:png','max:2048'],
         ]);
 
         if ($validated['role'] != $user->roles[0]->name && $currentUser->HasRole('Super Admin')) {
@@ -112,7 +114,24 @@ class UserController extends Controller
             $user->assignRole($validated['role']);
         }
 
-        if ($validated['password'] != null) {
+        if (isset($validated['name'])) {
+            $user->update([
+                'name' => $validated['name']
+            ]);
+        }
+
+        if (isset($validated['email'])) {
+            $user->update([
+                'email' => $validated['email']
+            ]);
+        }
+
+        if (isset($validated['profile_picture'])) {
+            File::delete(public_path('/system/profile-pictures/' . $user->id. '.png'));
+            $request->profile_picture->move(public_path('/system/profile-pictures'), $user->id. '.png');
+        }
+
+        if (isset($validated['password'])) {
             $user->update([
                 'password' => Hash::make($validated['password'])
             ]);
