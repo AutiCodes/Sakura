@@ -26,6 +26,7 @@
         CMS
     </div>
 
+    @hasanyrole('Super Admin|Admin|Redacteur')
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -41,7 +42,9 @@
             </div>
         </div>
     </li>
+    @endhasanyrole
 
+    @hasanyrole('Super Admin|Admin|Redacteur')
     <!-- Nav Item - Media Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseMedia"
@@ -57,7 +60,9 @@
             </div>
         </div>
     </li>
+    @endhasanyrole
 
+    @hasanyrole('Super Admin|Admin|Redacteur')
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapsePages"
@@ -73,15 +78,18 @@
           </div>
       </div>
     </li>            
+    @endhasanyrole
     
-
+    @hasanyrole('Super Admin|Admin|Redacteur')
     <!-- Nav item - Comments -->
     <li class="nav-item">
     <a class="nav-link" href="{{ route('comments.index') }}">
           <i class="fas fa-fw fa-comments"></i>
           <span>Comments</span></a>
     </li>              
+    @endhasanyrole
 
+    @hasanyrole('Super Admin|Admin')
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
@@ -105,7 +113,9 @@
           </div>
       </div>
     </li>      
+    @endhasanyrole
 
+    @hasanyrole('Super Admin|Admin')
     <!-- Nav Item - Users Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUsers"
@@ -122,7 +132,9 @@
           </div>
       </div>
     </li>
-
+    @endhasanyrole
+    
+    @hasanyrole('Super Admin|Admin|Redacteur')
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseStats"
@@ -138,7 +150,9 @@
           </div>
       </div>
     </li>     
+    @endhasanyrole
 
+    @hasanyrole('Super Admin|Admin')
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
@@ -146,7 +160,6 @@
     <div class="sidebar-heading">
       Systeem
     </div>
-
 
     <!-- Nav Item - Modules Collapse Menu -->
     <li class="nav-item">
@@ -205,7 +218,9 @@
           </div>
       </div>
     </li>    
+    @endhasanyrole
 
+    @hasanyrole('Super Admin|Admin')
     <!-- Nav Item - Technical config Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTechConfig"
@@ -239,6 +254,7 @@
           </div>
       </div>
     </li>
+    @endhasanyrole
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
