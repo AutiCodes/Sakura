@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->renderable(function (SpatieUnauthorizedException $exception, $request) {
-            return redirect('/admin-login');
+            return redirect('/admin-login')->with('error', 'Je hebt geen toegang tot die URL zonder ingelogt te zijn!');
         });
     }
 }
