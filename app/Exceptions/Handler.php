@@ -3,7 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Spatie\Permission\Exceptions\UnauthorizedException;
+use Spatie\Permission\Exceptions\UnauthorizedException as SpatieUnauthorizedException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -29,7 +29,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->renderable(function (\Spatie\Permission\Exceptions\UnauthorizedException $exception, $request) {
+        $this->renderable(function (SpatieUnauthorizedException $exception, $request) {
             return redirect('/admin-login');
         });
     }
