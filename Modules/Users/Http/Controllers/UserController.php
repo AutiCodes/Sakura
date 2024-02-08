@@ -74,6 +74,7 @@ class UserController extends Controller
     /**
      * Shows the specified resource to edit
      * @param int $id
+     * @return Renderable
      */
     public function edit($id)
     {
@@ -91,7 +92,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      * @param Request $request
      * @param int $id
-     * @return Renderable
+     * @return redirect back
      */
     public function update(Request $request, $id)
     {

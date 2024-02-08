@@ -35,7 +35,7 @@ class AuthenticationController extends Controller
 
         // If authentication fails redirect to login page
         if (!Auth::attempt($validated)) {
-            return redirect('/admin-login');
+            return redirect('/admin-login')->with('error', 'Email of wachtwoord komen niet overeen');
         }
 
         // If user is visitor, redirect back to homepage
