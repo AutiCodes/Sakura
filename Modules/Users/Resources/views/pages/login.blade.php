@@ -32,12 +32,8 @@ For source code or contribution see our Github repo: https://github.com/kelvin-c
         </ul>
     </div>
     @endif 
-
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @elseif (session('error'))
+    
+    @if (session('error'))
         <div class="alert alert-danger" role="alert">
             {{ session('error') }}
         </div>
