@@ -7,5 +7,6 @@
     "Media": true,
     "Pages": true,
     "Comments": true,
-    "SiteEdit": true
+    "SiteEdit": true,
+    "Statistics": true
 }

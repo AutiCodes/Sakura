@@ -25,12 +25,6 @@ Route::group(['middleware' => ['role:Super Admin|Admin|Redacteur']], function ()
 });
 
 /**
- * Statistics
- */
-Route::get('/admin/statistieken/website', [AdminPanelController::class, 'websiteStatistics']);
-Route::get('/admin/statistieken/discord', [AdminPanelController::class, 'discordStatistics']);
-
-/**
  * Modules
  */
 Route::get('/admin/modules/discord_autoposter', [AdminPanelController::class, 'discordAutoPost']);
