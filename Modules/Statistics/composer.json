@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/statistics",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Statistics\\": "",
+            "Modules\\Statistics\\App\\": "app/",
+            "Modules\\Statistics\\Database\\Factories\\": "database/factories/",
+            "Modules\\Statistics\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Statistics\\Tests\\": "tests/"
+        }
+    }
+}

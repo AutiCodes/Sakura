@@ -15,66 +15,6 @@ class AdminPanelController extends Controller
     } 
 
     /*
-    * Media
-    */
-    public function mediaAll()
-    {
-      return view('adminpanel::pages.media_all');
-    }
-
-    public function mediaAdd()
-    {
-      return view('adminpanel::pages.media_add');
-    }
-
-    /*
-    * Pages
-    */
-    public function pagesAll()
-    {
-      return view('adminpanel::pages.pages_all');
-    }
-
-    public function pagesAdd()
-    {
-      return view('adminpanel::pages.pages_add');
-    }
-
-    /*
-    * Comments
-    */
-    public function comments()
-    {
-      return view('adminpanel::pages.comments');
-    }
-
-    /*
-    * Display
-    */
-    public function editText()
-    {
-      return view('adminpanel::pages.display_edit_text');
-    }
-
-    public function editImages()
-    {
-      return view('adminpanel::pages.display_edit_images');
-    }
-
-    /*
-    * Statistics
-    */
-    public function websiteStatistics()
-    {
-      return view('adminpanel::pages.statistics_website');
-    }
-
-    public function discordStatistics()
-    {
-      return view('adminpanel::pages.statistics_discord');
-    }
-
-    /*
     * Modules
     */
     public function discordAutoPost()
