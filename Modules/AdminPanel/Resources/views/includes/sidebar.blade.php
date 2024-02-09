@@ -145,8 +145,8 @@
       <div id="collapseStats" class="collapse" aria-labelledby="collapseStats"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="/admin/statistieken/website">Website</a>
-              <a class="collapse-item" href="/admin/statistieken/discord">Discord</a>
+              <a class="collapse-item" href="{{ route('statistieken-website.index') }}">Website</a>
+              <a class="collapse-item" href="{{ route('statistieken-discord.index') }}">Discord</a>
           </div>
       </div>
     </li>     
